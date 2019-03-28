@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.7 on 2019-03-25 21:48:11.
+ * Generated for Laravel 5.8.7 on 2019-03-28 16:47:17.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -10193,8 +10193,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function validate($rules, $params = null)
         {
-                        /** @var \Illuminate\Http\Request $instance */
-                        return $instance->__invoke($rules, $params);
+                        return \Illuminate\Http\Request::validate($rules, $params);
         }
         
         /**
@@ -10202,10 +10201,9 @@ namespace Illuminate\Support\Facades {
          *
          * @static 
          */ 
-        public static function hasValidSignature($absolute = null)
+        public static function hasValidSignature($absolute = true)
         {
-                        /** @var \Illuminate\Http\Request $instance */
-                        return $instance->__invoke($absolute);
+                        return \Illuminate\Http\Request::hasValidSignature($absolute);
         }
          
     }
