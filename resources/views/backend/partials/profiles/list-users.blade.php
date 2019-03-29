@@ -109,26 +109,28 @@
                 <div class="modal-body pd-0">
                     <div class="card shadow-base bd-0 pd-20 ht-100p">
                         <div class="row ht-100p">
-                            <div class="col-md-5">
-                                <img src="https://via.placeholder.com/600x800" class="wd-100p ht-100p object-fit-cover rounded" alt="Image">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/600x800" class="wd-100p ht-50p object-fit-cover rounded" alt="Image">
+                                <div class="pd-5">
+                                    <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Roles Asignados</label>
+                                    <ul class="list-unstyled tx-13 mg-t-5 mg-b-5 mg-md-b-auto">
+                                        <li style="font-size: 13px;"><i class="fa fa-check mg-r-5 tx-success"></i>Super Admin</li>
+                                        <li style="font-size: 13px;"><i class="fa fa-check mg-r-5 tx-success"></i>Vendedor</li>
+                                        <li style="font-size: 13px;"><i class="fa fa-check mg-r-5 tx-success"></i>Bodega</li>
+                                    </ul>
+                                </div>
                             </div><!-- col-5 -->
-                            <div class="col-md-7 pd-y-10 pd-r-30 d-flex align-items-start flex-column">
-                                <h5 class="tx-normal tx-roboto lh-3 mg-b-10"><a href="" class="tx-inverse hover-info">Silvio Mauricio Gutierrez Quiñones</a></h5>
+                            <div class="col-md-8 pd-y-10 pd-r-30 d-flex align-items-start flex-column">
+                                <h3 class="tx-normal tx-roboto lh-3 mg-b-10" style="color: #0c0c0d">Silvio Mauricio Gutierrez Quiñones</h3>
                                 <p class="tx-11 tx-uppercase tx-mont tx-semibold tx-info">Vendedor</p>
-                                <p class="tx-14 mg-b-20">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy...</p>
+                                <h6 class="tx-gray-800 tx-uppercase tx-semibold tx-13 mg-b-25">Información del Usuario</h6>
 
-                                <p class="tx-13 mg-b-20 mg-md-b-auto">
-                                    <a href="" class="tx-info mg-r-10">22 Likes</a>
-                                    <a href="" class="tx-info">3 Comments</a>
-                                </p>
-
-                                <div class="media mg-t-20 mg-b-0">
-                                    <img src="https://via.placeholder.com/500" class="d-flex wd-40 rounded-circle mg-r-10" alt="Image">
-                                    <div class="media-body">
-                                        <h6 class="mg-b-5 tx-14"><a href="" class="tx-inverse">Raymond K. Davis</a></h6>
-                                        <div class="tx-12 tx-gray-600">Technical Writer</div>
-                                    </div><!-- media-body -->
-                                </div><!-- media -->
+                                <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Telefono 1</label>
+                                <p class="tx-info mg-b-25">+57 318-7951410</p>
+                                <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Telefono 2</label>
+                                <p class="tx-info mg-b-25">+57 311-3807162</p>
+                                <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Email</label>
+                                <p class="tx-inverse mg-b-25">silviotista93@gmail.com</p>
                             </div><!-- col-6 -->
                         </div><!-- row -->
                     </div><!-- card -->
