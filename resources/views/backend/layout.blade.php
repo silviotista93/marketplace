@@ -28,7 +28,7 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Bracket Plus Responsive Bootstrap 4 Admin Template</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- vendor css -->
     <link href="/backend/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -36,9 +36,11 @@
 
     <link href="/backend/lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="/backend/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="/backend/css/bracket.css">
+    <link href="/backend/lib/select2/css/select2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -94,6 +96,9 @@
 <script src="/backend/lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
 <script src="/backend/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 <script src="/backend/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+<script src="/backend/lib/select2/js/select2.full.min.js"></script>
 
 <script src="/backend/js/bracket.js"></script>
 @stack('js')

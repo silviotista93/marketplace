@@ -41,6 +41,15 @@ Route::group(['namespace'=>'Backend'],function (){
     Route::get('/dashboard-root','admin\DashboardAdminController@index')->name('dashboard.admin');
 
 
+    /*=============================================
+       PRODUCTOS
+    =============================================*/
+    Route::get('/manage-products/products','admin\ProductsController@index')->name('manage_products');
+    /*=============================================
+       CATEGORIAS Y SUBCATEGORIAS
+    =============================================*/
+    Route::get('/manage-categories/categories','admin\CategoriesController@index')->name('manage_categories');
+    Route::get('/manage-categories/sub-categories','admin\SubCategoriesController@index')->name('manage_subcategories');
 
     /*=============================================
        PROFILES USERS

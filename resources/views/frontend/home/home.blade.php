@@ -3811,7 +3811,7 @@
                     </ul>
                 </div>
             </div><!-- /.cate-box -->
-        </div> <!-- /#hot-categories -->
+        </div> <!-- /#hot-manage_categories -->
 
     </div> <!-- /.container -->
 </div>

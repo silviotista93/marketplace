@@ -26,7 +26,7 @@
     11.1.2 Product featured
   11.2 Banner bootom
 12. Brand showcase
-13. Hot categories
+13. Hot manage_categories
 14. Footer
 15. Breadcrumb
 16. Columns
@@ -2514,7 +2514,7 @@ span.notify-right{
 
 
 /*------------------
-[12. Hot categories]
+[12. Hot manage_categories]
 */
 #hot-categories{
     margin-top: 30px

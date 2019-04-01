@@ -20,21 +20,21 @@
             </a><!-- br-menu-link -->
         </li>
         <li class="br-menu-item">
-            <a href="#" class="br-menu-link with-sub">
+            <a href="#" class="br-menu-link with-sub {{request()->is('manage-categories*') ? 'active' : '' }}">
                 <i class="fas fa-sitemap"></i>
                 <span class="menu-item-label">Gestor Categorías</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
-                <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Categorías</a></li>
-                <li class="sub-item"><a href="card-social.html" class="sub-link">Subcategorias</a></li>
+                <li class="sub-item"><a href="{{ route('manage_categories') }}" class="sub-link {{request()->is('manage-categories/categories') ? 'active' : '' }}">Categorías</a></li>
+                <li class="sub-item"><a href="{{ route('manage_subcategories') }}" class="sub-link {{request()->is('manage-categories/sub-categories') ? 'active' : '' }}">Subcategorias</a></li>
             </ul>
         </li>
         <li class="br-menu-item">
-            <a href="#" class="br-menu-link with-sub">
+            <a href="{{ route('manage_products') }}" class="br-menu-link {{request()->is('manage-products/products') ? 'active' : '' }}">
                 <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
                 <span class="menu-item-label">Gestor Productos</span>
             </a><!-- br-menu-link -->
-            <ul class="br-menu-sub">
+            {{--<ul class="br-menu-sub">
                 <li class="sub-item"><a href="accordion.html" class="sub-link">Gesto</a></li>
                 <li class="sub-item"><a href="alerts.html" class="sub-link">Alerts</a></li>
                 <li class="sub-item"><a href="buttons.html" class="sub-link">Buttons</a></li>
@@ -51,7 +51,7 @@
                 <li class="sub-item"><a href="progress.html" class="sub-link">Progress</a></li>
                 <li class="sub-item"><a href="spinners.html" class="sub-link">Spinners</a></li>
                 <li class="sub-item"><a href="typography.html" class="sub-link">Typography</a></li>
-            </ul>
+            </ul>--}}
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub">
@@ -116,10 +116,10 @@
             </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
-            <a href="#" class="br-menu-link {{request()->is('profiles*') ? 'active' : '' }}" with-sub">
+            <a href="#" class="br-menu-link with-sub {{request()->is('profiles*') ? 'active' : '' }}">
                 <i class="fas fa-users"></i>
                 <span class="menu-item-label">Gestor Perfiles</span>
-            </a><!-- br-menu-link -->
+            </a>
             <ul class="br-menu-sub">
                 <li class="sub-item"><a href="{{ route('dashboard.profile.list') }}" class="sub-link {{request()->is('profiles/list-user') ? 'active' : '' }}">Usuarios</a></li>
                 <li class="sub-item"><a href="{{ route('dashboard.profile.add') }}" class="sub-link {{request()->is('profiles/add-user') ? 'active' : '' }}">Agregar Usuarios</a></li>

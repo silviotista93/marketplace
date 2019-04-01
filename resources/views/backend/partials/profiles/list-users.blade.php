@@ -52,7 +52,7 @@
                                         <td class="text-center"><a href="#"
                                                                    class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                                                                    data-toggle="modal" data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
+                                                <div><i class="fas fa-info"></i></div>
                                             </a>
                                         </td>
                                     </tr>
@@ -68,7 +68,7 @@
                                         <td class="text-center"><a href="#"
                                                                    class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                                                                    data-toggle="modal" data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
+                                                <div><i class="fas fa-info"></i></div>
                                             </a>
                                         </td>
                                     </tr>
@@ -83,7 +83,7 @@
                                         <td class="text-center"><a href="#"
                                                                    class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                                                                    data-toggle="modal" data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
+                                                <div><i class="fas fa-info"></i></div>
                                             </a>
                                         </td>
                                     </tr>
