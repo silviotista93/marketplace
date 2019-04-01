@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function roles(){
+
+      return $this->belongsToMany(\App\User::class,'roles_users','role_id','user_id');
+
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +41,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }
