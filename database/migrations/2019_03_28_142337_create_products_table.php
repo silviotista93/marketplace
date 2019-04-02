@@ -20,21 +20,13 @@ class CreateProductsTable extends Migration
             $table->enum('status', [Product::DISPONIBLE, Product::NO_DISPONIBLE]);
             $table->string("name");
             $table->text("short_description");
-            $table->text("description");
-            $table->text("multimedia");
-            $table->integer("stock");
+            $table->text("description");            
             $table->float("price");
             $table->float("price_neto");
             $table->bigInteger("views");
             $table->bigInteger("sell");
-            $table->float("weigth");
-            
-            $table->unsignedBigInteger("stores_id");
-            $table->foreign("stores_id")->references("id")->on("stores");
-
-            $table->unsignedBigInteger("sub_categories_id");
-            $table->foreign("sub_categories_id")->references("id")->on("sub_categories");
-
+            $table->float("weigth");    
+                
             $table->timestamps();
         });
     }

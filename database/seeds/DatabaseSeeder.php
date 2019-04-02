@@ -49,27 +49,27 @@ class DatabaseSeeder extends Seeder
         });
         $i++;
 
-         factory(\App\Country::class, 1)->create(['country' => 'Colombia','flag' => '/backend/img/flags/colombia.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Venezuela','flag' => '/backend/img/flags/venezuela.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Ecuador','flag' => '/backend/img/flags/ecuador.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Perú','flag' => '/backend/img/flags/peru.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Brasil','flag' => '/backend/img/flags/brazil.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Panamá','flag' => '/backend/img/flags/panama.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Paraguay','flag' => '/backend/img/flags/paraguay.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Uruguay','flag' => '/backend/img/flags/uruguay.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Argentina','flag' => '/backend/img/flags/argentina.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Chile','flag' => '/backend/img/flags/chile.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Mexico','flag' => '/backend/img/flags/mexico.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Puerto Rico','flag' => '/backend/img/flags/puerto-rico.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Guatemala','flag' => '/backend/img/flags/guatemala.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Cuba','flag' => '/backend/img/flags/cuba.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'El Salvador','flag' => '/backend/img/flags/el-salvador.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'República Dominicana','flag' => '/backend/img/flags/dominican-republic.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Honduras','flag' => '/backend/img/flags/honduras.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Nicaragua','flag' => '/backend/img/flags/nicaragua.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Bolivia','flag' => '/backend/img/flags/bolivia.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Estados Unidos','flag' => '/backend/img/flags/united-states.png']);
-         factory(\App\Country::class, 1)->create(['country' => 'Costa Rica','flag' => '/backend/img/flags/costa-rica.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Colombia','flag' => '/backend/img/countries/colombia.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Venezuela','flag' => '/backend/img/countries/venezuela.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Ecuador','flag' => '/backend/img/countries/ecuador.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Perú','flag' => '/backend/img/countries/peru.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Brasil','flag' => '/backend/img/countries/brazil.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Panamá','flag' => '/backend/img/countries/panama.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Paraguay','flag' => '/backend/img/countries/paraguay.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Uruguay','flag' => '/backend/img/countries/uruguay.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Argentina','flag' => '/backend/img/countries/argentina.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Chile','flag' => '/backend/img/countries/chile.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Mexico','flag' => '/backend/img/countries/mexico.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Puerto Rico','flag' => '/backend/img/countries/puerto-rico.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Guatemala','flag' => '/backend/img/countries/guatemala.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Cuba','flag' => '/backend/img/countries/cuba.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'El Salvador','flag' => '/backend/img/countries/el-salvador.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'República Dominicana','flag' => '/backend/img/countries/dominican-republic.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Honduras','flag' => '/backend/img/countries/honduras.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Nicaragua','flag' => '/backend/img/countries/nicaragua.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Bolivia','flag' => '/backend/img/countries/bolivia.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Estados Unidos','flag' => '/backend/img/countries/united-states.png']);
+         factory(\App\Country::class, 1)->create(['name' => 'Costa Rica','flag' => '/backend/img/countries/costa-rica.png']);
 
          factory(\App\City::class, 10)->create();
          

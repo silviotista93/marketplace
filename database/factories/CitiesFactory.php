@@ -2,9 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Cities::class, function (Faker $faker) {
+$factory->define(App\City::class, function (Faker $faker) {
     return [
         'name' => $faker->city,
-        'country_id' => \App\City::all()->random()->i
+        'country_id' => \App\Country::all()->random()->id
     ];
 });

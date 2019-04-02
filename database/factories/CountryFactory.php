@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Countries::class, function (Faker $faker) {
+$factory->define(App\Country::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
        
