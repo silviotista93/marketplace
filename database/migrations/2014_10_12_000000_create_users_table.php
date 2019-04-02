@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
+            $table->unsignedBigInteger('super_role_id')->nullable();
             $table->timestamps();
         });
 

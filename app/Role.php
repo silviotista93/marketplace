@@ -12,6 +12,7 @@ class Role extends Model
   const ADMIN = 4;
   const VENDEDOR = 5;
   const BODEGA = 6;
+  const EMPRESA = 7;
 
   public function users(){
     return $this->belongsToMany(\App\User::class);

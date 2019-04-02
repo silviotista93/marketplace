@@ -13,13 +13,18 @@ class DatabaseSeeder extends Seeder
     {
         Storage::deleteDirectory('user');
         Storage::makeDirectory('user');
+        Storage::deleteDirectory('category');
+        Storage::makeDirectory('category');
+        Storage::deleteDirectory('subcategory');
+        Storage::makeDirectory('subcategory');
 
         factory(\App\Role::class, 1)->create(['name'=>'Root']);
-        factory(\App\Role::class, 1)->create(['name'=>'SupAdmin']);
-        factory(\App\Role::class, 1)->create(['name'=>'Marketing']);
-        factory(\App\Role::class, 1)->create(['name'=>'Admin']);
-        factory(\App\Role::class, 1)->create(['name'=>'Vendedor']);
-        factory(\App\Role::class, 1)->create(['name'=>'Bodega']);
+        factory(\App\Role::class, 1)->create(['name'=>'SupAdmin','super_role_id'=>\App\Role::ROOT]);
+        factory(\App\Role::class, 1)->create(['name'=>'Marketing', 'super_role_id'=>\App\Role::ROOT]);
+        factory(\App\Role::class, 1)->create(['name'=>'Admin', 'super_role_id'=>\App\Role::EMPRESA]);
+        factory(\App\Role::class, 1)->create(['name'=>'Vendedor','super_role_id'=>\App\Role::EMPRESA]);
+        factory(\App\Role::class, 1)->create(['name'=>'Bodega','super_role_id'=>\App\Role::EMPRESA]);
+        factory(\App\Role::class, 1)->create(['name'=>'Empresa']);
 
         $roles = [ \App\Role::ROOT, \App\Role::SUPER_ADMIN, \App\Role::MARKETING, \App\Role::ADMIN, \App\Role::VENDEDOR, \App\Role::BODEGA ];
         $email = ['root@gmail.com','sadmin@gmail.com','marketing@gmail.com','admin@gmail.com','vendedor@gmail.com','bodega@gmail.com' ];
@@ -72,6 +77,11 @@ class DatabaseSeeder extends Seeder
          factory(\App\Country::class, 1)->create(['name' => 'Costa Rica','flag' => '/backend/img/countries/costa-rica.png']);
 
          factory(\App\City::class, 10)->create();
+         factory(\App\Category::class, 10)->create();
+
+         factory(\App\SubCategory::class, 10)->create();
+
+
          
         
     }
