@@ -97,7 +97,7 @@
 @stop @push('js')
 <script>
     const urlUsersList = "{{ route("dashboard.profile.get_list") }}";
-        const activeUsers = "{{\App\User::ACTIVO}}";
+    const activeUsers = "{{\App\User::ACTIVO}}";
 </script>
 <script src="/common/list-users.js"></script>
 
