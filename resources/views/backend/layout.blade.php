@@ -28,6 +28,9 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
+    <!-- token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <title>{{ config('app.name') }}</title>
 
     <!-- vendor css -->
@@ -101,6 +104,13 @@
 <script src="/backend/lib/select2/js/select2.full.min.js"></script>
 
 <script src="/backend/js/bracket.js"></script>
+<script>
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    }
+});
+</script>
 @stack('js')
 </body>
 </html>

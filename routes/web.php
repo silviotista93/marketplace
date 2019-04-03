@@ -59,6 +59,8 @@ Route::group(['namespace'=>'Backend'],function (){
 
     //Listar Usuarios
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');
+    Route::post('/profiles/get-list-user', 'partials\profiles\ListUsersController@getUsers')->name('dashboard.profile.get_list');
+
 });
 
 Auth::routes();
