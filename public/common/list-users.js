@@ -1,7 +1,7 @@
 let table = null;
 
-
 const showInfoUsers = function(e){
+    const modalInfo = $("#modal_info_profile");
     const user = JSON.parse($(this).attr("data-info"));
     let roles = "";
     user.roles.map(function (rol){
@@ -18,6 +18,7 @@ const showInfoUsers = function(e){
     <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Email</label>
     <p class="tx-inverse mg-b-25">${user.email}</p>`;
     userDatos.innerHTML = userDato;
+    modalInfo.find("#imagenPerfil").attr("src", user.picture).attr("alt", "Imagen de perfil de "+user.name);
 }
 
 const loadTable = function () {
@@ -96,7 +97,6 @@ const loadTable = function () {
 };
 
 const init =function (){
-    const modalInfo = $("#modal_info_profile");
     loadTable();
     $("#users-list").on("click", '.users__info--info', showInfoUsers);
 }

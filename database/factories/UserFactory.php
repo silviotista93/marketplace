@@ -34,7 +34,7 @@ $factory->define(User::class, function (Faker $faker) {
         'phone_2'=>$faker->phoneNumber,
         'gender' => $faker->randomElement(['Male', 'Female', 'Other']),
         'birthday'=>$faker->dateTimeBetween($startDate = '-30 years', $endDate = '-18 years', $timezone = null),
-        'picture'=>\Faker\Provider\Image::image(storage_path(). '/app/public/user', 600, 350, 'people', false),
+        'picture'=> "/backend/img/perfil.jpg",
         'password' => bcrypt('secret'), // password
         'remember_token' => str_random(10),
     ];

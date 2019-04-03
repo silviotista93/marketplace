@@ -54,6 +54,11 @@
     </div>
 </div>
 
+<!--=====================================
+
+	Modal información usuario
+
+======================================-->
 <div id="modal_info_profile" class="modal fade effect-flip-horizontal">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bd-0 tx-14">
@@ -67,7 +72,7 @@
                 <div class="card shadow-base bd-0 pd-20 ht-100p">
                     <div class="row ht-100p">
                         <div class="col-md-4">
-                            <img src="https://via.placeholder.com/600x800" class="wd-100p ht-50p object-fit-cover rounded" alt="Image">
+                            <img id="imagenPerfil" src="https://via.placeholder.com/600x800" class="wd-100p ht-50p object-fit-cover rounded" alt="Image">
                             <div class="pd-5">
                                 <label class="tx-10 tx-uppercase tx-mont tx-medium tx-spacing-1 mg-b-2">Roles Asignados</label>
                                 <ul class="list-unstyled tx-13 mg-t-5 mg-b-5 mg-md-b-auto" id="user__roles">
