@@ -56,7 +56,7 @@ Route::group(['namespace'=>'Backend'],function (){
     =============================================*/
     //Agregar Usuarios
     Route::get('/profiles/add-user', 'partials\profiles\AddUserController@index')->name('dashboard.profile.add');
-    Route::post("/profiles/add-user', 'partials\profiles\AddUserController@index")->name("dashboard.profile.create-user");
+    Route::post('/profiles/add-store-user', 'partials\profiles\AddUserController@store')->name("dashboard.profile.create-user");
 
     //Listar Usuarios
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');
