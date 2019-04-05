@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
+use App\Mail\NewUser;
 
 class AddUserController extends Controller
 {
@@ -36,6 +37,8 @@ class AddUserController extends Controller
             foreach($validatedData["roles"] as $role){
                 $user->roles()->attach($role);
             }
+            
+            \Mail::to($user)->send(new NewUser($user, $pass));
         } catch (\Throwable $th) {
             return response()->json([
                 'msg' => $th->getMessage(),
