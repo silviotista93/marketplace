@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
-use Illuminate\Support\Facades\Date;
-use Carbon\Carbon;
 
 class AddUserController extends Controller
 {
@@ -39,7 +37,14 @@ class AddUserController extends Controller
                 $user->roles()->attach($role);
             }
         } catch (\Throwable $th) {
-            return false;
+            return response()->json([
+                'msg' => $th->getMessage(),
+                'title' => "Error"
+            ], 500);
         }
+        return response()->json([
+            'title' => 'Excelente',
+            'msg' => 'Usuario creado correctamente'
+        ],201);
     }
 }

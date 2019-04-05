@@ -44,6 +44,11 @@
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="/backend/css/bracket.css">
     <link href="/backend/lib/select2/css/select2.min.css" rel="stylesheet">
+    <style>
+    .form-control-danger{
+        border-color:#d9534f; 
+    }
+    </style>
 </head>
 
 <body>
