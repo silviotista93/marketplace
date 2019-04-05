@@ -34,6 +34,37 @@ const showErrors = function(errores){
     });
 }
 
+function ajaxUpload(url, data, success, error) {
+    $(".msg-error").html("");
+    $("."+classInputError).removeClass(classInputError);
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: "JSON",
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response, status, object){
+            if (typeof success === "function"){
+                success(response);
+            }
+            showAlert(object.status, response.title, response.msg);
+        },
+        error: function (error){
+            let msg = "Error interno";
+            if (error.status === 422){
+                msg = "Datos incorrectos.";
+                showErrors(error.responseJSON.errors);
+            }
+            showAlert(error.status,"Error", msg);
+            if (typeof error === "function"){
+                error(error);
+            }
+        }
+    });
+}
+
 const sendForm = function(url, data, success, error){
     $(".msg-error").html("");
     $("."+classInputError).removeClass(classInputError);
