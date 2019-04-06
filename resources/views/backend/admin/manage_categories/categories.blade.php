@@ -9,7 +9,7 @@
         </nav>
     </div>
     <div class="br-pagetitle">
-        <i class="fas fa-users fa-4x"></i>
+        <i class="fas fa-sitemap fa-4x"></i>
         <div>
             <h4>Categorías</h4>
             <p class="mg-b-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>

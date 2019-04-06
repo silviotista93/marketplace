@@ -41,6 +41,9 @@
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="/backend/css/bracket.css">
     <link href="/backend/lib/select2/css/select2.min.css" rel="stylesheet">
+    <link href="/backend/lib/medium-editor/css/medium-editor.min.css" rel="stylesheet">
+    <link href="/backend/lib/medium-editor/css/themes/default.min.css" rel="stylesheet">
+    <link href="/backend/lib/summernote/summernote-bs4.css" rel="stylesheet">
 </head>
 
 <body>
@@ -91,6 +94,9 @@
 <script src="/backend/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="/backend/lib/moment/min/moment.min.js"></script>
 <script src="/backend/lib/peity/jquery.peity.min.js"></script>
+<script src="/backend/lib/jquery-steps/build/jquery.steps.min.js"></script>
+<script src="/backend/lib/parsleyjs/parsley.min.js"></script>
+<script src="/backend/lib/summernote/summernote-bs4.min.js"></script>
 
 <script src="/backend/lib/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/backend/lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
