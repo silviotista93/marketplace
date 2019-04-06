@@ -28,6 +28,9 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
+    <!-- token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <title>{{ config('app.name') }}</title>
 
     <!-- vendor css -->
@@ -41,9 +44,11 @@
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="/backend/css/bracket.css">
     <link href="/backend/lib/select2/css/select2.min.css" rel="stylesheet">
+
     <link href="/backend/lib/medium-editor/css/medium-editor.min.css" rel="stylesheet">
     <link href="/backend/lib/medium-editor/css/themes/default.min.css" rel="stylesheet">
     <link href="/backend/lib/summernote/summernote-bs4.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -107,6 +112,13 @@
 <script src="/backend/lib/select2/js/select2.full.min.js"></script>
 
 <script src="/backend/js/bracket.js"></script>
+<script>
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    }
+});
+</script>
 @stack('js')
 </body>
 </html>

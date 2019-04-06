@@ -49,6 +49,8 @@ Route::group(['namespace'=>'Backend'],function (){
        CATEGORIAS Y SUBCATEGORIAS
     =============================================*/
     Route::get('/manage-categories/categories','admin\CategoriesController@index')->name('manage_categories');
+    Route::post('/datatables-categories-admin','admin\CategoriesController@tabla_categorias')->name('datatables.categories.admin');
+    Route::post('/admin/add-category','admin\CategoriesController@saveCategory')->name('add-category');
     Route::get('/manage-categories/sub-categories','admin\SubCategoriesController@index')->name('manage_subcategories');
 
     /*=============================================
@@ -56,9 +58,12 @@ Route::group(['namespace'=>'Backend'],function (){
     =============================================*/
     //Agregar Usuarios
     Route::get('/profiles/add-user', 'partials\profiles\AddUserController@index')->name('dashboard.profile.add');
+    Route::post('/profiles/add-store-user', 'partials\profiles\AddUserController@store')->name("dashboard.profile.create-user");
 
     //Listar Usuarios
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');
+    Route::post('/profiles/get-list-user', 'partials\profiles\ListUsersController@getUsers')->name('dashboard.profile.get_list');
+
 });
 
 Auth::routes();
