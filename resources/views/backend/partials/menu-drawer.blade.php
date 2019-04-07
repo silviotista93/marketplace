@@ -30,12 +30,12 @@
             </ul>
         </li>
         <li class="br-menu-item">
-            <a href="" class="br-menu-link {{request()->is('manage-products/products') ? 'active' : '' }}">
-                <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <a href="" class="br-menu-link {{request()->is('manage-products*') ? 'active' : '' }}">
+                <i class="fab fa-dropbox"></i>
                 <span class="menu-item-label">Gestor Productos</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
-                <li class="sub-item"><a href="{{ route('manage_products') }}" class="sub-link">Agregar Productos</a></li>
+                <li class="sub-item"><a href="{{ route('manage_add_products') }}" class="sub-link {{request()->is('manage-products/add-products') ? 'active' : '' }}">Agregar Productos</a></li>
                 <li class="sub-item"><a href="alerts.html" class="sub-link">Productos</a></li>
             </ul>
         </li><!-- br-menu-item -->

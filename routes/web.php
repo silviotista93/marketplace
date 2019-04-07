@@ -46,7 +46,7 @@ Route::group(['namespace'=>'Backend'],function (){
     /*=============================================
        PRODUCTOS
     =============================================*/
-    Route::get('/manage-products/products','admin\ProductsController@index')->name('manage_products');
+    Route::get('/manage-products/add-products','admin\AddProductsController@index')->name('manage_add_products');
     /*=============================================
        CATEGORIAS Y SUBCATEGORIAS
     =============================================*/
