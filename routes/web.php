@@ -14,7 +14,9 @@
 /*=============================================
 CONSULTAS DE PRUEBAS
 =============================================*/
-
+Route::get('prueba',function(){
+   
+});
 
 /*=============================================
 SELECCIONAR LENGUAJE
@@ -49,8 +51,15 @@ Route::group(['namespace'=>'Backend'],function (){
        CATEGORIAS Y SUBCATEGORIAS
     =============================================*/
     Route::get('/manage-categories/categories','admin\CategoriesController@index')->name('manage_categories');
+    //lista de categorias
     Route::post('/datatables-categories-admin','admin\CategoriesController@tabla_categorias')->name('datatables.categories.admin');
+   //agregar categoria
     Route::post('/admin/add-category','admin\CategoriesController@saveCategory')->name('add-category');
+    //lista de subcategorias
+    Route::post('/datatables-subcategories-admin','admin\SubCategoriesController@tabla_subcategorias')->name('datatables.subcategories.admin');
+   //agregar categoria
+    Route::post('/admin/add-category','admin\CategoriesController@saveCategory')->name('add-category');
+
     Route::get('/manage-categories/sub-categories','admin\SubCategoriesController@index')->name('manage_subcategories');
 
     /*=============================================

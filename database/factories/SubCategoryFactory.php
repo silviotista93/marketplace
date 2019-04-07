@@ -7,7 +7,7 @@ $factory->define(App\SubCategory::class, function (Faker $faker) {
     return [
         'sub_category' => $name,
         'slug'=>str_slug($name, '-','pro'),
-        'sub_category_picture'=>\Faker\Provider\Image::image(storage_path(). '/app/public/subcategory', 600, 350, 'abstract', false),
+        'sub_category_picture'=>"/storage/subcategory/".\Faker\Provider\Image::image(storage_path(). '/app/public/subcategory', 600, 350, 'abstract', false),
        
         'categories_id'=>\App\Category::all()->random()->id,
 
