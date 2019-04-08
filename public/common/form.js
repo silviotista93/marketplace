@@ -14,7 +14,7 @@ const showAlert = function (status, title, msg){
         status = "danger";
     }
     const alertHTML = 
-    `<div class="alertaMSG alert alert-bordered alert-${status}" role="alert" style="position: fixed;top: 4rem;right: 0.5rem; min-width:200px;">
+    `<div class="alertaMSG alert alert-bordered alert-${status}" role="alert" style="position: fixed;top: 4rem;right: 0.5rem; min-width:200px; z-index: 10000;">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>

@@ -1,7 +1,9 @@
 @component('mail::message')
-# Tus credenciales para acceder a {{config('app.name')}}
+Hola  <strong>{{ $user->name }} {{ $user->last_name }}</strong>
+<br>
 
-Utiliza estas credenciales para acceder al sistema.
+
+Utiliza estas credenciales para acceder a <strong>{{config('app.name')}}</strong>.
 
 @component('mail::table')
 

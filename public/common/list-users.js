@@ -8,6 +8,9 @@ const showInfoUsers = function(e){
         roles += `<li style="font-size: 13px;"><i class="fa fa-check mg-r-5 tx-success"></i>${rol.name}</li>`;
     });
     modalInfo.find("#user__roles").html(roles);
+    if (user.phone_2 === null){
+        user.phone_2 = "N/A";
+    }
     let userDato = 
     `<h3 class="tx-normal tx-roboto lh-3 mg-b-10" style="color: #0c0c0d">${user.name} ${user.last_name}</h3>
     <h6 class="tx-gray-800 tx-uppercase tx-semibold tx-13 mg-b-25">Información del Usuario</h6>
