@@ -8,8 +8,12 @@ use App\Role;
 use App\User;
 use App\Mail\NewUser;
 
-class AddUserController extends Controller
-{
+class AddUserController extends Controller{
+    
+    public function __construct(){
+        $this->middleware("permiso:".\join(",", [\App\Role::ROOT, \App\Role::EMPRESA]));
+    }
+
     public function index(){
         $roles = Role::where("super_role_id", "=", \Auth::user()->roles()->get()[0]->id)->get();
         return view('backend.partials.profiles.add-users', compact("roles"));
