@@ -34,7 +34,7 @@ class NewUser extends Mailable
      */
     public function build()
     {
-        return $this->subject(__('Usuario registrado'))
+        return $this->subject('Bienvenido a '.config('app.name')." ".$this->user->name." ".$this->user->last_name)
             ->markdown('emails.new_user')
             ->with("user", $this->user)
             ->with("password", $this->password);

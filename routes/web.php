@@ -37,11 +37,10 @@ Route::group(['namespace'=>'Frontend'],function (){
 /*=============================================
 BACKEND ADMIN
 =============================================*/
-Route::group(['namespace'=>'Backend'],function (){
+Route::group(['namespace'=>'Backend', 'middleware' => 'auth'],function (){
 
     //Rutas para el dashboard admin
-    Route::get('/dashboard-root','admin\DashboardAdminController@index')->name('dashboard.admin');
-
+    Route::get('/dashboard-root','admin\DashboardAdminController@index')->name('dashboard.admin')->middleware("permiso:1,2,3");
 
     /*=============================================
        PRODUCTOS
