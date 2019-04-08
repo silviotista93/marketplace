@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Http\Requests\AddCategory;
 
 class CategoriesController extends Controller
 {
@@ -21,12 +22,9 @@ class CategoriesController extends Controller
     }
 
 
-    public function saveCategory( Request $request ){
+    public function saveCategory(AddCategory $request ){
 
-        $validate = $request->validate([
-            'category'=> 'required|unique:categories,category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
-            'imagen'=> 'required|mimes:jpeg,bmp,png'
-        ]);
+        $validate = $request->validated();
 
         try{
             $category = new Category();

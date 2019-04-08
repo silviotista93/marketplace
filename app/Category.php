@@ -29,4 +29,14 @@ class Category extends Model
     public function subcategories(){
         return $this->hasOne(\App\SubCategory::class, 'categories_id','id');
     }
+
+    public function setCategoryAttribute($valor){
+        $this->attributes['category'] = strtolower($valor);
+    }
+    
+    public function getCategoryAttribute($valor){
+        return ucwords($valor);
+    }
+
+
 }

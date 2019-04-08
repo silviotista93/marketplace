@@ -57,8 +57,8 @@ Route::group(['namespace'=>'Backend'],function (){
     Route::post('/admin/add-category','admin\CategoriesController@saveCategory')->name('add-category');
     //lista de subcategorias
     Route::post('/datatables-subcategories-admin','admin\SubCategoriesController@tabla_subcategorias')->name('datatables.subcategories.admin');
-   //agregar categoria
-    Route::post('/admin/add-category','admin\CategoriesController@saveCategory')->name('add-category');
+   //agregar sub categoria
+    Route::post('/admin/add-sub-category','admin\SubCategoriesController@saveSubCategory')->name('add-sub-category');
 
     Route::get('/manage-categories/sub-categories','admin\SubCategoriesController@index')->name('manage_subcategories');
 

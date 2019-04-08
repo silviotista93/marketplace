@@ -31,4 +31,13 @@ class SubCategory extends Model
     public function categories(){
         return $this->hasOne(\App\Category::class);
     }
+
+
+    public function setSubCategoryAttribute($valor){
+        $this->attributes['sub_category'] = strtolower($valor);
+    }
+    
+    public function getSubCategoryAttribute($valor){
+        return ucwords($valor);
+    }
 }
