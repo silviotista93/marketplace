@@ -1,4 +1,4 @@
-@extends('backend.layout') 
+@extends('backend.layout')
 @section('header_page')
 <div class="br-pageheader">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -19,7 +19,7 @@
 
 
 
-@stop 
+@stop
 @section('content')
 <div class="br-pagebody pd-x-20 pd-sm-x-30 mx-wd-1350">
     <div class="row row-sm mg-t-20">
@@ -95,7 +95,7 @@
             </div>
             <div class="modal-footer">
                 <button  class="btn btn-info btn-oblong bd-0 pull-left">Crear Categoria</button>
-                
+
             </div>
         </form>
         </div>
@@ -162,7 +162,7 @@
                     render: function(data, status, category){
 
                             return `<img src="${category.category_picture}" width="100px" />`
-     
+
                     }
 
                 },
@@ -180,7 +180,7 @@
                            data-target="#modal_info_profile">
                          <div><i class="fas fa-trash-alt"></i></div>
                     </a>`
-                         
+
                  }
                 }
 

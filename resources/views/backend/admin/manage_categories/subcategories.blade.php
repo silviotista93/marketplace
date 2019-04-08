@@ -9,7 +9,7 @@
         </nav>
     </div>
     <div class="br-pagetitle">
-        <i class="fas fa-users fa-4x"></i>
+        <i class="fas fa-sitemap fa-4x"></i>
         <div>
             <h4>Subcategorías</h4>
             <p class="mg-b-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
@@ -35,67 +35,14 @@
                                 <table id="manage_subcategories" class="table display responsive nowrap">
                                     <thead>
                                     <tr>
-                                        <th class="wd-20p">Categoria</th>
+                                        <th class="wd-20p">Sub Categoria</th>
                                         <th class="wd-20p">Imagen Categoria</th>
                                         <th class="wd-20p">Actualización</th>
                                         <th class="wd-20p">Acciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Ropa</td>
-                                        <td>imagen</td>
-                                        <td>2019-01-22 10:17:13</td>
-                                        <td class="text-center"><a href="#"
-                                                                   class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                                                   data-toggle="modal"
-                                                                   data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
-                                            </a>
-                                            <a href="#"
-                                               class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                               data-toggle="modal"
-                                               data-target="#modal_info_profile">
-                                                <div><i class="fas fa-trash-alt"></i></div>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tecnologia</td>
-                                        <td>imagen</td>
-                                        <td>2019-01-22 10:17:13</td>
-                                        <td class="text-center"><a href="#"
-                                                                   class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                                                   data-toggle="modal"
-                                                                   data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
-                                            </a>
-                                            <a href="#"
-                                               class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                               data-toggle="modal"
-                                               data-target="#modal_info_profile">
-                                                <div><i class="fas fa-trash-alt"></i></div>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Accesorios</td>
-                                        <td>imagen</td>
-                                        <td>2019-01-22 10:17:13</td>
-                                        <td class="text-center"><a href="#"
-                                                                   class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                                                   data-toggle="modal"
-                                                                   data-target="#modal_info_profile">
-                                                <div><i class="fas fa-edit"></i></div>
-                                            </a>
-                                            <a href="#"
-                                               class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
-                                               data-toggle="modal"
-                                               data-target="#modal_info_profile">
-                                                <div><i class="fas fa-trash-alt"></i></div>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    
                                     </tbody>
                                 </table>
                             </div><!-- table-wrapper -->
@@ -168,6 +115,52 @@
 
             $('#manage_subcategories').DataTable({
                 responsive: true,
+
+                ajax: {
+                    url: "{{ route('datatables.subcategories.admin') }}",
+                    method:"POST",
+                    data: {}
+
+                },
+                columns: [
+                {
+                    data:'sub_category',
+                    defaultContent: '<span class="label label-danger text-center" style=" color:red !important">N/A</span>'
+                },
+                {
+                    data:'sub_category_picture',
+                    defaultContent: '<span class="label label-danger text-center" style=" color:red !important">N/A</span>',
+
+                    render: function(data, status, category){
+
+                            return `<img src="${category.sub_category_picture}" width="100px" />`
+     
+                    }
+
+                },
+                
+                {
+                    data:'updated_at',
+                    defaultContent: '<span class="label label-danger text-center" style=" color:red !important">N/A</span>'
+                },
+                {
+                 render: function(data, status, category){
+
+                    return `<a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#modal_info_profile">
+                    <div><i class="fas fa-edit"></i></div>
+                    </a><a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
+                           data-toggle="modal"
+                           data-target="#modal_info_profile">
+                         <div><i class="fas fa-trash-alt"></i></div>
+                    </a>`
+                         
+                 }
+                }
+
+
+                ]
+
+                ,
                 "language": {
 
                     "sProcessing": "Procesando...",
