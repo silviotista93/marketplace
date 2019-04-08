@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Backend\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AddSubCategory;
+use App\SubCategory;
 
 class SubCategoriesController extends Controller
 {
     public function index(){
-        return view('backend.admin.manage_categories.subcategories');
+
+        $categories = \App\Category::all(); 
+
+        return view('backend.admin.manage_categories.subcategories',compact('categories') );
     }
 
     public function tabla_subcategorias(){
@@ -21,22 +26,20 @@ class SubCategoriesController extends Controller
     }
 
 
-    public function saveCategory( Request $request ){
-
-        $validate = $request->validate([
-            'category'=> 'required|unique:categories,category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
-            'imagen'=> 'required|mimes:jpeg,bmp,png'
-        ]);
+    public function saveSubCategory(AddSubCategory $request ){
+        //dd($request);
+        $validate = $request->validated();
 
         try{
-            $category = new Category();
+            $subcategory = new SubCategory();
     
-            $path = $request->file('imagen')->store('category');
+            $path = $request->file('imagen')->store('subcategory');
     
-            $category->category = $request->category;
-            $category->category_picture = '/storage/'.$path;
-            $category->slug =str_slug($request->category, '-');
-            $category->save();
+            $subcategory->sub_category = $request->subcategory;
+            $subcategory->sub_category_picture = '/storage/'.$path;
+            $subcategory->slug =str_slug($request->subcategory, '-');
+            $subcategory->categories_id =$request->categoria;
+            $subcategory->save();
 
         }catch( \Throwable $th){
 
@@ -48,7 +51,7 @@ class SubCategoriesController extends Controller
         }
         return response()->json([
             'title' => 'Excelente',
-            'msg' => 'Categoria registrada correctamente'
+            'msg' => 'Sub categoria registrada correctamente'
         ],201);
 
 

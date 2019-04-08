@@ -54,7 +54,7 @@
         </div>
     </div>
 </div>
-
+<!-- inicio modal -->
 <div id="add_categories" class="modal fade effect-slide-in-bottom">
     <div class="modal-dialog" role="document">
         <div class="modal-content bd-0 tx-14">
@@ -103,6 +103,55 @@
     <!-- modal-dialog -->
 </div>
 <!-- modal -->
+
+<!-- inicio modal -->
+<div id="update_categories" class="modal fade effect-slide-in-bottom">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Agregar Categoría</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+        <form id="frmAddCategory" action="{{ route('add-category') }}" enctype="multipart/form-data">
+                {{ csrf_field() }}
+            <div class="modal-body pd-25">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
+                                <input type="text" id="category" name="category" value="{{ old('category') }}" class="form-control" placeholder="Ingrese Categoría">
+                            </div>
+                            <div id="error-category" class="text-danger msg-error"></div>
+                            <!-- input-group -->
+                        </div>
+                        <div class="form-group">
+                            <div class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
+                                <input type="file" id="imagen" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>
+                                <label for="imagen" class="if-outline if-outline-info">
+                                        <i class="icon ion-ios-upload-outline tx-24"></i>
+                                        <span>Imagen de categoria...</span>
+                                    </label>
+                            </div>
+                            <div id="error-imagen" class="text-danger msg-error"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button  class="btn btn-info btn-oblong bd-0 pull-left">Crear Categoria</button>
+
+            </div>
+        </form>
+        </div>
+    </div>
+    <!-- modal-dialog -->
+</div>
 
 
 
@@ -173,7 +222,7 @@
                 {
                  render: function(data, status, category){
 
-                    return `<a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#modal_info_profile">
+                    return `<a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#update_categories" data-info="${category}">
                     <div><i class="fas fa-edit"></i></div>
                     </a><a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                            data-toggle="modal"
