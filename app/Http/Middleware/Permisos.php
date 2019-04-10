@@ -21,6 +21,6 @@ class Permisos
                 return $next($request);
             }
         }
-        return redirect()->route("login");
+        return response("No puedes continuar", 404);
     }
 }
