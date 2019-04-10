@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Http\Requests\AddCategory;
+use App\Http\Requests\UpdateCategory;
 
 class CategoriesController extends Controller
 {
@@ -50,20 +51,32 @@ class CategoriesController extends Controller
         ], 201);
     }
 
-    public function updateCategory(AddCategory $request)
+    public function updateCategory(UpdateCategory $request)
     {
 
         $validate = $request->validated();
-
+        
         try {
-            $path = $request->file('imagen')->store('category');
-            Category::where('id','=',$request->id_category)->update([
+            if($request->file('imagen')){
 
-                'category' => $request->get('category'),
-                'category_picture' => '/storage/' . $path,
-                'slug' => str_slug($request->get('category'), '-')
+                $path = $request->file('imagen')->store('category');
+                Category::where('id','=',$request->id_category)->update([
+    
+                    'category' => $request->get('category'),
+                    'category_picture' => '/storage/' . $path,
+                    'slug' => str_slug($request->get('category'), '-')
+    
+                ]);
+            }else{
+                
 
-            ]);
+                Category::where('id','=',$request->id_category)->update([
+    
+                    'category' => $request->get('category'),                    
+                    'slug' => str_slug($request->get('category'), '-')
+    
+                ]);
+            }
 
             
 

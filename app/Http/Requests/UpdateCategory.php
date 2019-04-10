@@ -13,7 +13,7 @@ class UpdateCategory extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class UpdateCategory extends FormRequest
     public function rules()
     {
         return [
-            //
+            'category'=> 'required|unique:categories,category,'.$this->id_category.'|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
+            'imagen'=> 'mimes:jpeg,bmp,png'
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+
+            'category.required'=> 'Ingrese el nombre de la categoria',
+            'category.unique'=> 'Esta categoria ya esta registrada',
+            'category.max'=> 'Solo se admiten 100 caracteres',
+            'category.regex'=> 'Solo se admiten caracteres alfabeticos [A-Z]',
+            'imagen.required'=> 'Ingrese una imagen para la categoria',
+            'imagen.mimes'=> 'Solo se admiten imagenes',
+
+
         ];
     }
 }

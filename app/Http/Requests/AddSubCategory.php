@@ -24,7 +24,7 @@ class AddSubCategory extends FormRequest
     public function rules()
     {
         return [
-            'subcategory'=> 'required|unique:categories,category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
+            'subcategory'=> 'required|unique:sub_categories,sub_category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
             'imagen'=> 'required|mimes:jpeg,bmp,png',
             'categoria'=> 'required|numeric'
         ];

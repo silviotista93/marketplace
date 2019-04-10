@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddSubCategory;
+use App\Http\Requests\UpdateSubCategory;
 use App\SubCategory;
 
 class SubCategoriesController extends Controller
@@ -59,21 +60,33 @@ class SubCategoriesController extends Controller
     }
 
 
-    public function updateSubCategory(AddSubCategory $request)
+    public function updateSubCategory(UpdateSubCategory $request)
     {
 
         $validate = $request->validated();
 
         try {
-            $path = $request->file('imagen')->store('subcategory');
-            SubCategory::where('id','=',$request->id_subcategory)->update([
+            if($request->file('imagen')){
 
-                'sub_category' => $request->get('subcategory'),
-                'sub_category_picture' => '/storage/' . $path,
-                'slug' => str_slug($request->get('subcategory'), '-'),
-                'categories_id' => $request->get('categoria'),
+                $path = $request->file('imagen')->store('subcategory');
+                SubCategory::where('id','=',$request->id_subcategory)->update([
+    
+                    'sub_category' => $request->get('subcategory'),
+                    'sub_category_picture' => '/storage/' . $path,
+                    'slug' => str_slug($request->get('subcategory'), '-'),
+                    'categories_id' => $request->get('categoria'),
+    
+                ]);
+            }else{
 
-            ]);
+                SubCategory::where('id','=',$request->id_subcategory)->update([
+    
+                    'sub_category' => $request->get('subcategory'),            
+                    'slug' => str_slug($request->get('subcategory'), '-'),
+                    'categories_id' => $request->get('categoria'),
+    
+                ]);
+            }
 
             
 
