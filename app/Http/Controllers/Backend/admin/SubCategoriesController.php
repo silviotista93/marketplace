@@ -57,4 +57,36 @@ class SubCategoriesController extends Controller
 
         
     }
+
+
+    public function updateSubCategory(AddSubCategory $request)
+    {
+
+        $validate = $request->validated();
+
+        try {
+            $path = $request->file('imagen')->store('subcategory');
+            SubCategory::where('id','=',$request->id_subcategory)->update([
+
+                'sub_category' => $request->get('subcategory'),
+                'sub_category_picture' => '/storage/' . $path,
+                'slug' => str_slug($request->get('subcategory'), '-'),
+                'categories_id' => $request->get('categoria'),
+
+            ]);
+
+            
+
+        } catch (\Throwable $th) {
+
+            return response()->json([
+                'msg' => $th->getMessage(),
+                'title' => "error"
+            ], 500);
+        }
+        return response()->json([
+            'title' => 'Excelente',
+            'msg' => 'Categoria Actualizada correctamente'
+        ], 201);
+    }
 }

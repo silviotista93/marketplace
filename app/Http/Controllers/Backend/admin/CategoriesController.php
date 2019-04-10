@@ -49,4 +49,35 @@ class CategoriesController extends Controller
             'msg' => 'Categoria registrada correctamente'
         ], 201);
     }
+
+    public function updateCategory(AddCategory $request)
+    {
+
+        $validate = $request->validated();
+
+        try {
+            $path = $request->file('imagen')->store('category');
+            Category::where('id','=',$request->id_category)->update([
+
+                'category' => $request->get('category'),
+                'category_picture' => '/storage/' . $path,
+                'slug' => str_slug($request->get('category'), '-')
+
+            ]);
+
+            
+
+        } catch (\Throwable $th) {
+
+            return response()->json([
+                'msg' => $th->getMessage(),
+                'title' => "error"
+            ], 500);
+        }
+        return response()->json([
+            'title' => 'Excelente',
+            'msg' => 'Categoria Actualizada correctamente'
+        ], 201);
+    }
+
 }

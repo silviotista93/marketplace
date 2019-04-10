@@ -118,7 +118,7 @@
 
     <!-- inicio modal actualizar -->
 
-    <div id="update_categories" class="modal fade effect-slide-in-bottom">
+    <div id="update_subcategories" class="modal fade effect-slide-in-bottom">
         <div class="modal-dialog" role="document">
             <div class="modal-content bd-0 tx-14">
                 <div class="modal-header pd-y-20 pd-x-25">
@@ -127,8 +127,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="frmAddSubCategory" action="{{ route('add-sub-category') }}" enctype="multipart/form-data">
-                    {{ csrf_field() }}
+                <form id="frmUpdateSubCategory" action="{{ route('update-sub-category') }}" enctype="multipart/form-data">
+                    {{ method_field('PUT') }}
+                    <input type="hidden" name="id_subcategory" id="id_subcategory" value="">
                 <div class="modal-body pd-25">
                     <div class="row">
                         <div class="col-lg-12">
@@ -137,15 +138,15 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-check"></i></span>
                                     </div>
-                                    <input type="text" name="subcategory" id="subcategory" value="{{ old('subcategory') }}"
+                                    <input type="text" name="subcategory" id="subcategoryu" value="{{ old('subcategory') }}"
                                            class="form-control" placeholder="Ingrese Subcategoría">
                                 </div>
-                                <div id="error-subcategory" class="text-danger msg-error"></div>
+                                <div id="error-subcategoryu" class="text-danger msg-error"></div>
                                 <!-- input-group -->
                             </div>
                             <div class="form-group">
                                 <div class="">
-                                    <select id="categoria" name="categoria" class="form-control" data-placeholder="Asignar Categoría">
+                                    <select id="categoriau" name="categoria" class="form-control" data-placeholder="Asignar Categoría">
                                         <option label="Asignar Categoría">Seleccione una categoria</option>
                                         @foreach ($categories as $c)
                                     <option label="Asignar Categoría" value="{{ $c->id }}" >{{$c->category}}</option>
@@ -154,25 +155,25 @@
                                         
                                     </select>
                                 </div>
-                                <div id="error-categoria" class="text-danger msg-error"></div>
+                                <div id="error-categoriau" class="text-danger msg-error"></div>
                             </div>
                             <div class="form-group">
                                 <div
                                     class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
-                                    <input type="file" name="imagen" id="imagen"
+                                    <input type="file" name="imagen" id="imagenu"
                                            class="inputfile" data-multiple-caption="{count} files selected" multiple>
-                                    <label for="imagen" class="if-outline if-outline-info">
+                                    <label for="imagenu" class="if-outline if-outline-info">
                                         <i class="icon ion-ios-upload-outline tx-24"></i>
                                         <span>Imagen de subcategoria...</span>
                                     </label>
                                 </div>
-                                <div id="error-imagen" class="text-danger msg-error"></div>
+                                <div id="error-imagenu" class="text-danger msg-error"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button  class="btn btn-info btn-oblong bd-0 pull-left">Crear Sub Categoria</button>
+                    <button  class="btn btn-info btn-oblong bd-0 pull-left">Actualizar Sub Categoria</button>
                 </div>
                 </form>
             </div>
@@ -218,9 +219,9 @@
                     defaultContent: '<span class="label label-danger text-center" style=" color:red !important">N/A</span>'
                 },
                 {
-                 render: function(data, status, category){
+                 render: function(data, status, subcategory){
 
-                    return `<a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#update_categories">
+                    return `<a href="#" class=" update btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#update_subcategories" data-info='${JSON.stringify(subcategory)}'>
                     <div><i class="fas fa-edit"></i></div>
                     </a><a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                            data-toggle="modal"

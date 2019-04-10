@@ -66,6 +66,7 @@
             </div>
         <form id="frmAddCategory" action="{{ route('add-category') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                
             <div class="modal-body pd-25">
                 <div class="row">
                     <div class="col-lg-12">
@@ -104,7 +105,7 @@
 </div>
 <!-- modal -->
 
-<!-- inicio modal -->
+<!-- inicio modal update-->
 <div id="update_categories" class="modal fade effect-slide-in-bottom">
     <div class="modal-dialog" role="document">
         <div class="modal-content bd-0 tx-14">
@@ -114,8 +115,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-        <form id="frmAddCategory" action="{{ route('add-category') }}" enctype="multipart/form-data">
-                {{ csrf_field() }}
+        <form id="frmUpdateCategory" action="{{ route('update-category') }}" enctype="multipart/form-data">
+            {{ method_field('PUT') }}
+            
+                <input type="hidden" value="" id="id_category" name="id_category"/>
             <div class="modal-body pd-25">
                 <div class="row">
                     <div class="col-lg-12">
@@ -124,15 +127,15 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-check"></i></span>
                                 </div>
-                                <input type="text" id="category" name="category" value="{{ old('category') }}" class="form-control" placeholder="Ingrese Categoría">
+                                <input type="text" id="categoryu" name="category" value="{{ old('category') }}" class="form-control" placeholder="Ingrese Categoría">
                             </div>
-                            <div id="error-category" class="text-danger msg-error"></div>
+                            <div id="error-categoryu" class="text-danger msg-error"></div>
                             <!-- input-group -->
                         </div>
                         <div class="form-group">
                             <div class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
-                                <input type="file" id="imagen" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>
-                                <label for="imagen" class="if-outline if-outline-info">
+                                <input type="file" id="imagenu" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>
+                                <label for="imagenu" class="if-outline if-outline-info">
                                         <i class="icon ion-ios-upload-outline tx-24"></i>
                                         <span>Imagen de categoria...</span>
                                     </label>
@@ -144,7 +147,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button  class="btn btn-info btn-oblong bd-0 pull-left">Crear Categoria</button>
+                <button  class="btn btn-info btn-oblong bd-0 pull-left">Actualizar Categoria</button>
 
             </div>
         </form>
@@ -159,8 +162,7 @@
 @stop
  @push('js')
 
- <script src="/common/categories/add-category.js"></script>
- <script src="/common/form.js"></script>
+ 
 <script>
     $(function () {
 
@@ -222,8 +224,8 @@
                 {
                  render: function(data, status, category){
 
-                    return `<a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#update_categories" data-info="${category}">
-                    <div><i class="fas fa-edit"></i></div>
+                    return `<a href="#" class="update btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10" data-toggle="modal"                            data-target="#update_categories" data-info='${JSON.stringify(category)}'>
+                    <div><i class="fas fa-edit" ></i></div>
                     </a><a href="#" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"
                            data-toggle="modal"
                            data-target="#modal_info_profile">
@@ -274,6 +276,8 @@
         });
 
 </script>
+<script src="/common/categories/add-category.js"></script>
+<script src="/common/form.js"></script>
 
 
 
