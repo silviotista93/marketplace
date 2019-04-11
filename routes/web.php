@@ -71,6 +71,8 @@ Route::group(['namespace'=>'Backend', 'middleware' => 'auth'],function (){
     //Agregar Usuarios
     Route::get('/profiles/add-user', 'partials\profiles\AddUserController@index')->name('dashboard.profile.add');
     Route::post('/profiles/add-store-user', 'partials\profiles\AddUserController@store')->name("dashboard.profile.create-user");
+    Route::get('/profiles/edit-profile', 'partials\profiles\EditProfileController@index_user')->name("dashboard.profile.edit-profile");
+    Route::put('/profiles/update-user', 'partials\profiles\EditProfileController@update_password')->name("update-user");
 
     //Listar Usuarios
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');

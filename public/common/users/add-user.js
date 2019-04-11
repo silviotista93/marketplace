@@ -9,3 +9,15 @@ frmGuardarUsuario.submit(function (e){
     }
     sendForm(url, data, success)
 });
+
+const frmUpdateUser = $("#frmUpdateUser");
+
+frmUpdateUser.submit(function (e) {
+    e.preventDefault();
+    const url = $(this).attr("action");
+    var data = new FormData($("#frmUpdateUser")[0]);
+    const success = function (e) {
+        frmUpdateUser[0].reset();
+    }
+    ajaxUpload(url, data, success);
+});
