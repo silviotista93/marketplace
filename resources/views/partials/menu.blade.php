@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="form-group input-serach">
-                        <input type="text"  placeholder="Buscar...">
+                        <input type="text" placeholder="Buscar...">
                     </div>
                     <button type="submit" class="pull-right btn-search"></button>
                 </form>
@@ -130,7 +130,10 @@
                         </h4>
                         <div class="vertical-menu-content is-home">
                             <ul class="vertical-menu-list">
-                                <li><a href="#"><img class="icon-menu" alt="Funky roots" src="/frontend/data/1.png">Electronica</a></li>
+                                
+
+                                <li><a href="#"><img class="icon-menu" alt="Funky roots" src="/frontend/data/1.png"></a></li>
+                               
                                 <li>
                                     <a class="parent" href="#"><img class="icon-menu" alt="Funky roots" src="/frontend/data/2.png">Deportes</a>
                                     <div class="vertical-dropdown-menu">
@@ -304,7 +307,8 @@
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                                    aria-controls="navbar">
                                     <i class="fa fa-bars"></i>
                                 </button>
                                 <a class="navbar-brand" href="#">MENU</a>
@@ -509,7 +513,8 @@
                                     <li><a href="category.html">Jewelry</a></li>
                                     <li><a href="category.html">Blog</a></li>
                                 </ul>
-                            </div><!--/.nav-collapse -->
+                            </div>
+                            <!--/.nav-collapse -->
                         </div>
                     </nav>
                 </div>

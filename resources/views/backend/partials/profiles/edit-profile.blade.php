@@ -117,6 +117,7 @@
                                             <input type="password" name="password" class="form-control m-input" id="exampleInputPassword1" placeholder="Actualizar Contraseña">
 
                                         </div>
+                                        <div id="error-exampleInputPassword1" class="text-danger msg-error"></div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group m-form__group ">
@@ -124,6 +125,7 @@
                                             <input type="password" name="password_confirmation" class="form-control m-input" id="exampleInputPassword1" placeholder="Confirmar Contraseña">
 
                                         </div>
+                                        <div id="error-exampleInputPassword1" class="text-danger msg-error"></div>
                                     </div>
                                     <div class="form-group">
 

@@ -39,7 +39,6 @@ class SubCategoriesController extends Controller
             $subcategory->sub_category = $request->subcategory;
             $subcategory->sub_category_picture = '/storage/'.$path;
             $subcategory->slug =str_slug($request->subcategory, '-');
-            $subcategory->categories_id =$request->categoria;
             $subcategory->save();
 
         }catch( \Throwable $th){
@@ -74,7 +73,7 @@ class SubCategoriesController extends Controller
                     'sub_category' => $request->get('subcategory'),
                     'sub_category_picture' => '/storage/' . $path,
                     'slug' => str_slug($request->get('subcategory'), '-'),
-                    'categories_id' => $request->get('categoria'),
+                    
     
                 ]);
             }else{
@@ -83,7 +82,7 @@ class SubCategoriesController extends Controller
     
                     'sub_category' => $request->get('subcategory'),            
                     'slug' => str_slug($request->get('subcategory'), '-'),
-                    'categories_id' => $request->get('categoria'),
+                    
     
                 ]);
             }

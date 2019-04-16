@@ -26,7 +26,7 @@ class EditProfileController extends Controller
 
         try {
 
-            if (($request->filled('password')) & ($request->file('imagen'))) {
+            if (($request->filled('password')) && ($request->file('imagen'))) {
 
                 $this->validate($request, [
 
@@ -43,7 +43,12 @@ class EditProfileController extends Controller
                     'picture' => '/storage/' . $path,
                 ]);
 
-                $msg = 'Usuario Actualizado';
+                $response = response()->json([
+                    'title' => 'Exelente',
+                    'msg' => 'Datos actualizados'
+                ], 201);
+
+                // $msg = 'Usuario Actualizado';
             } else if ($request->filled('password')) {
 
                 $this->validate($request, [
@@ -59,8 +64,12 @@ class EditProfileController extends Controller
                     'password' => $newpassword,
 
                 ]);
+                $response = response()->json([
+                    'title' => 'Exelente',
+                    'msg' => 'Password actualizado'
+                ], 201);
 
-                $msg = 'Password Actualizado';
+                // $msg = 'Password Actualizado';
             } else if ($request->file('imagen')) {
 
                 $this->validate($request, [
@@ -75,9 +84,17 @@ class EditProfileController extends Controller
                     'picture' => '/storage/' . $path,
                 ]);
 
-                $msg = 'Imagen Actualizada';
+                $response = response()->json([
+                    'title' => 'Exelente',
+                    'msg' => 'Imagen Actualizada'
+                ], 201);
+                // $msg = 'Imagen Actualizada';
             } else {
-                $msg = 'No se realizo ningun cambio';
+               $response = response()->json([
+                    'title' => 'Oh¡',
+                    'msg' => 'No se realizo ningun cambio'
+                ], 201);
+                // $msg = 'No se realizo ningun cambio';
             }
         } catch (\Throwable $th) {
             return response()->json([
@@ -85,9 +102,6 @@ class EditProfileController extends Controller
                 'title' => "error"
             ], 500);
         }
-        return response()->json([
-            'title' => 'Excelente',
-            'msg' => $msg
-        ], 201);
+        return $response;
     }
 }

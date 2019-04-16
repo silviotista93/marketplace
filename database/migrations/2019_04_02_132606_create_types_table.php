@@ -17,8 +17,8 @@ class CreateTypesTable extends Migration
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('description');
-            $table->unsignedBigInteger("sub_category_id");
-            $table->foreign("sub_category_id")->references("id")->on("sub_categories");
+            $table->unsignedBigInteger("category_id");
+            $table->foreign("category_id")->references("id")->on("categories");
             $table->timestamps();
         });
     }
