@@ -81,9 +81,13 @@ class DatabaseSeeder extends Seeder
          factory(\App\Country::class, 1)->create(['name' => 'Costa Rica','flag' => '/backend/img/countries/costa-rica.png']);
 
          factory(\App\City::class, 10)->create();
-         factory(\App\Category::class, 7)->create();
-         factory(\App\Type::class, 7)->create();
-         factory(\App\SubCategory::class, 7)->create();
+         factory(\App\Category::class, 1)->create(['category'=>'TECHNOLOGIA','icon'=>'tv']);
+         factory(\App\Category::class, 1)->create(['category'=>'DEPORTES','icon'=>'futbol-o']);
+         factory(\App\Category::class, 1)->create(['category'=>'CALZADO','icon'=>'shoes-snickers-streamline']);
+         factory(\App\Category::class, 1)->create(['category'=>'ROPA','icon'=>'t-shirt']);
+         factory(\App\Category::class, 1)->create(['category'=>'ACCESORIOS','icon'=>'bag']);
+         factory(\App\Type::class, 5)->create();
+         factory(\App\SubCategory::class, 5)->create();
 
 
          

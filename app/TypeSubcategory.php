@@ -16,6 +16,6 @@ class TypeSubcategory extends Model
     public function subCategories()
     {
 
-        return $this->belongsTo(\App\subCategory::class, 'subcategory_id', 'id');
+        return $this->belongsTo(\App\SubCategory::class, 'subcategory_id', 'id');
     }
 }

@@ -26,8 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
-    public function subcategories(){
-        return $this->hasOne(\App\SubCategory::class, 'categories_id','id');
+    public function types(){
+        return $this->hasOne(\App\Type::class, 'category_id','id');
     }
 
     public function setCategoryAttribute($valor){

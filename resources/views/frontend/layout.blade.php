@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/frontend/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/frontend/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/frontend/css/responsive.css" />
+    <link href="{{ asset('/common/fonts/styles.css') }}" rel="stylesheet" type="text/css">
+
+    @stack('css')
 
     <title>{{ config('app.name') }}</title>
 </head>
@@ -314,5 +317,6 @@
 <script type="text/javascript" src="/frontend/js/jquery.actual.min.js"></script>
 <script type="text/javascript" src="/frontend/js/theme-script.js"></script>
 
+@stack('js')
 </body>
 </html>

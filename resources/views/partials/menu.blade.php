@@ -130,10 +130,12 @@
                         </h4>
                         <div class="vertical-menu-content is-home">
                             <ul class="vertical-menu-list">
-                                
 
-                                <li><a href="#"><img class="icon-menu" alt="Funky roots" src="/frontend/data/1.png"></a></li>
-                               
+                                @foreach ($categories as $c)
+
+                                <li><a href="#"><i class="icon icon-{{ $c->icon }}"></i>{{ $c->category}}</a></li>
+                                @endforeach
+
                                 <li>
                                     <a class="parent" href="#"><img class="icon-menu" alt="Funky roots" src="/frontend/data/2.png">Deportes</a>
                                     <div class="vertical-dropdown-menu">

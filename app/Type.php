@@ -27,6 +27,6 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     public function categories(){
-        return $this->hasOne(\App\Category::class);
+        return $this->belongsTo(\App\Category::class,'category_id', 'id');
     }
 }
