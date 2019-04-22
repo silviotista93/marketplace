@@ -28,7 +28,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SubCategory extends Model
 {
-    
+    public function typeSub(){
+        return $this->hasMany(\App\TypeSubcategory::class,'subcategory_id','id');
+    }
 
 
     public function setSubCategoryAttribute($valor){

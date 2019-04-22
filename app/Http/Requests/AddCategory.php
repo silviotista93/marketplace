@@ -25,7 +25,8 @@ class AddCategory extends FormRequest
     {
         return [
             'category'=> 'required|unique:categories,category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
-            'imagen'=> 'required|mimes:jpeg,bmp,png'
+            'imagen'=> 'required|mimes:jpeg,bmp,png',
+            'icono'=> 'required|unique:categories,icon',
         ];
     }
 
@@ -39,6 +40,8 @@ class AddCategory extends FormRequest
             'category.regex'=> 'Solo se admiten caracteres alfabeticos [A-Z]',
             'imagen.required'=> 'Ingrese una imagen para la categoria',
             'imagen.mimes'=> 'Solo se admiten imagenes',
+            'icono.required'=> 'Ingrese el nombre del icono ',
+            'icono.unique'=> 'Este icono ya esta asociado a una categoria',
 
 
         ];

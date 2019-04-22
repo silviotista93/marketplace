@@ -81,6 +81,18 @@
                             <!-- input-group -->
                         </div>
                         <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
+                                <input type="text" id="icono" name="icono" value="{{ old('icono') }}" class="form-control" placeholder="Ingrese un icono">
+                            </div>
+                            <div id="error-icono" class="text-danger msg-error"></div>
+                            
+                            <div id="" class="">Iconos disponibles <a><i class="icon-eye" class="btn btn-primary btn-oblong mg-b-10 pull-right float-right" data-toggle="modal" data-target="#icon-list"></i></a></div>
+                            <!-- input-group -->
+                        </div>
+                        <div class="form-group">
                             <div class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
                                 <input type="file" id="imagen" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>
                                 <label for="imagen" class="if-outline if-outline-info">
@@ -133,6 +145,18 @@
                             <!-- input-group -->
                         </div>
                         <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
+                                <input type="text" id="iconou" name="icono" value="{{ old('icono') }}" class="form-control" placeholder="Ingrese un icono">
+                            </div>
+                            <div id="error-iconou" class="text-danger msg-error"></div>
+                            
+                            <div id="" class="">Iconos disponibles <a><i class="icon-eye" class="btn btn-primary btn-oblong mg-b-10 pull-right float-right" data-toggle="modal" data-target="#icon-list"></i></a></div>
+                            <!-- input-group -->
+                        </div>
+                        <div class="form-group">
                             <div class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
                                 <input type="file" id="imagenu" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>
                                 <label for="imagenu" class="if-outline if-outline-info">
@@ -156,7 +180,74 @@
     <!-- modal-dialog -->
 </div>
 
+{{-- modal iconos --}}
+<!-- inicio modal update-->
+<div id="icon-list" class="modal fade effect-slide-in-bottom">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Iconos disponibles</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <body>
+                <div class="container">
+                 
+                  <ul class="glyphs css-mapping">
+                    <li>
+                      <div class="icon icon-bag"></div>
+                      <input type="text" readonly="readonly" value="bag">
+                    </li>
+                    <li>
+                      <div class="icon icon-tv"></div>
+                      <input type="text" readonly="readonly" value="tv">
+                    </li>
+                    <li>
+                      <div class="icon icon-shoes-snickers-streamline"></div>
+                      <input type="text" readonly="readonly" value="shoes-snickers-streamline">
+                    </li>
+                    <li>
+                      <div class="icon icon-t-shirt"></div>
+                      <input type="text" readonly="readonly" value="t-shirt">
+                    </li>
+                    <li>
+                      <div class="icon icon-futbol-o"></div>
+                      <input type="text" readonly="readonly" value="futbol-o">
+                    </li>
+                    <li>
+                      <div class="icon icon-info"></div>
+                      <input type="text" readonly="readonly" value="info">
+                    </li>
+                    <li>
+                      <div class="icon icon-shop"></div>
+                      <input type="text" readonly="readonly" value="shop">
+                    </li>
+                    <li>
+                      <div class="icon icon-clipboard-notes"></div>
+                      <input type="text" readonly="readonly" value="clipboard-notes">
+                    </li>
+                    <li>
+                      <div class="icon icon-eye"></div>
+                      <input type="text" readonly="readonly" value="eye">
+                    </li>
+                    <li>
+                      <div class="icon icon-question-circle"></div>
+                      <input type="text" readonly="readonly" value="question-circle">
+                    </li>
+                  </ul>
+                  
+              
+            
+                
+            <div class="modal-footer">
+               
 
+            </div>
+        
+        </div>
+    </div>
+{{-- fin modal iconos --}}
 
 
 @stop

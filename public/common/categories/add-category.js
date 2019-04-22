@@ -27,6 +27,7 @@ const datos = function (e) {
     var category =JSON.parse($(this).attr("data-info"));
     $('#categoryu').val(category.category);
     $('#id_category').val(category.id);
+    $('#iconou').val(category.icon);
    
 };
 $('#manage_categories').on('click','.update', datos);

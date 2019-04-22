@@ -35,6 +35,7 @@ class CategoriesController extends Controller
             $path = $request->file('imagen')->store('category');
 
             $category->category = $request->category;
+            $category->icon = $request->icono;
             $category->category_picture = '/storage/' . $path;
             $category->slug = str_slug($request->category, '-');
             $category->save();
@@ -63,6 +64,7 @@ class CategoriesController extends Controller
                 Category::where('id','=',$request->id_category)->update([
     
                     'category' => $request->get('category'),
+                    'icon' => $request->get('icon'),
                     'category_picture' => '/storage/' . $path,
                     'slug' => str_slug($request->get('category'), '-')
     

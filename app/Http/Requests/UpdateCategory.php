@@ -25,7 +25,8 @@ class UpdateCategory extends FormRequest
     {
         return [
             'category'=> 'required|unique:categories,category,'.$this->id_category.'|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
-            'imagen'=> 'mimes:jpeg,bmp,png'
+            'imagen'=> 'mimes:jpeg,bmp,png',
+            'icono'=> 'required|unique:categories,icon,'.$this->id_category,
         ];
     }
 
@@ -40,6 +41,8 @@ class UpdateCategory extends FormRequest
             'category.regex'=> 'Solo se admiten caracteres alfabeticos [A-Z]',
             'imagen.required'=> 'Ingrese una imagen para la categoria',
             'imagen.mimes'=> 'Solo se admiten imagenes',
+            'icono.required'=> 'Ingrese el nombre del icono',
+            'icono.unique'=> 'Este icono ya esta asociado a una categoria',
 
 
         ];

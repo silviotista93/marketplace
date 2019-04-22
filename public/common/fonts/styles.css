@@ -59,3 +59,12 @@
 .icon-shop:before {
   content: "\68";
 }
+.icon-clipboard-notes:before {
+  content: "\67";
+}
+.icon-eye:before {
+  content: "\69";
+}
+.icon-question-circle:before {
+  content: "\6a";
+}

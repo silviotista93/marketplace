@@ -86,7 +86,13 @@ class DatabaseSeeder extends Seeder
          factory(\App\Category::class, 1)->create(['category'=>'CALZADO','icon'=>'shoes-snickers-streamline']);
          factory(\App\Category::class, 1)->create(['category'=>'ROPA','icon'=>'t-shirt']);
          factory(\App\Category::class, 1)->create(['category'=>'ACCESORIOS','icon'=>'bag']);
-         factory(\App\Type::class, 5)->create();
+
+         factory(\App\Type::class, 1)->create(['category_id'=> 1]);
+         factory(\App\Type::class, 1)->create(['category_id'=> 2]);
+         factory(\App\Type::class, 1)->create(['category_id'=> 3]);
+         factory(\App\Type::class, 1)->create(['category_id'=> 4]);
+         factory(\App\Type::class, 1)->create(['category_id'=> 5]);
+         factory(\App\Type::class, 1)->create(['category_id'=> 5]);
          factory(\App\SubCategory::class, 5)->create();
 
 

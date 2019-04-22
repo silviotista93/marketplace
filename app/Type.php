@@ -29,4 +29,8 @@ class Type extends Model
     public function categories(){
         return $this->belongsTo(\App\Category::class,'category_id', 'id');
     }
+    public function typeSub(){
+        return $this->hasMany(\App\TypeSubcategory::class,'type_id', 'id');
+    }
+
 }

@@ -12,9 +12,9 @@ class SubCategoriesController extends Controller
 {
     public function index(){
 
-        $categories = \App\Category::all(); 
+        
 
-        return view('backend.admin.manage_categories.subcategories',compact('categories') );
+        return view('backend.admin.manage_categories.subcategories');
     }
 
     public function tabla_subcategorias(){
@@ -98,7 +98,7 @@ class SubCategoriesController extends Controller
         }
         return response()->json([
             'title' => 'Excelente',
-            'msg' => 'Categoria Actualizada correctamente'
+            'msg' => 'Sub Categoria Actualizada correctamente'
         ], 201);
     }
 }

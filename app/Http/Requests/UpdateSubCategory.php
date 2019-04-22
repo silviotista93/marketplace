@@ -25,8 +25,7 @@ class UpdateSubCategory extends FormRequest
     {
         return [
             'subcategory'=> 'required|unique:sub_categories,sub_category,'.$this->id_subcategory.'|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
-            'imagen'=> 'mimes:jpeg,bmp,png',
-            'categoria'=> 'required|numeric'
+            'imagen'=> 'mimes:jpeg,bmp,png',           
         ];
     }
 
@@ -38,9 +37,7 @@ class UpdateSubCategory extends FormRequest
             'subcategory.max'=>'se permite maximo 100 caracteres',
             'subcategory.regex'=>'Solo se permiten caracteres alfabeticos [A-Z]',
             'imagen.required'=>'Ingrese una imagen para la sub categoria',
-            'imagen.mimes'=>'solo se permiten imagenes',
-            'categoria.required'=>'Debe seleccionar una categoria',
-            'categoria.numeric'=>'Debe seleccionar una categoria',
+            'imagen.mimes'=>'solo se permiten imagenes',            
         ];
         
     }

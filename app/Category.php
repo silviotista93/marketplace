@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     public function types(){
-        return $this->hasOne(\App\Type::class, 'category_id','id');
+        return $this->hasMany(\App\Type::class, 'category_id','id');
     }
 
     public function setCategoryAttribute($valor){

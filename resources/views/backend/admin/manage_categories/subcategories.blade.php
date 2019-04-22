@@ -79,7 +79,7 @@
                                 <div id="error-subcategory" class="text-danger msg-error"></div>
                                 <!-- input-group -->
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div class="">
                                     <select id="categoria" name="categoria" class="form-control" data-placeholder="Asignar Categoría">
                                         <option label="Asignar Categoría">Seleccione una categoria</option>
@@ -91,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div id="error-categoria" class="text-danger msg-error"></div>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <div
                                     class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
@@ -143,20 +143,7 @@
                                 </div>
                                 <div id="error-subcategoryu" class="text-danger msg-error"></div>
                                 <!-- input-group -->
-                            </div>
-                            {{-- <div class="form-group">
-                                <div class="">
-                                    <select id="categoriau" name="categoria" class="form-control" data-placeholder="Asignar Categoría">
-                                        <option label="Asignar Categoría">Seleccione una categoria</option>
-                                        @foreach ($categories as $c)
-                                    <option label="Asignar Categoría" value="{{ $c->id }}" >{{$c->category}}</option>
-                                        
-                                        @endforeach
-                                        
-                                    </select>
-                                </div>
-                                <div id="error-categoriau" class="text-danger msg-error"></div>
-                            </div> --}}
+                            </div>                      
                             <div class="form-group">
                                 <div
                                     class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
