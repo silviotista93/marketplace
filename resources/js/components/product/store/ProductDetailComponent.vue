@@ -201,9 +201,6 @@ export default {
     },
     validate() {
       this.description = $("#summernote").summernote("code");
-      if (this.description === "<p><br></p>"){
-          this.description = "";
-      }
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
       this.$emit("on-validate", this.$data, isValid);

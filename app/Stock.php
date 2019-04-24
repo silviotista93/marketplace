@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Description;
 
 /**
  * App\Stock
@@ -26,5 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Stock extends Model
 {
-    //
+    public function descriptions()
+    {
+        return $this->belongsToMany(Description::class, "description_stock", "stock_id", "description_id");
+    }
 }

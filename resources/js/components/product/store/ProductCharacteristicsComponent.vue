@@ -30,12 +30,7 @@
               description.key
             }}</span>
           </div>
-          <input
-            type="text"
-            class="form-control"
-            v-model="description.value"
-            readonly
-          />
+          <input type="text" class="form-control" v-model="description.value" />
         </div>
       </li>
     </ul>
@@ -44,7 +39,7 @@
     <div class="container--agregarProducto">
       <button
         type="button"
-        class="btn btn-primary btn--agregarProducto"
+        class="btn btn-teal btn--agregarProducto"
         data-toggle="modal"
         data-target="#agregarProducto"
         @click="reset()"
@@ -115,10 +110,10 @@
             </form>
             <button
               type="button"
-              class="btn btn-secondary btn--addDescription"
+              class="btn btn-teal btn--addDescription"
               @click="addDescription()"
             >
-              <i class="fa fa-home"></i>
+              <i class="fa fa-plus"></i>
             </button>
           </div>
           <div class="modal-footer">
@@ -151,63 +146,7 @@ export default {
     return {
       current: "ropa",
       tiposProductos: ["ropa", "televisor", "plancha"],
-      productos: [
-        {
-          cantidad: 15,
-          descriptions: [
-            {
-              key: "color",
-              value: "red"
-            },
-            {
-              key: "color",
-              value: "red"
-            },
-            {
-              key: "color",
-              value: "red"
-            },
-            {
-              key: "color",
-              value: "red"
-            }
-          ]
-        },
-        {
-          cantidad: 2,
-          descriptions: [
-            {
-              key: "color",
-              value: "blur"
-            },
-            {
-              key: "tela",
-              value: "seda"
-            },
-            {
-              key: "color",
-              value: "red"
-            },
-            {
-              key: "color",
-              value: "red"
-            }
-          ]
-        },
-        {
-          cantidad: 85,
-          descriptions: [
-            {
-              key: "color",
-              value: "blur"
-            },
-            {
-              key: "tela",
-              value: "seda"
-            }
-          ]
-        }
-      ],
+      productos: [],
       producto: {
         cantidad: "",
         descriptions: []
@@ -221,12 +160,12 @@ export default {
   validations: {},
   methods: {
     validate() {
-      if (this.productos.lenght<1){
-          alert("Ingresa por lo menos un");
-          return false;
+      if (this.productos.lenght < 1) {
+        alert("Ingresa por lo menos un");
+        return false;
       }
       let isValid = true;
-      this.$emit("on-validate", {productos: this.productos}, isValid);
+      this.$emit("on-validate", { productos: this.productos }, isValid);
       return isValid;
     },
     reset() {
@@ -251,12 +190,14 @@ export default {
     },
     addDescription() {
       const c = prompt("Ingresa el nombre de la descripcion", "talla, color");
-      this.description = {
-        key: c,
-        value: ""
-      };
-      const description = Object.assign({}, this.description);
-      this.producto.descriptions.push(description);
+      if (c.length > 1) {
+        this.description = {
+          key: c,
+          value: ""
+        };
+        const description = Object.assign({}, this.description);
+        this.producto.descriptions.push(description);
+      }
     }
   }
 };
@@ -280,6 +221,9 @@ export default {
   margin: 1rem;
 }
 .btn--addDescription {
-  border-radius: 50%;
+    border-radius: 50%;
+  float: right;
+  width: 3rem;
+  line-height: 1.5rem;
 }
 </style>

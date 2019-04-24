@@ -58,6 +58,7 @@ import "vue-form-wizard/dist/vue-form-wizard.min.css";
 import ProductDetailComponent from "./ProductDetailComponent";
 import SelectCategoryComponent from "./SelectCategoryComponent";
 import ProductCharacteristicsComponent from "./ProductCharacteristicsComponent";
+import axios from "axios";
 
 export default {
   components: {
@@ -67,12 +68,19 @@ export default {
   },
   data() {
     return {
-      finalModel: {}
+      registroProducto: {}
     };
   },
   methods: {
     onComplete() {
-      alert();
+        const url = "/guardar-producto";
+        axios.post(url, this.registroProducto)
+        .then(response => {
+            alert("registro exitoso");
+            location.reload();
+        }).catch(err => {
+            console.log(err);
+        });
     },
     validateStep(name) {
       var refToValidate = this.$refs[name];
@@ -80,7 +88,7 @@ export default {
     },
     mergePartialModels(model, isValid) {
       if (isValid) {
-        this.finalModel = Object.assign({}, this.finalModel, model);
+        this.registroProducto = Object.assign({}, this.registroProducto, model);
       }
     }
   }
