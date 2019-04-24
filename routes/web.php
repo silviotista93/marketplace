@@ -15,7 +15,7 @@
 CONSULTAS DE PRUEBAS
 =============================================*/
 Route::get('prueba',function(){
-   
+
 });
 
 /*=============================================
@@ -78,6 +78,14 @@ Route::group(['namespace'=>'Backend', 'middleware' => 'auth'],function (){
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');
     Route::post('/profiles/get-list-user', 'partials\profiles\ListUsersController@getUsers')->name('dashboard.profile.get_list');
 
+    //lista categorias
+    Route::post("getCategories", "empresa\CategoryHelperController@categories");
+    //lista de tipo
+    Route:: post("getTipos/{category}", "empresa\CategoryHelperController@typesForCategories");
+    //lista de subcategorias
+    Route::post( "subcategories/{type}", "empresa\CategoryHelperController@subcategoriesFortype");
+    //guardar producto
+    Route::post("guardar-producto", "empresa\ProductController@store")->name("guardar-producto");
 });
 
 Auth::routes();
