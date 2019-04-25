@@ -24,7 +24,8 @@ frmUpdateSubCategory.submit(function (e){
 
 
 const datos = function (e) {
-    $('#subcategoryu').val('');
+    
+    $('#subcategoryu').val('');   
     var subcategory =JSON.parse($(this).attr("data-info"));
     $('#subcategoryu').val(subcategory.sub_category);
     $('#categoriau').val(subcategory.categories_id);

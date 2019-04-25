@@ -87,13 +87,24 @@ class DatabaseSeeder extends Seeder
          factory(\App\Category::class, 1)->create(['category'=>'ROPA','icon'=>'t-shirt']);
          factory(\App\Category::class, 1)->create(['category'=>'ACCESORIOS','icon'=>'bag']);
 
-         factory(\App\Type::class, 1)->create(['category_id'=> 1]);
-         factory(\App\Type::class, 1)->create(['category_id'=> 2]);
-         factory(\App\Type::class, 1)->create(['category_id'=> 3]);
-         factory(\App\Type::class, 1)->create(['category_id'=> 4]);
-         factory(\App\Type::class, 1)->create(['category_id'=> 5]);
-         factory(\App\Type::class, 1)->create(['category_id'=> 5]);
-         factory(\App\SubCategory::class, 5)->create();
+         factory(\App\Type::class, 1)->create(['type'=> 'SMARTHPHONES','category_id'=> 1]);
+         factory(\App\Type::class, 1)->create(['type'=> 'BICICLETAS','category_id'=> 2]);
+         factory(\App\Type::class, 1)->create(['type'=> 'ZAPATOS HOMBRE','category_id'=> 3]);
+         factory(\App\Type::class, 1)->create(['type'=> 'ROPA HOMBRE','category_id'=> 4]);
+         factory(\App\Type::class, 1)->create(['type'=> 'GAFAS','category_id'=> 5]);
+
+         factory(\App\SubCategory::class, 1)->create(['sub_category'=>'TENNIS']);
+         factory(\App\SubCategory::class, 1)->create(['sub_category'=>'BICICLETAS RUTA']);
+         factory(\App\SubCategory::class, 1)->create(['sub_category'=>'CELULARES']);
+         factory(\App\SubCategory::class, 1)->create(['sub_category'=>'GAFAS DE SOL']);
+         factory(\App\SubCategory::class, 1)->create(['sub_category'=>'CAMISA']);
+
+         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 1,'type_id' => 3,'slug'=>'13']);
+         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 2,'type_id' => 2,'slug'=>'22']);
+         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 3,'type_id' => 1,'slug'=>'31']);
+         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 4,'type_id' => 5,'slug'=>'45']);
+         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 5,'type_id' => 4,'slug'=>'54']);
+         
 
 
          
