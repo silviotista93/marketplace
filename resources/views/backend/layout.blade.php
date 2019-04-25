@@ -49,7 +49,7 @@
     <link href="/backend/lib/medium-editor/css/themes/default.min.css" rel="stylesheet">
     <link href="/backend/lib/summernote/summernote-bs4.css" rel="stylesheet">
     <link href="{{asset('common/fonts/styles.css')}}" rel="stylesheet">
-
+    @stack('css')
 </head>
 
 <body>

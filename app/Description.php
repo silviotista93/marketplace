@@ -24,5 +24,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Description extends Model
 {
-    //
+    protected $fillable = [
+        "key",
+        "value"
+    ];
+
+    public function stoks (){
+        return $this->belongsToMany( Stock::class, "description_stock", "description_id", "stock_id");
+    }
 }
