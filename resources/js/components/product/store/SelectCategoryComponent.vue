@@ -159,6 +159,9 @@ export default {
         subcategory: this.category
       };
       this.$emit("on-validate", data, isValid);
+      if (!isValid){
+        event.$emit('alert', 403, "Error", "Selecciona que tipo de producto ofreces");
+      }
       return isValid;
     }
   }

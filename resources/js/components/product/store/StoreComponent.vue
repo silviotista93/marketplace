@@ -1,5 +1,6 @@
 <template>
   <div class="card-body">
+    <alert></alert>
     <h6 class="br-section-label" style="margin-top: 0px !important;">
       Ingrese la información del producto
     </h6>
@@ -14,6 +15,7 @@
       shape="square"
       stepSize="sm"
       color="#3498db"
+      error-color="#DC3545"
     >
       <tab-content
         title="Información basica del producto"
@@ -41,7 +43,7 @@
         :before-change="() => validateStep('productC')"
       >
         <product-characteristics
-        ref="productC"
+          ref="productC"
           @on-validate="mergePartialModels"
         ></product-characteristics>
       </tab-content>
@@ -59,12 +61,14 @@ import ProductDetailComponent from "./ProductDetailComponent";
 import SelectCategoryComponent from "./SelectCategoryComponent";
 import ProductCharacteristicsComponent from "./ProductCharacteristicsComponent";
 import axios from "axios";
+import Alert from "../../../helper/Alert.vue";
 
 export default {
   components: {
     "product-detail": ProductDetailComponent,
     "select-category": SelectCategoryComponent,
-    "product-characteristics": ProductCharacteristicsComponent
+    "product-characteristics": ProductCharacteristicsComponent,
+    alert: Alert
   },
   data() {
     return {
@@ -73,13 +77,15 @@ export default {
   },
   methods: {
     onComplete() {
-        const url = "/guardar-producto";
-        axios.post(url, this.registroProducto)
+      const url = "/guardar-producto";
+      axios
+        .post(url, this.registroProducto)
         .then(response => {
-            alert("registro exitoso");
-            location.reload();
-        }).catch(err => {
-            console.log(err);
+          alert("registro exitoso");
+          location.reload();
+        })
+        .catch(err => {
+          console.log(err);
         });
     },
     validateStep(name) {

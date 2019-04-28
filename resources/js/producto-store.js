@@ -23,6 +23,7 @@ Vue.use(Vuelidate);
 
 
 Vue.component('store-product', require('./components/product/store/StoreComponent.vue').default);
+event = new Vue();
 
 const app = new Vue({
     el: '#store-product'
