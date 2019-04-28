@@ -48,7 +48,7 @@
         ></product-characteristics>
       </tab-content>
       <tab-content title="Registro" icon="icon icon-shop">
-        Registrar Producto
+        <detalle-product :informacion="registroProducto"></detalle-product>
       </tab-content>
     </form-wizard>
   </div>
@@ -62,17 +62,19 @@ import SelectCategoryComponent from "./SelectCategoryComponent";
 import ProductCharacteristicsComponent from "./ProductCharacteristicsComponent";
 import axios from "axios";
 import Alert from "../../../helper/Alert.vue";
+import DetalleProducto from "./DetalleProductoComponent";
 
 export default {
   components: {
     "product-detail": ProductDetailComponent,
     "select-category": SelectCategoryComponent,
     "product-characteristics": ProductCharacteristicsComponent,
+    "detalle-product": DetalleProducto,
     alert: Alert
   },
   data() {
     return {
-      registroProducto: {}
+      registroProducto: {"name":"producto uno","short_description":"descripción","percentage":12,"price":10000,"description":"<p>sdasdasdasdasd</p>","category":5,"type":5,"subcategory":5,"productos":[{"cantidad":10,"descriptions":[{"key":"color","value":"rojo"},{"key":"talla","value":"xl"}]},{"cantidad":20,"descriptions":[{"key":"color","value":"azul"},{"key":"talla","value":"xs"}]}]}
     };
   },
   methods: {

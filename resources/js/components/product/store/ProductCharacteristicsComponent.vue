@@ -236,7 +236,7 @@ export default {
     },
     addDescription() {
       const c = prompt("Ingresa el nombre de la descripcion", "talla, color");
-      if (c.length > 1) {
+      if (c && c.length > 1) {
         this.description = {
           key: c,
           value: ""
