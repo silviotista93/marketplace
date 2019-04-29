@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "795b7be424fc4b1f67543838440a102d",
+    "content-hash": "335ecdbb92c8fbaaaa375fec1d9c5703",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -135,12 +135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/caouecs/Laravel-lang.git",
-                "reference": "c5e3d884c46d616db0a1cc9401feb8cb998eaeb4"
+                "reference": "82ade94e591657fd33256340fc75c898fc22d071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/c5e3d884c46d616db0a1cc9401feb8cb998eaeb4",
-                "reference": "c5e3d884c46d616db0a1cc9401feb8cb998eaeb4",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/82ade94e591657fd33256340fc75c898fc22d071",
+                "reference": "82ade94e591657fd33256340fc75c898fc22d071",
                 "shasum": ""
             },
             "require-dev": {
@@ -170,7 +170,7 @@
                 "laravel",
                 "lpm"
             ],
-            "time": "2019-03-27T20:34:54+00:00"
+            "time": "2019-04-16T16:07:52+00:00"
         },
         {
             "name": "composer/ca-bundle",

@@ -15,7 +15,8 @@
 CONSULTAS DE PRUEBAS
 =============================================*/
 Route::get('prueba',function(){
-   
+   $q = \App\Category::with('types.typeSub')->get();
+       return $q;
 });
 
 /*=============================================

@@ -30,8 +30,8 @@
             </ul>
         </li>
         <li class="br-menu-item">
-            <a href="" class="br-menu-link {{request()->is('manage-products*') ? 'active' : '' }}">
-                <i class="fab fa-dropbox"></i>
+            <a href="" class="br-menu-link with-sub {{request()->is('manage-products*') ? 'active' : '' }}">
+                <i class="fas fa-sitemap"></i>
                 <span class="menu-item-label">Gestor Productos</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
@@ -83,7 +83,7 @@
         <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub">
                 <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                <span class="menu-item-label">Gestor Usuarios</span>
+                <span class="menu-item-label">Gestor Empresas</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
                 <li class="sub-item"><a href="table-basic.html" class="sub-link">Basic Table</a></li>
@@ -104,7 +104,7 @@
         <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{request()->is('profiles*') ? 'active' : '' }}">
                 <i class="fas fa-users"></i>
-                <span class="menu-item-label">Gestor Perfiles</span>
+                <span class="menu-item-label">Gestor Usuarios</span>
             </a>
             <ul class="br-menu-sub">
                 <li class="sub-item"><a href="{{ route('dashboard.profile.list') }}" class="sub-link {{request()->is('profiles/list-user') ? 'active' : '' }}">Usuarios</a></li>
