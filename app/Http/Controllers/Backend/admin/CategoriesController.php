@@ -7,11 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Http\Requests\AddCategory;
 use App\Http\Requests\UpdateCategory;
+use App\Type;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
+        
         return view('backend.admin.manage_categories.categories');
     }
 

@@ -79,19 +79,19 @@
                                 <div id="error-subcategory" class="text-danger msg-error"></div>
                                 <!-- input-group -->
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <div class="">
-                                    <select id="categoria" name="categoria" class="form-control" data-placeholder="Asignar Categoría">
-                                        <option label="Asignar Categoría">Seleccione una categoria</option>
-                                        @foreach ($categories as $c)
-                                    <option label="Asignar Categoría" value="{{ $c->id }}" >{{$c->category}}</option>
+                                    <select id="tipo" name="tipo" class="form-control" data-placeholder="Asignar tipo">
+                                        <option label="Asignar tipo">Seleccione un tipo</option>
+                                        @foreach ($tipo as $t)
+                                    <option label="Asignar tipo" value="{{ $t->id }}" >{{$t->type}}</option>
                                         
                                         @endforeach
                                         
                                     </select>
                                 </div>
-                                <div id="error-categoria" class="text-danger msg-error"></div>
-                            </div> --}}
+                                <div id="error-tipo" class="text-danger msg-error"></div>
+                            </div> 
                             <div class="form-group">
                                 <div
                                     class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
@@ -129,7 +129,7 @@
                 </div>
                 <form id="frmUpdateSubCategory" action="{{ route('update-sub-category') }}" enctype="multipart/form-data">
                     {{ method_field('PUT') }}
-                    <input type="hidden" name="id_subcategory" id="id_subcategory" value="">
+                    <input type="hidden" name="id_subcategory" id="id_subcategory" value="1">
                 <div class="modal-body pd-25">
                     <div class="row">
                         <div class="col-lg-12">
@@ -143,7 +143,23 @@
                                 </div>
                                 <div id="error-subcategoryu" class="text-danger msg-error"></div>
                                 <!-- input-group -->
-                            </div>                      
+                            </div>  
+                            <div class="form-group">
+                                <div class="">
+                                    <select id="tipo" name="tipo" class="form-control" data-placeholder="Asignar tipo">
+                                        <option label="Asignar tipo">Seleccione un tipo</option>
+                                        
+                                        @foreach ($tipo as $t)
+                                        
+                                        <option label="Asignar tipo" value="{{ $t->id }}" >{{$t->type}}</option>
+                                       
+                                        
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
+                                <div id="error-tipo" class="text-danger msg-error"></div>
+                            </div>                     
                             <div class="form-group">
                                 <div
                                     class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
@@ -166,6 +182,8 @@
             </div>
         </div><!-- modal-dialog -->
     </div><!-- modal actualizar -->
+
+  
 @stop
 @push('js')
 <script src="/common/categories/add-sub-category.js"></script>

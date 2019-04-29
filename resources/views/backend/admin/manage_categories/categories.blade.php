@@ -92,6 +92,7 @@
                             <div id="" class="">Iconos disponibles <a><i class="icon-eye" class="btn btn-primary btn-oblong mg-b-10 pull-right float-right" data-toggle="modal" data-target="#icon-list"></i></a></div>
                             <!-- input-group -->
                         </div>
+                       
                         <div class="form-group">
                             <div class="ht-200 bg-gray-200 mg-t-20 d-flex align-items-center justify-content-center">
                                 <input type="file" id="imagen" name="imagen" class="inputfile" data-multiple-caption="{count} files selected" multiple>

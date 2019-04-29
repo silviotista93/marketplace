@@ -43,4 +43,11 @@ class Product extends Model
     const DISPONIBLE = 1;
     const NO_DISPONIBLE = 0;
 
+    protected $fillable = [
+        "name",
+        "short_description",
+        "description",
+        "price"
+    ];
+
 }

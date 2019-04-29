@@ -3,7 +3,7 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Category::class, function (Faker $faker) {
-    $category=$faker->unique()->randomElement(['TECHNOLOGIA', 'DEPORTES','CALZADO','ROPA','ACCESORIOS']);
+    $category=$faker->unique(true)->randomElement(['TECHNOLOGIA', 'DEPORTES','CALZADO','ROPA','ACCESORIOS']);
     return [
         'category' => $category,
         'slug' => str_slug($category, '-'),

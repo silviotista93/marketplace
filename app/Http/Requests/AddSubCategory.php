@@ -25,6 +25,7 @@ class AddSubCategory extends FormRequest
     {
         return [
             'subcategory'=> 'required|unique:sub_categories,sub_category|max:100|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
+            'tipo'=> 'required|integer',
             'imagen'=> 'required|mimes:jpeg,bmp,png',
             
         ];
@@ -39,7 +40,8 @@ class AddSubCategory extends FormRequest
             'subcategory.regex'=>'Solo se permiten caracteres alfabeticos [A-Z]',
             'imagen.required'=>'Ingrese una imagen para la sub categoria',
             'imagen.mimes'=>'solo se permiten imagenes',
-            
+            'tipo.required'=>'Debe seleccionar un tipo',
+            'tipo.integer'=>'Debe seleccionar un tipo',            
         ];
         
     }

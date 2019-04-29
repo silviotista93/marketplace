@@ -8,7 +8,6 @@
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
 
 /*=============================================
@@ -17,6 +16,8 @@ CONSULTAS DE PRUEBAS
 Route::get('prueba',function(){
    $q = \App\Category::with('types.typeSub')->get();
        return $q;
+
+
 });
 
 /*=============================================
@@ -79,6 +80,14 @@ Route::group(['namespace'=>'Backend', 'middleware' => 'auth'],function (){
     Route::get('/profiles/list-user', 'partials\profiles\ListUsersController@index')->name('dashboard.profile.list');
     Route::post('/profiles/get-list-user', 'partials\profiles\ListUsersController@getUsers')->name('dashboard.profile.get_list');
 
+    //lista categorias
+    Route::post("getCategories", "empresa\CategoryHelperController@categories");
+    //lista de tipo
+    Route:: post("getTipos/{category}", "empresa\CategoryHelperController@typesForCategories");
+    //lista de subcategorias
+    Route::post( "subcategories/{type}", "empresa\CategoryHelperController@subcategoriesFortype");
+    //guardar producto
+    Route::post("guardar-producto", "empresa\ProductController@store")->name("guardar-producto");
 });
 
 Auth::routes();
