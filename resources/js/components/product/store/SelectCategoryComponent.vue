@@ -153,12 +153,27 @@ export default {
     validate() {
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
+      let category = this.categories.find(c => {
+          return c.id === this.category;
+      });
+      const subcategory = this.subcategories.find(s => {
+          return s.id === this.subcategory;
+      });
+      const type = this.types.find(t => {
+          return t.id === this.type;
+      });
       const data = {
         category: this.category,
-        type: this.category,
-        subcategory: this.category
+        type: this.type,
+        subcategory: this.subcategory,
+        category_name: category.category,
+        subcategory_name: subcategory.sub_category,
+        type_name: type.type
       };
       this.$emit("on-validate", data, isValid);
+      if (!isValid){
+        event.$emit('alert', 403, "Error", "Selecciona que tipo de producto ofreces");
+      }
       return isValid;
     }
   }

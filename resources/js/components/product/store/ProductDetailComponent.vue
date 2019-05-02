@@ -2,7 +2,6 @@
   <section>
     <div class="row">
       <div class="col-lg-6">
-        <p>Try the keyboard navigation by clicking arrow left or right!</p>
         <div class="form-group">
           <label class="form-control-label"
             >Nombre del Producto: <span class="tx-danger">*</span></label
@@ -204,6 +203,9 @@ export default {
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
       this.$emit("on-validate", this.$data, isValid);
+      if (!isValid){
+        event.$emit('alert', 403, "Error", "Ingresa la información basica del producto");
+      }
       return isValid;
     }
   }

@@ -32,6 +32,14 @@
           </div>
           <input type="text" class="form-control" v-model="description.value" />
         </div>
+        <button
+          type="button"
+          class="btn btn-danger active"
+          title="Eliminar producto"
+          @click="eliminarProducto(key)"
+        >
+          <i class="fa fa-trash-alt"></i>
+        </button>
       </li>
     </ul>
 
@@ -85,7 +93,15 @@
                     class="form-control"
                     id="cantidad"
                     v-model.number="producto.cantidad"
+                    v-bind:class="{
+                      'is-invalid': send && producto.cantidad.length < 1
+                    }"
                   />
+                  <span
+                    class="help-block tx-danger"
+                    v-if="send && producto.cantidad.length < 1"
+                    >Ingrese Cantidad</span
+                  >
                 </div>
               </div>
               <div
@@ -104,7 +120,15 @@
                     class="form-control"
                     :id="'detail-' + description.key"
                     v-model="description.value"
+                    v-bind:class="{
+                      'is-invalid': send && description.value.length < 1
+                    }"
                   />
+                  <span
+                    class="help-block tx-danger"
+                    v-if="send && description.value.length < 1"
+                    >Ingrese {{ description.key }}</span
+                  >
                 </div>
               </div>
             </form>
@@ -129,7 +153,6 @@
               type="button"
               class="btn btn-outline-primary"
               @click="addDetail()"
-              data-dismiss="modal"
             >
               Guardar Cambios
             </button>
@@ -154,14 +177,20 @@ export default {
       description: {
         key: "",
         value: ""
-      }
+      },
+      send: false
     };
   },
   validations: {},
   methods: {
     validate() {
-      if (this.productos.lenght < 1) {
-        alert("Ingresa por lo menos un");
+      if (this.productos.length < 1) {
+        event.$emit(
+          "alert",
+          403,
+          "Error",
+          "Ingresa la información basica del producto"
+        );
         return false;
       }
       let isValid = true;
@@ -182,15 +211,32 @@ export default {
         key: "",
         value: ""
       };
+      this.send = false;
     },
-    addDetail() {
-      const product = Object.assign({}, this.producto);
-      this.productos.push(product);
-      this.reset();
+    validarDetail() {
+      this.send = true;
+      let valid = true;
+      if (this.producto.cantidad.length < 1) {
+        valid = false;
+      }
+      this.producto.descriptions.map(d => {
+        if (d.value.length < 1) {
+          valid = false;
+        }
+      });
+      return valid;
+    },
+    addDetail(e) {
+      if (this.validarDetail()) {
+        const product = Object.assign({}, this.producto);
+        this.productos.push(product);
+        $("#agregarProducto").modal("hide");
+        this.reset();
+      }
     },
     addDescription() {
       const c = prompt("Ingresa el nombre de la descripcion", "talla, color");
-      if (c.length > 1) {
+      if (c && c.length > 1) {
         this.description = {
           key: c,
           value: ""
@@ -198,6 +244,9 @@ export default {
         const description = Object.assign({}, this.description);
         this.producto.descriptions.push(description);
       }
+    },
+    eliminarProducto(position) {
+      this.productos.splice(position, 1);
     }
   }
 };
@@ -221,7 +270,7 @@ export default {
   margin: 1rem;
 }
 .btn--addDescription {
-    border-radius: 50%;
+  border-radius: 50%;
   float: right;
   width: 3rem;
   line-height: 1.5rem;
