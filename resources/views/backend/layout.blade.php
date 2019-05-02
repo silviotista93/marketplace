@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -48,78 +49,80 @@
     <link href="/backend/lib/medium-editor/css/medium-editor.min.css" rel="stylesheet">
     <link href="/backend/lib/medium-editor/css/themes/default.min.css" rel="stylesheet">
     <link href="/backend/lib/summernote/summernote-bs4.css" rel="stylesheet">
-    <link href="{{asset('common/fonts/styles.css')}}" rel="stylesheet">
-    @stack('css')
+    <link href="{{asset('common/fonts/styles.css')}}" rel="stylesheet"> @stack('css')
 </head>
 
 <body>
 
-<!-- ########## START: LEFT PANEL ########## -->
-<div class="br-logo"><a href=""><span>[</span>bracket <i>plus</i><span>]</span></a></div>
+    <!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-logo"><a href=""><span>[</span>bracket <i>plus</i><span>]</span></a></div>
 
-<!--=====================================
+    <!--=====================================
     MENÚ DRAWER
 ======================================-->
-@include('backend.partials.menu-drawer')
+    @include('backend.partials.menu-drawer')
 
 
-<!--=====================================
+    <!--=====================================
     HEADER
 ======================================-->
-@include('backend.partials.header')
+    @include('backend.partials.header')
 
-<!--=====================================
+    <!--=====================================
     SIDEBAR
 ======================================-->
+    @include('backend.partials.sider_bar')
 
-@include('backend.partials.sider_bar')
+    <div class="br-mainpanel">
+        @yield('header_page') @yield('content')
 
-<div class="br-mainpanel">
-    @yield('header_page')
+        <footer class="br-footer">
+            <div class="footer-left">
+                <div class="mg-b-2">Copyright &copy; 2017. Bracket Plus. All Rights Reserved.</div>
+                <div>Attentively and carefully made by ThemePixels.</div>
+            </div>
+            <div class="footer-right d-flex align-items-center">
+                <span class="tx-uppercase mg-r-10">Share:</span>
+                <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-facebook tx-20"></i></a>
+                <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Bracket%20Plus,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-twitter tx-20"></i></a>
+            </div>
+        </footer>
 
-    @yield('content')
-
-    <footer class="br-footer">
-        <div class="footer-left">
-            <div class="mg-b-2">Copyright &copy; 2017. Bracket Plus. All Rights Reserved.</div>
-            <div>Attentively and carefully made by ThemePixels.</div>
-        </div>
-        <div class="footer-right d-flex align-items-center">
-            <span class="tx-uppercase mg-r-10">Share:</span>
-            <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-facebook tx-20"></i></a>
-            <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Bracket%20Plus,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-twitter tx-20"></i></a>
-        </div>
-    </footer>
-
-</div>
+    </div>
 
 
-<script src="/backend/lib/jquery/jquery.min.js"></script>
-<script src="/backend/lib/jquery-ui/ui/widgets/datepicker.js"></script>
-<script src="/backend/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/backend/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="/backend/lib/moment/min/moment.min.js"></script>
-<script src="/backend/lib/peity/jquery.peity.min.js"></script>
-<script src="/backend/lib/jquery-steps/build/jquery.steps.min.js"></script>
-<script src="/backend/lib/parsleyjs/parsley.min.js"></script>
-<script src="/backend/lib/summernote/summernote-bs4.min.js"></script>
+    <script src="/backend/lib/jquery/jquery.min.js"></script>
+    <script src="/backend/lib/jquery-ui/ui/widgets/datepicker.js"></script>
+    <script src="/backend/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/backend/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/backend/lib/moment/min/moment.min.js"></script>
+    <script src="/backend/lib/peity/jquery.peity.min.js"></script>
+    <script src="/backend/lib/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="/backend/lib/parsleyjs/parsley.min.js"></script>
+    <script src="/backend/lib/summernote/summernote-bs4.min.js"></script>
 
-<script src="/backend/lib/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="/backend/lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
-<script src="/backend/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/backend/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="/backend/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/backend/lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+    <script src="/backend/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/backend/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-<script src="/backend/lib/select2/js/select2.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+    <script src="/backend/lib/select2/js/select2.full.min.js"></script>
 
-<script src="/backend/js/bracket.js"></script>
-<script>
-$.ajaxSetup({
+    <script src="/backend/js/bracket.js"></script>
+    <script>
+        const urlMenu = "{{ route("menu") }}";
+    </script>
+    <script src="/backend/common/home/menu.js"></script>
+    <script>
+        $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': "{{ csrf_token() }}"
     }
 });
-</script>
-@stack('js')
+
+    </script>
+    @stack('js')
 </body>
+
 </html>

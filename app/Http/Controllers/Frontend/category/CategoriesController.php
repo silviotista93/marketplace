@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\admin;
+namespace App\Http\Controllers\Frontend\category;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,13 +11,25 @@ use App\Type;
 
 class CategoriesController extends Controller
 {
-    public function index()
+    
+        public function show(Category $category){   
+    
+            
+            $categories = Category::where('id','=' ,$category->id );
+            $category=$category;
+            return view('frontend.categories.categoria',compact('categories','category'));
+        }
+
+
+
+
+   /*  public function index()
     {
         
         return view('backend.admin.manage_categories.categories');
     }
-
-    public function tabla_categorias()
+ */
+   /*  public function tabla_categorias()
     {
 
         $categories = Category::all();
@@ -95,16 +107,7 @@ class CategoriesController extends Controller
             'title' => 'Excelente',
             'msg' => 'Categoria Actualizada correctamente'
         ], 201);
-    }
+    } */
 
-
-    public function show(Category $category){
-        
-
-        
-        $categories = Category::all();
-        $category=$category;
-        return view('frontend.categories.categoria',compact('categories','category'));
-    }
 
 }

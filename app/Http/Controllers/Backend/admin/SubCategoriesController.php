@@ -19,6 +19,7 @@ class SubCategoriesController extends Controller
         $tipo = Type::all();
         $typeSub=TypeSubcategory::where('subcategory_id', '=','id_subcategory')->get();
         
+        
 
         return view('backend.admin.manage_categories.subcategories', compact(['tipo','typeSub']));
     }

@@ -129,47 +129,10 @@
                             <span class="btn-open-mobile pull-right home-page"><i class="fa fa-bars"></i></span>
                         </h4>
                         <div class="vertical-menu-content is-home">
-                            <ul class="vertical-menu-list">
+                            <ul class="vertical-menu-list" id="menu">
 
 
-                                @foreach ($categories as $c)
-
-
-                                <li>
-                                    <a href="#">
-                                    <i class="icon icon-{{ $c->icon }}" style="margin-right: 5%;"></i> 
-                                    {{ $c->category}}</a>      
-
-                                    
-                                    <div class="vertical-dropdown-menu">
-                                        <div class="vertical-groups col-sm-12">
-                                            @foreach ($type as $t) 
-                                            {{--  @dd($t) --}}
-                                            @if( $t->types->category_id == $c->id)
-                                            
-                                            <div class="mega-group col-sm-4">
-                                                <h4 class="mega-group-header">{{$t->types->type}}<span></span></h4>
-                                                
-                                                <ul class="group-link-default">
-                                                                 
-                                                                                                                    
-                                                        <li><a href="#">{{$t->subCategories->sub_category}}</a></li>
-                                                    </ul>
-                                                </div>
-                                                        @endif 
-                                                        @endforeach
-                                                        
-                                                        
-                                                        
-                                                    
-                                            </div>
-                                        </div>
-
-                                </li>
-
-
-                                @endforeach
-
+                               
 
 
                             </ul>
