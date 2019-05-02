@@ -12,7 +12,7 @@
         @change="getTypes"
         v-bind:class="{ 'is-invalid': $v.category.$error }"
       >
-        <option value="null">Selecione</option>
+        <option :value="null">Selecione</option>
         <option :value="c.id" v-for="c in categories" :key="c.id">
           {{ c.category }}
         </option>
@@ -33,7 +33,7 @@
         @change="getSubcategories"
         v-bind:class="{ 'is-invalid': $v.type.$error }"
       >
-        <option value="null">{{
+        <option :value="null">{{
           types.length > 0 ? "Seleccione un tipo" : "Sin tipos"
         }}</option>
         <option :value="t.id" v-for="t in types" :key="t.id">
@@ -56,7 +56,7 @@
         name="subcategory"
         v-bind:class="{ 'is-invalid': $v.subcategory.$error }"
       >
-        <option value="null">{{
+        <option :value="null">{{
           subcategories.length > 0 ? "Seleccione una subcategoria" : "Sin subcategorias"
         }}</option>
         <option :value="s.id" v-for="s in subcategories" :key="s.id">

@@ -36,13 +36,13 @@
     <!--=====================================
 		MENU-BUSCAR-CATEGORIAS
 ======================================-->
-    
+
     @include('partials.menu')
-   
+
     <!--=====================================
 		SLIDER HOME
 ======================================-->
-   {{--  @include('partials.slider') --}}
+    {{-- @include('partials.slider') --}}
 
     <!--=====================================
 		CONTAINER PRINCIPAL
@@ -109,8 +109,8 @@
                         <div class="input-group" id="mail-box">
                             <input type="text" placeholder="Your Email Address" />
                             <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">OK</button>
-                          </span>
+                                <button class="btn btn-default" type="button">OK</button>
+                            </span>
                         </div>
                         <!-- /input-group -->
                         <div class="introduce-title">Let's Socialize</div>
@@ -133,34 +133,34 @@
                     <ul id="trademark-list">
                         <li id="payment-methods">Accepted Payment Methods</li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-ups.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-ups.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-qiwi.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-qiwi.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-wu.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-wu.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-cn.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-cn.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-visa.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-visa.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-mc.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-mc.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-ems.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-ems.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-dhl.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-dhl.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-fe.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-fe.jpg" alt="ups" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="/frontend/data/trademark-wm.jpg"  alt="ups"/></a>
+                            <a href="#"><img src="/frontend/data/trademark-wm.jpg" alt="ups" /></a>
                         </li>
                     </ul>
                 </div>
@@ -321,12 +321,11 @@
     <script type="text/javascript" src="/frontend/lib/owl.carousel/owl.carousel.min.js"></script>
     <script type="text/javascript" src="/frontend/lib/jquery.countdown/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="/frontend/js/jquery.actual.min.js"></script>
-    <script type="text/javascript" src="/frontend/js/theme-script.js"></script>
     <script>
         const urlMenu = "{{ route("menu") }}";
-        
     </script>
     <script type="text/javascript" src="/common/home/menu.js"></script>
+    <script type="text/javascript" src="/frontend/js/theme-script.js"></script>
 
     @stack('js')
 </body>

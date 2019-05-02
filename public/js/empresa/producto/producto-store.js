@@ -4985,7 +4985,7 @@ var render = function() {
           }
         },
         [
-          _c("option", { attrs: { value: "null" } }, [_vm._v("Selecione")]),
+          _c("option", { domProps: { value: null } }, [_vm._v("Selecione")]),
           _vm._v(" "),
           _vm._l(_vm.categories, function(c) {
             return _c("option", { key: c.id, domProps: { value: c.id } }, [
@@ -5041,7 +5041,7 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "null" } }, [
+              _c("option", { domProps: { value: null } }, [
                 _vm._v(
                   _vm._s(
                     _vm.types.length > 0 ? "Seleccione un tipo" : "Sin tipos"
@@ -5101,7 +5101,7 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "null" } }, [
+              _c("option", { domProps: { value: null } }, [
                 _vm._v(
                   _vm._s(
                     _vm.subcategories.length > 0
