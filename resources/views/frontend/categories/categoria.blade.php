@@ -1,6 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
+
     <div class="columns-container">
         <div class="container" id="columns">
             <!-- breadcrumb -->

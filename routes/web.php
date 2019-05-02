@@ -13,16 +13,13 @@
 /*=============================================
 CONSULTAS DE PRUEBAS
 =============================================*/
-<<<<<<< HEAD
+
 /* Route::get('prueba', function () { 
 
 }); */
-=======
-Route::get('prueba',function(){
-   $q = \App\Category::with('types.typeSub')->get();
-       return $q;
 
->>>>>>> f6cee6ba9dda4b629567e9f14827118ee3baf45b
+
+
 
 
 /*=============================================
