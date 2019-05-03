@@ -39,6 +39,10 @@ Route::group(['namespace' => 'Frontend'], function () {
    Route::get('/', 'HomeController@index')->name('home');
    // rutas categorias home    
      Route::get('category/{category}', 'category\CategoriesController@show')->name('categories.show');
+   // rutas subcategorias home    
+     Route::get('subcategory/{subcategory}', 'subcategory\SubcategoriesController@show')->name('subcategories.show');
+   // solicitud de empresa    
+     Route::get('empresa/solicitud', 'empresa\EmpresaController@index')->name('empresa.solicitud');
 
 });
 

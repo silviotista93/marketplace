@@ -1,4 +1,4 @@
-alert("ddd");
+
 $.ajax({
     url: urlMenu,
     type: 'html',

@@ -17,6 +17,7 @@ class CategoriesController extends Controller
             
             $categories = Category::where('id','=' ,$category->id );
             $category=$category;
+            /* dd($category); */
             return view('frontend.categories.categoria',compact('categories','category'));
         }
 

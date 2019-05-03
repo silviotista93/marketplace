@@ -1,7 +1,6 @@
 @extends('frontend.layout')
 
 @section('content')
-
     <div class="columns-container">
         <div class="container" id="columns">
             <!-- breadcrumb -->
@@ -450,16 +449,16 @@
                     <div class="category-slider">
                         <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
                             <li>
-                                <img src="assets/data/category-slide.jpg" alt="">
+                            <img src="{{$category->category_picture}}" alt="" width="871px" height="288px">
                             </li>
                             <li>
-                                <img src="assets/data/slide-cart2.jpg" alt="">
+                                <img src="{{$category->category_picture}}" alt="" width="871px" height="288px">
                             </li>
                         </ul>
                     </div>
                     <!-- ./category-slider -->
                     <!-- subcategories -->
-                    <div class="subcategories">
+                {{--     <div class="subcategories">
                         <ul>
                             <li class="current-categorie">
                                 <a href="#">Women's Fashion</a>
@@ -480,12 +479,12 @@
                                 <a href="#">Blouses</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <!-- ./subcategories -->
                     <!-- view-product-list-->
                     <div id="view-product-list" class="view-product-list">
                         <h2 class="page-heading">
-                            <span class="page-heading-title">Women</span>
+                        <span class="page-heading-title">{{ $category->category}}</span>
                         </h2>
                         <ul class="display-product-option">
                             <li class="view-as-grid selected">

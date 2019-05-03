@@ -65,7 +65,7 @@ class HomeController extends Controller
                                                 <ul class="group-link-default">';
                          foreach ($type as $s){                                
                              if ($t->id == $s->type_id){
-                                 echo '<li><a href="#">'.$s->subcategories ->sub_category.'</a></li>';
+                                 echo '<li><a href="'.route("subcategories.show",$s->subcategories->slug) .'">'.$s->subcategories->sub_category.'</a></li>';
                              } 
                                                 
                 
