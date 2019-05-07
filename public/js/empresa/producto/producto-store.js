@@ -1763,6 +1763,7 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helper_monedas_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../helper/monedas.js */ "./resources/js/helper/monedas.js");
 //
 //
 //
@@ -1837,6 +1838,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -2122,6 +2124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_form_wizard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helper_monedas_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../helper/monedas.js */ "./resources/js/helper/monedas.js");
 //
 //
 //
@@ -2268,6 +2271,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2326,7 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
       this.description = $("#summernote").summernote("code");
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
-      this.$emit("on-validate", this.$data, isValid);
+      var data = Object.assign({}, this.$data);
+      data.venta = this.sellPrice;
+      this.$emit("on-validate", data, isValid);
 
       if (!isValid) {
         event.$emit('alert', 403, "Error", "Ingresa la información basica del producto");
@@ -4150,7 +4156,7 @@ var render = function() {
     _c("section", { staticClass: "row" }, [
       _c("p", { staticClass: "col-sm-6" }, [
         _c("strong", [_vm._v("Precio:")]),
-        _vm._v(" $" + _vm._s(_vm.informacion.price))
+        _vm._v(" " + _vm._s(_vm._f("formatPrice")(_vm.informacion.price)))
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "col-sm-6" }, [
@@ -4161,12 +4167,7 @@ var render = function() {
       _c("p", { staticClass: "col-sm-6" }, [
         _c("strong", [_vm._v("Valor Venta:")]),
         _vm._v(
-          " $" +
-            _vm._s(
-              _vm.informacion.price * _vm.informacion.percentage +
-                _vm.informacion.price
-            ) +
-            "\n    "
+          " " + _vm._s(_vm._f("formatPrice")(_vm.informacion.venta)) + "\n    "
         )
       ])
     ]),
@@ -4843,7 +4844,7 @@ var render = function() {
                   type: "text",
                   disabled: ""
                 },
-                domProps: { value: _vm.sellPrice }
+                domProps: { value: _vm._f("formatPrice")(_vm.sellPrice) }
               })
             ])
           ])
@@ -19867,6 +19868,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Alert_vue_vue_type_template_id_a0b4f4ce_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
+
+
+/***/ }),
+
+/***/ "./resources/js/helper/monedas.js":
+/*!****************************************!*\
+  !*** ./resources/js/helper/monedas.js ***!
+  \****************************************/
+/*! exports provided: filterPrice */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterPrice", function() { return filterPrice; });
+// register
+Vue.filter('formatPrice', function (value) {
+  var number = (value / 1).toFixed(2).replace('.', ',');
+  return "$" + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+});
+var filterPrice = Vue.filter('formatPrice');
 
 
 /***/ }),
