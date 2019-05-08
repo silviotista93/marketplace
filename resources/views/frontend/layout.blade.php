@@ -320,12 +320,13 @@
     <script type="text/javascript" src="/frontend/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="/frontend/lib/owl.carousel/owl.carousel.min.js"></script>
     <script type="text/javascript" src="/frontend/lib/jquery.countdown/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="/frontend/lib/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/frontend/js/jquery.actual.min.js"></script>
+    <script type="text/javascript" src="/frontend/js/theme-script.js"></script>
     <script>
         const urlMenu = "{{ route("menu") }}";
     </script>
     <script type="text/javascript" src="/common/home/menu.js"></script>
-    <script type="text/javascript" src="/frontend/js/theme-script.js"></script>
 
     @stack('js')
 </body>
