@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->text("description");            
             $table->float("price");
             $table->float("price_neto");
+            $table->float("percentage")->default(0);
             $table->bigInteger("views");
             $table->bigInteger("sell");
             $table->float("weigth");    

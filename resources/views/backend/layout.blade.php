@@ -83,8 +83,12 @@
             </div>
             <div class="footer-right d-flex align-items-center">
                 <span class="tx-uppercase mg-r-10">Share:</span>
-                <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-facebook tx-20"></i></a>
-                <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Bracket%20Plus,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-twitter tx-20"></i></a>
+                <a target="_blank" class="pd-x-5"
+                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/bracketplus/intro"><i
+                        class="fab fa-facebook tx-20"></i></a>
+                <a target="_blank" class="pd-x-5"
+                    href="https://twitter.com/home?status=Bracket%20Plus,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracketplus/intro"><i
+                        class="fab fa-twitter tx-20"></i></a>
             </div>
         </footer>
 
@@ -116,11 +120,44 @@
     <script src="/backend/common/home/menu.js"></script>
     <script>
         $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    }
-});
-
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            }
+        });
+        Dropzone.prototype.defaultOptions.dictDefaultMessage = "Arrastrar y soltar los archivos aquí para subirlos";
+        Dropzone.prototype.defaultOptions.dictFallbackMessage = "Su navegador no admite la carga de archivos de arrastrar y soltar.";
+        Dropzone.prototype.defaultOptions.dictFallbackText = "Por favor, use el formulario de respaldo a continuación para cargar sus archivos como en los días anteriores.";
+        Dropzone.prototype.defaultOptions.dictFileTooBig = "El archivo es demasiado grande (filesizeMiB). Tamaño máximo de archivo: maxFilesize}MiB.";
+        Dropzone.prototype.defaultOptions.dictInvalidFileType = "No puedes subir archivos de este tipo.";
+        Dropzone.prototype.defaultOptions.dictResponseError = "Servidor respondió con el código statusCode.";
+        Dropzone.prototype.defaultOptions.dictCancelUpload = "Cancelar carga";
+        Dropzone.prototype.defaultOptions.dictCancelUploadConfirmation = "¿Estás seguro de que quieres cancelar esta carga?";
+        Dropzone.prototype.defaultOptions.dictRemoveFile = "Remover archivo";
+        Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "No puedes subir más archivos.";
+        const LENGUAJE_TABLA = {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "search": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        };
     </script>
     @stack('js')
 </body>

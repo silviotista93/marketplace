@@ -147,7 +147,7 @@
 <script>
 import { TabContent } from "vue-form-wizard";
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
-import { filterPrice } from "../../../helper/monedas.js";
+import { formatPrice } from "../../../helper/monedas.js";
 export default {
   data() {
     return {
