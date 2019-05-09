@@ -105,6 +105,10 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::post('getProducts', "empresa\ProductController@getProducts")->name("getProducts");
    Route::post('getInfoProduct', "empresa\ProductController@getInfoProduct")->name("getInfoProduct");
    Route::post("subirImagenProducto", "empresa\ProductController@subirImagenPro")->name("subirImagenProducto");
+
+   Route::get('store-management/shops','admin\store_managament\ShopsController@index')->name('dashboard.store_management.shops');
+   Route::get('store-management/request','admin\store_managament\RequestController@index')->name('dashboard.store_management.request');
+   Route::get('store-management/show','admin\store_managament\ShopsController@store')->name('dashboard.store_management.store');
 });
 
 Auth::routes();
