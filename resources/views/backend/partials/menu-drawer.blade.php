@@ -67,7 +67,7 @@
             </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
-            <a href="#" class="br-menu-link with-sub">
+            <a href="#" class="br-menu-link with-sub ">
                 <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
                 <span class="menu-item-label">Gestor Visitas</span>
             </a><!-- br-menu-link -->
@@ -81,13 +81,13 @@
             </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
-            <a href="#" class="br-menu-link with-sub">
-                <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                <span class="menu-item-label">Gestor Empresas</span>
+            <a href="#" class="br-menu-link with-sub {{request()->is('store-management*') ? 'active' : '' }}">
+                <i class="fas fa-store"></i>
+                <span class="menu-item-label">Gestor Tiendas</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
-                <li class="sub-item"><a href="table-basic.html" class="sub-link">Basic Table</a></li>
-                <li class="sub-item"><a href="table-datatable.html" class="sub-link">Data Table</a></li>
+                <li class="sub-item"><a href="{{ route('dashboard.store_management.shops')  }}" class="sub-link {{request()->is('store-management/shops') ? 'active' : '' }}">Tiendas</a></li>
+                <li class="sub-item"><a href="{{ route('dashboard.store_management.request') }}" class="sub-link {{request()->is('store-management/request') ? 'active' : '' }}">Solicitudes</a></li>
             </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">

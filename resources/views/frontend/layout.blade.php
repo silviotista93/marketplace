@@ -58,7 +58,7 @@
             <div id="introduce-box" class="row">
                 <div class="col-md-3">
                     <div id="address-box">
-                        <a href="#"><img src="/frontend/data/introduce-logo.png" alt="" /></a>
+                        <a href="#"><img src="/frontend/images/outlet_logo.jpg" alt="" /></a>
                         <div id="address-list">
                             <div class="tit-name">Address:</div>
                             <div class="tit-contain">Example Street 68, Mahattan, New York, USA.</div>

@@ -96,6 +96,17 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::post("subcategories/{type}", "empresa\CategoryHelperController@subcategoriesFortype");
    //guardar producto
    Route::post("guardar-producto", "empresa\ProductController@store")->name("guardar-producto");
+
+
+    /*=============================================
+        GESTIONAR TIENDAS
+     =============================================*/
+    //Todas las tiendas
+    Route::get('/store-management/shops', "admin\store_managament\ShopsController@index")->name('dashboard.store_management.shops');
+    //Solicitudes
+    Route::get('/store-management/request', "admin\store_managament\RequestController@index")->name('dashboard.store_management.request');
+    //Mostrar tienda
+    Route::get('/store-management/show-store', "admin\store_managament\ShopsController@show")->name('dashboard.store_management.show');
 });
 
 Auth::routes();

@@ -49,7 +49,7 @@
     <div class="container main-header">
         <div class="row">
             <div class="col-xs-12 col-sm-3 logo">
-                <a href="index.html"><img alt="Kute shop - themelock.com" src="/frontend/images/logo.png" /></a>
+                <a href="index.html"><img alt="Kute shop - themelock.com" style="margin: -21px -3px -30px 12px" src="/frontend/images/outlet_logo.jpg" /></a>
             </div>
             <div class="col-xs-7 col-sm-7 header-search-box">
                 <form class="form-inline">

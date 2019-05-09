@@ -49,13 +49,14 @@
     <link href="/backend/lib/medium-editor/css/medium-editor.min.css" rel="stylesheet">
     <link href="/backend/lib/medium-editor/css/themes/default.min.css" rel="stylesheet">
     <link href="/backend/lib/summernote/summernote-bs4.css" rel="stylesheet">
+    <link href="/backend/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
     <link href="{{asset('common/fonts/styles.css')}}" rel="stylesheet"> @stack('css')
 </head>
 
-<body>
+<body class="collapsed-menu with-subleft">
 
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="br-logo"><a href=""><span>[</span>bracket <i>plus</i><span>]</span></a></div>
+    <div class="br-logo"><a href=""><img style="margin:20%; width: 56%" src="/backend/img/outlet_logo.jpg" alt=""></a></div>
 
     <!--=====================================
     MENÚ DRAWER
@@ -73,18 +74,18 @@
 ======================================-->
     @include('backend.partials.sider_bar')
 
-    <div class="br-mainpanel">
+    <div class="br-{{request()->is(['store-management/shops','store-management/request']) ? 'contentpanel' : 'mainpanel' }}">
         @yield('header_page') @yield('content')
 
         <footer class="br-footer">
             <div class="footer-left">
-                <div class="mg-b-2">Copyright &copy; 2017. Bracket Plus. All Rights Reserved.</div>
-                <div>Attentively and carefully made by ThemePixels.</div>
+                <div class="mg-b-2">Copyright &copy; 2019. Outlet Virtual. All Rights Reserved.</div>
+                <div></div>
             </div>
             <div class="footer-right d-flex align-items-center">
                 <span class="tx-uppercase mg-r-10">Share:</span>
-                <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-facebook tx-20"></i></a>
-                <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Bracket%20Plus,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracketplus/intro"><i class="fab fa-twitter tx-20"></i></a>
+                <a target="_blank" class="pd-x-5" href=""><i class="fab fa-facebook tx-20"></i></a>
+                <a target="_blank" class="pd-x-5" href=""><i class="fab fa-twitter tx-20"></i></a>
             </div>
         </footer>
 
