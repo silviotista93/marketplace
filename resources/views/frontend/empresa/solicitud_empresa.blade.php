@@ -33,38 +33,38 @@
                             <div class="form-selector">
                                 <label>Nombres:</label>
                                 <input type="text" class="form-control input-sm" id="name" name="name" placeholder="Ingrese sus nombres" >
+                                <div id="error-name" class="text-danger msg-error"></div>
                             </div>
-                            <div id="error-name" class="text-danger msg-error"></div>
                             <div class="form-selector">
                                 <label>Apellidos:</label>
                                 <input type="text" class="form-control input-sm" id="apellido" name="apellido" placeholder="Ingrese sus apellidos">
+                                <div id="error-apellido" class="text-danger msg-error"></div>
                             </div>
-                            <div id="error-apellido" class="text-danger msg-error"></div>
                             <div class="form-selector">
                                 <label>Email:</label>
                                 <input type="text" class="form-control input-sm" name="email" id="email" placeholder="Ingrese su email">
+                                <div id="error-email" class="text-danger msg-error"></div>
                             </div>
-                            <div id="error-email" class="text-danger msg-error"></div>
                            
                             
                             <div class="form-selector">
                                 <label>Celular:</label>
                                 <input type="text" class="form-control input-sm" id="phone" name="phone" placeholder="Ingrese su numero de celular" >
+                                <div id="error-phone" class="text-danger msg-error"></div>
                             </div>
-                            <div id="error-phone" class="text-danger msg-error"></div>
                             <div class="form-selector">
                                 <label>Telefono(opcional):</label>
                                 <input type="text" class="form-control input-sm" id="phone2" name="phone2" placeholder="Ingrese su numero de telefono o celular">
+                                <div id="error-phone2" class="text-danger msg-error"></div>
                             </div>
-                            <div id="error-phone2" class="text-danger msg-error"></div>
                             <div class="form-selector">                        
                                 
                                 <h3 class="page-subheading">Datos de la tienda</h3>
                                 <div class="form-selector">
                                     <label>Nombre de la tienda:</label>
                                     <input type="text" class="form-control input-sm" id="nombreT" name="nombreT" placeholder="Ingrese el nombre de su tienda">
+                                    <div id="error-nombreT" class="text-danger msg-error"></div>
                                 </div>
-                                <div id="error-nombreT" class="text-danger msg-error"></div>
                                 <div class="form-selector">
                                     <label>Rut:</label>
                                     <div class="input-group image-preview">
@@ -86,8 +86,8 @@
                                             </div>
                                         </span>
                                     </div>
+                                    <div id="error-imagenRut" class="text-danger msg-error"></div>
                                 </div>
-                                <div id="error-imagenRut" class="text-danger msg-error"></div>
                                 <div class="form-selector">
                                     <label>Extracto bancario:</label>
                                     <div class="input-group image-preview">
@@ -109,8 +109,8 @@
                                             </div>
                                         </span>
                                     </div>
+                                    <div id="error-imagenE" class="text-danger msg-error"></div>
                                 </div>
-                                <div id="error-imagenE" class="text-danger msg-error"></div>
                                 <div class="form-selector">
                                     <label>Dni:</label>
                                     <div class="input-group image-preview">
@@ -132,8 +132,8 @@
                                             </div>
                                         </span>
                                     </div>
+                                    <div id="error-imagenDni" class="text-danger msg-error"></div>
                                 </div>
-                                <div id="error-imagenDni" class="text-danger msg-error"></div>
                                 <div class="form-selector">
                                     <button id="btn-send-contact" class="btn">Send</button>
                                 </div>

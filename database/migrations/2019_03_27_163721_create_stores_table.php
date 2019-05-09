@@ -22,9 +22,7 @@ class CreateStoresTable extends Migration
             $table->string("dni_picture");
             $table->enum("status", [Store::ACTIVO, Store::INACTIVO]);
             $table->unsignedBigInteger("users_id");
-            $table->foreign("users_id")->references('id')->on("users");
-            $table->unsignedBigInteger("stock_id");
-            
+            $table->foreign("users_id")->references('id')->on("users");          
             $table->timestamps();
         });
     }

@@ -44,9 +44,8 @@ class EmpresaController extends Controller
             $store->rut = '/storage/' . $pathR;
             $store->bank_statement = '/storage/' . $pathS;
             $store->dni_picture = '/storage/' . $pathD;            
-            $store->status= 1;
-            $store->users_id= $user->id;
-            $store->stock_id= 1;
+            $store->status= 0;
+            $store->users_id= $user->id;            
             $store->save();
            
             

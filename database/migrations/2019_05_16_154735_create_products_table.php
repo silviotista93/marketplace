@@ -26,7 +26,11 @@ class CreateProductsTable extends Migration
             $table->float("percentage")->default(0);
             $table->bigInteger("views");
             $table->bigInteger("sell");
-            $table->float("weigth");    
+            $table->float("weigth");
+            $table->unsignedBigInteger("stores_id");
+            $table->foreign("stores_id")->references('id')->on("stores");    
+            $table->unsignedBigInteger("type_sub_id");
+            $table->foreign("type_sub_id")->references('id')->on("type_subcategories");    
                 
             $table->timestamps();
         });

@@ -34,5 +34,11 @@ class Store extends Model
 {
     const ACTIVO = 1;
     const INACTIVO = 0;
+
+
+    public function users(){
+        
+        /* return $this->belongsToMany(\App\TypeSubcategory::class,'type_subcategories','type_id','subcategory_id'); */
+    }
     
 }
