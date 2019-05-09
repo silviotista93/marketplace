@@ -15,9 +15,6 @@ use App\Mail\NewStoreRequest;
 CONSULTAS DE PRUEBAS
 =============================================*/
 
-/*  Route::get('prueba', function () { 
- return new NewStoreRequest('cristian','salazar','golosos');
-}); */
 
 
 
@@ -34,15 +31,15 @@ FRONTEND
 =============================================*/
 
 Route::group(['namespace' => 'Frontend'], function () {
-   //rutas menu 
+   //rutas menu
    Route::get('/menu', 'HomeController@menu')->name('menu');
    //Rutas para el modulo HOME
    Route::get('/', 'HomeController@index')->name('home');
-   // rutas categorias home    
+   // rutas categorias home
      Route::get('category/{category}', 'category\CategoriesController@show')->name('categories.show');
-   // rutas subcategorias home    
+   // rutas subcategorias home
      Route::get('subcategory/{subcategory}', 'subcategory\SubcategoriesController@show')->name('subcategories.show');
-   // solicitud de empresa vista     
+   // solicitud de empresa vista
      Route::get('empresa/solicitud', 'empresa\EmpresaController@index')->name('empresa.solicitud');
      Route::post('empresa/add-store', 'empresa\EmpresaController@saveStore')->name('add-store');
 
@@ -69,7 +66,7 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    //agregar categoria
    Route::post('/admin/add-category', 'admin\CategoriesController@saveCategory')->name('add-category');
 
- 
+
    //actualizar categoria
    Route::put('/admin/update-category', 'admin\CategoriesController@updateCategory')->name('update-category');
    //lista de subcategorias
