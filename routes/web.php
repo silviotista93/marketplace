@@ -1,4 +1,5 @@
 <?php
+use App\Mail\NewStoreRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,8 @@
 CONSULTAS DE PRUEBAS
 =============================================*/
 
-/* Route::get('prueba', function () { 
-
+/*  Route::get('prueba', function () { 
+ return new NewStoreRequest('cristian','salazar','golosos');
 }); */
 
 

@@ -16,9 +16,10 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("rut", 22);
-            $table->string("bank_statement", 150);
-            $table->string("dni_picture", 150);
+            $table->string('store_name');
+            $table->string("rut");
+            $table->string("bank_statement");
+            $table->string("dni_picture");
             $table->enum("status", [Store::ACTIVO, Store::INACTIVO]);
             $table->unsignedBigInteger("users_id");
             $table->foreign("users_id")->references('id')->on("users");
