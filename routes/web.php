@@ -14,7 +14,7 @@
 CONSULTAS DE PRUEBAS
 =============================================*/
 
-/* Route::get('prueba', function () { 
+/* Route::get('prueba', function () {
 
 }); */
 
@@ -33,12 +33,17 @@ FRONTEND
 =============================================*/
 
 Route::group(['namespace' => 'Frontend'], function () {
-   //rutas menu 
+   //rutas menu
    Route::get('/menu', 'HomeController@menu')->name('menu');
    //Rutas para el modulo HOME
    Route::get('/', 'HomeController@index')->name('home');
-   // rutas categorias home    
+   // rutas categorias home
      Route::get('category/{category}', 'category\CategoriesController@show')->name('categories.show');
+   // rutas subcategorias home
+     Route::get('subcategory/{subcategory}', 'subcategory\SubcategoriesController@show')->name('subcategories.show');
+   // solicitud de empresa vista
+     Route::get('empresa/solicitud', 'empresa\EmpresaController@index')->name('empresa.solicitud');
+     Route::post('empresa/add-store', 'empresa\EmpresaController@saveStore')->name('add-store');
 
 });
 
@@ -63,7 +68,7 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    //agregar categoria
    Route::post('/admin/add-category', 'admin\CategoriesController@saveCategory')->name('add-category');
 
- 
+
    //actualizar categoria
    Route::put('/admin/update-category', 'admin\CategoriesController@updateCategory')->name('update-category');
    //lista de subcategorias
@@ -96,17 +101,10 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::post("subcategories/{type}", "empresa\CategoryHelperController@subcategoriesFortype");
    //guardar producto
    Route::post("guardar-producto", "empresa\ProductController@store")->name("guardar-producto");
-
-
-    /*=============================================
-        GESTIONAR TIENDAS
-     =============================================*/
-    //Todas las tiendas
-    Route::get('/store-management/shops', "admin\store_managament\ShopsController@index")->name('dashboard.store_management.shops');
-    //Solicitudes
-    Route::get('/store-management/request', "admin\store_managament\RequestController@index")->name('dashboard.store_management.request');
-    //Mostrar tienda
-    Route::get('/store-management/show-store', "admin\store_managament\ShopsController@show")->name('dashboard.store_management.show');
+   Route::get('manage-products/listar-producto', "empresa\ProductController@index")->name("listarProductos");
+   Route::post('getProducts', "empresa\ProductController@getProducts")->name("getProducts");
+   Route::post('getInfoProduct', "empresa\ProductController@getInfoProduct")->name("getInfoProduct");
+   Route::post("subirImagenProducto", "empresa\ProductController@subirImagenPro")->name("subirImagenProducto");
 });
 
 Auth::routes();

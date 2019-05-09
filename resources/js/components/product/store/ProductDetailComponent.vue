@@ -104,7 +104,7 @@
                 placeholder="Precio Venta"
                 type="text"
                 disabled
-                :value="sellPrice"
+                :value="sellPrice | formatPrice"
               />
             </div>
             <!--
@@ -147,7 +147,7 @@
 <script>
 import { TabContent } from "vue-form-wizard";
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
-
+import { formatPrice } from "../../../helper/monedas.js";
 export default {
   data() {
     return {
@@ -202,7 +202,9 @@ export default {
       this.description = $("#summernote").summernote("code");
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
-      this.$emit("on-validate", this.$data, isValid);
+      let data = Object.assign({}, this.$data);
+      data.venta = this.sellPrice;
+      this.$emit("on-validate", data, isValid);
       if (!isValid){
         event.$emit('alert', 403, "Error", "Ingresa la información basica del producto");
       }

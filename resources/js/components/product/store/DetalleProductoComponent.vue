@@ -11,13 +11,13 @@
     </section>
     <hr>
     <section class="row">
-      <p class="col-sm-6"><strong>Precio:</strong> ${{ informacion.price }}</p>
+      <p class="col-sm-6"><strong>Precio:</strong> {{ informacion.price | formatPrice }}</p>
       <p class="col-sm-6">
         <strong>Ganancia:</strong> {{ informacion.percentage }}%
       </p>
       <p class="col-sm-6">
-        <strong>Valor Venta:</strong> ${{
-          informacion.price * informacion.percentage + informacion.price
+        <strong>Valor Venta:</strong> {{
+          informacion.venta | formatPrice
         }}
       </p>
     </section>
@@ -73,6 +73,8 @@
   </article>
 </template>
 <script>
+import { formatPrice } from "../../../helper/monedas.js";
+
 export default {
   data() {
     return {};

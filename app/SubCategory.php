@@ -28,6 +28,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SubCategory extends Model
 {
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
     public function typeSub(){
         return $this->belongsToMany(\App\TypeSubcategory::class,'type_subcategories','type_id','subcategory_id');
     }

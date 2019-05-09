@@ -53,6 +53,7 @@ class User extends Authenticatable
     use Notifiable;
 
     const ACTIVO = "Activo";
+    const INACTIVO = "Inactivo";
 
     public function roles(){
 

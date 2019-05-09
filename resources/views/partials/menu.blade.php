@@ -120,7 +120,7 @@
     </div>
     <!-- END MANIN HEADER -->
     <div id="nav-top-menu" class="nav-top-menu">
-        <div class="container">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-sm-3" id="box-vertical-megamenus">
                     <div class="box-vertical-megamenus">
@@ -132,7 +132,7 @@
                             <ul class="vertical-menu-list" id="menu">
 
 
-                               
+
 
 
                             </ul>
@@ -141,7 +141,7 @@
                     </div>
                     </nav>
                 </div>
-            </div>
+            </div> --}}
             <!-- userinfo on top-->
             <div id="form-search-opntop">
             </div>

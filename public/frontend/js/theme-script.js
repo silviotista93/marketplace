@@ -3,17 +3,16 @@
     /* ---------------------------------------------
      Scripts initialization
      --------------------------------------------- */
-    $(window).load(function() {
-        // auto width megamenu
-        auto_width_megamenu();
-        resizeTopmenu();
-    });
     /* ---------------------------------------------
      Scripts ready
      --------------------------------------------- */
     $(document).ready(function() {
-        /* Resize top menu*/
-        resizeTopmenu();
+        setTimeout(() => {
+            auto_width_megamenu();
+            /* Resize top menu*/
+            resizeTopmenu();
+        }, 500);
+
         /* Zoom image */
         if($('#product-zoom').length >0){
             $('#product-zoom').elevateZoom({
@@ -22,7 +21,7 @@
                 zoomWindowFadeIn: 500,
                 zoomWindowFadeOut: 750,
                 gallery:'gallery_01'
-            }); 
+            });
         }
         /* Popup sizechart */
         if($('#size_chart').length >0){
@@ -35,7 +34,7 @@
           config.smartSpeed="300";
           if($(this).hasClass('owl-style2')){
             config.animateOut="fadeOut";
-            config.animateIn="fadeIn";    
+            config.animateIn="fadeIn";
           }
           $(this).owlCarousel(config);
         });
@@ -62,7 +61,7 @@
                 var austDay = new Date($(this).data('y'),$(this).data('m') - 1,$(this).data('d'),$(this).data('h'),$(this).data('i'),$(this).data('s'));
                 $(this).countdown({
                     until: austDay,
-                    labels: labels, 
+                    labels: labels,
                     layout: layout
                 });
             });
@@ -112,20 +111,20 @@
                     prevText:'<i class="fa fa-angle-left"></i>',
                     auto: true,
                     onSlideNext: function ($slideElement, oldIndex, newIndex) {
-                       var corlor = $($slideElement).data('background');   
-                       $('#home-slider').css('background',corlor);     
+                       var corlor = $($slideElement).data('background');
+                       $('#home-slider').css('background',corlor);
                     },
                     onSlidePrev: function ($slideElement, oldIndex, newIndex) {
-                       var corlor = $($slideElement).data('background');   
-                       $('#home-slider').css('background',corlor);     
+                       var corlor = $($slideElement).data('background');
+                       $('#home-slider').css('background',corlor);
                     }
                 }
 
             );
             slider.goToNextSlide();
         }
-        
-        /* elevator click*/ 
+
+        /* elevator click*/
         $(document).on('click','a.btn-elevator',function(e){
             e.preventDefault();
             var target = this.hash;
@@ -138,7 +137,7 @@
             }, 500);
             return false;
         })
-        /* scroll top */ 
+        /* scroll top */
         $(document).on('click','.scroll_top',function(){
             $('body,html').animate({scrollTop:0},400);
             return false;
@@ -156,7 +155,7 @@
             $('#'+id).addClass('active');
             return false;
         })
-        // CATEGORY FILTER 
+        // CATEGORY FILTER
         $('.slider-range-price').each(function(){
             var min             = $(this).data('min');
             var max             = $(this).data('max');
@@ -198,14 +197,14 @@
             $('#vertical-megamenus-ontop').toggleClass('active');
             return false;
         })
-        // View grid list product 
+        // View grid list product
         $(document).on('click','.display-product-option .view-as-grid',function(){
             $(this).closest('.display-product-option').find('li').removeClass('selected');
             $(this).addClass('selected');
             $(this).closest('#view-product-list').find('.product-list').removeClass('list').addClass('grid');
             return false;
         })
-        // View list list product 
+        // View list list product
         $(document).on('click','.display-product-option .view-as-list',function(){
             $(this).closest('.display-product-option').find('li').removeClass('selected');
             $(this).addClass('selected');

@@ -1763,6 +1763,7 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helper_monedas_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../helper/monedas.js */ "./resources/js/helper/monedas.js");
 //
 //
 //
@@ -1837,6 +1838,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -2122,6 +2124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_form_wizard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helper_monedas_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../helper/monedas.js */ "./resources/js/helper/monedas.js");
 //
 //
 //
@@ -2268,6 +2271,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2326,7 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
       this.description = $("#summernote").summernote("code");
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
-      this.$emit("on-validate", this.$data, isValid);
+      var data = Object.assign({}, this.$data);
+      data.venta = this.sellPrice;
+      this.$emit("on-validate", data, isValid);
 
       if (!isValid) {
         event.$emit('alert', 403, "Error", "Ingresa la información basica del producto");
@@ -2352,6 +2358,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! timers */ "./node_modules/timers-browserify/main.js");
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(timers__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -2423,6 +2431,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2433,7 +2445,8 @@ __webpack_require__.r(__webpack_exports__);
       subcategory: null,
       categories: [],
       subcategories: [],
-      types: []
+      types: [],
+      imagenes: []
     };
   },
   validations: {
@@ -2454,21 +2467,45 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.getCategories();
   },
+  mounted: function mounted() {
+    this.initDropZone();
+  },
   methods: {
-    getCategories: function getCategories() {
+    initDropZone: function initDropZone() {
       var _this = this;
+
+      $("#subirImagen").dropzone({
+        url: "/subirImagenProducto",
+        acceptedFiles: "image/*",
+        maxFilesize: 2,
+        maxFiles: 5,
+        uploadMultiple: true,
+        paramName: "image",
+        headers: {
+          "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+        },
+        success: function success(file, response) {
+          _this.imagenes.push(response.path);
+
+          $("#inputDBImageAddProject").val(response.msg);
+          $("#img_add_proyect").attr("src", response.msg);
+        }
+      });
+    },
+    getCategories: function getCategories() {
+      var _this2 = this;
 
       var url = "/getCategories";
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {}).then(function (response) {
-        _this.categories = response.data;
-        _this.type = null;
-        _this.subcategory = null;
+        _this2.categories = response.data;
+        _this2.type = null;
+        _this2.subcategory = null;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     getSubcategories: function getSubcategories() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (isNaN(this.type)) {
         this.type = null;
@@ -2478,13 +2515,13 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = "/subcategories/" + this.type;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {}).then(function (response) {
-        _this2.subcategories = response.data;
+        _this3.subcategories = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     getTypes: function getTypes() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (isNaN(this.category)) {
         this.category = null;
@@ -2495,25 +2532,25 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = "/getTipos/" + this.category;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {}).then(function (response) {
-        _this3.types = response.data;
-        _this3.subcategory = null;
+        _this4.types = response.data;
+        _this4.subcategory = null;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     validate: function validate() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.$v.form.$touch();
       var isValid = !this.$v.form.$invalid;
       var category = this.categories.find(function (c) {
-        return c.id === _this4.category;
+        return c.id === _this5.category;
       });
       var subcategory = this.subcategories.find(function (s) {
-        return s.id === _this4.subcategory;
+        return s.id === _this5.subcategory;
       });
       var type = this.types.find(function (t) {
-        return t.id === _this4.type;
+        return t.id === _this5.type;
       });
       var data = {
         category: this.category,
@@ -2521,12 +2558,13 @@ __webpack_require__.r(__webpack_exports__);
         subcategory: this.subcategory,
         category_name: category.category,
         subcategory_name: subcategory.sub_category,
-        type_name: type.type
+        type_name: type.type,
+        imagenes: this.imagenes
       };
       this.$emit("on-validate", data, isValid);
 
       if (!isValid) {
-        event.$emit('alert', 403, "Error", "Selecciona que tipo de producto ofreces");
+        event.$emit("alert", 403, "Error", "Selecciona que tipo de producto ofreces");
       }
 
       return isValid;
@@ -4150,7 +4188,7 @@ var render = function() {
     _c("section", { staticClass: "row" }, [
       _c("p", { staticClass: "col-sm-6" }, [
         _c("strong", [_vm._v("Precio:")]),
-        _vm._v(" $" + _vm._s(_vm.informacion.price))
+        _vm._v(" " + _vm._s(_vm._f("formatPrice")(_vm.informacion.price)))
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "col-sm-6" }, [
@@ -4161,12 +4199,7 @@ var render = function() {
       _c("p", { staticClass: "col-sm-6" }, [
         _c("strong", [_vm._v("Valor Venta:")]),
         _vm._v(
-          " $" +
-            _vm._s(
-              _vm.informacion.price * _vm.informacion.percentage +
-                _vm.informacion.price
-            ) +
-            "\n    "
+          " " + _vm._s(_vm._f("formatPrice")(_vm.informacion.venta)) + "\n    "
         )
       ])
     ]),
@@ -4843,7 +4876,7 @@ var render = function() {
                   type: "text",
                   disabled: ""
                 },
-                domProps: { value: _vm.sellPrice }
+                domProps: { value: _vm._f("formatPrice")(_vm.sellPrice) }
               })
             ])
           ])
@@ -4948,8 +4981,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "form-group" }, [
-      _vm._m(0),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "select",
@@ -4985,11 +5020,11 @@ var render = function() {
           }
         },
         [
-          _c("option", { attrs: { value: "null" } }, [_vm._v("Selecione")]),
+          _c("option", { domProps: { value: null } }, [_vm._v("Selecione")]),
           _vm._v(" "),
           _vm._l(_vm.categories, function(c) {
             return _c("option", { key: c.id, domProps: { value: c.id } }, [
-              _vm._v("\n        " + _vm._s(c.category) + "\n      ")
+              _vm._v(_vm._s(c.category))
             ])
           })
         ],
@@ -4998,14 +5033,14 @@ var render = function() {
       _vm._v(" "),
       _vm.$v.category.$error
         ? _c("span", { staticClass: "help-block tx-danger" }, [
-            _vm._v("\n      Seleccione una Categoria\n    ")
+            _vm._v("Seleccione una Categoria")
           ])
         : _vm._e()
     ]),
     _vm._v(" "),
     _vm.category
       ? _c("div", { staticClass: "form-group" }, [
-          _vm._m(1),
+          _vm._m(2),
           _vm._v(" "),
           _c(
             "select",
@@ -5041,17 +5076,19 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "null" } }, [
+              _c("option", { domProps: { value: null } }, [
                 _vm._v(
-                  _vm._s(
-                    _vm.types.length > 0 ? "Seleccione un tipo" : "Sin tipos"
-                  )
+                  "\n        " +
+                    _vm._s(
+                      _vm.types.length > 0 ? "Seleccione un tipo" : "Sin tipos"
+                    ) +
+                    "\n      "
                 )
               ]),
               _vm._v(" "),
               _vm._l(_vm.types, function(t) {
                 return _c("option", { key: t.id, domProps: { value: t.id } }, [
-                  _vm._v("\n        " + _vm._s(t.type) + "\n      ")
+                  _vm._v(_vm._s(t.type))
                 ])
               })
             ],
@@ -5060,7 +5097,7 @@ var render = function() {
           _vm._v(" "),
           _vm.$v.type.$error
             ? _c("span", { staticClass: "help-block tx-danger" }, [
-                _vm._v("\n      Seleccione un tipo de categoria.\n    ")
+                _vm._v("Seleccione un tipo de categoria.")
               ])
             : _vm._e()
         ])
@@ -5068,7 +5105,7 @@ var render = function() {
     _vm._v(" "),
     _vm.type
       ? _c("div", { staticClass: "form-group" }, [
-          _vm._m(2),
+          _vm._m(3),
           _vm._v(" "),
           _c(
             "select",
@@ -5101,19 +5138,21 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "null" } }, [
+              _c("option", { domProps: { value: null } }, [
                 _vm._v(
-                  _vm._s(
-                    _vm.subcategories.length > 0
-                      ? "Seleccione una subcategoria"
-                      : "Sin subcategorias"
-                  )
+                  "\n        " +
+                    _vm._s(
+                      _vm.subcategories.length > 0
+                        ? "Seleccione una subcategoria"
+                        : "Sin subcategorias"
+                    ) +
+                    "\n      "
                 )
               ]),
               _vm._v(" "),
               _vm._l(_vm.subcategories, function(s) {
                 return _c("option", { key: s.id, domProps: { value: s.id } }, [
-                  _vm._v("\n        " + _vm._s(s.sub_category) + "\n      ")
+                  _vm._v(_vm._s(s.sub_category))
                 ])
               })
             ],
@@ -5122,7 +5161,7 @@ var render = function() {
           _vm._v(" "),
           _vm.$v.subcategory.$error
             ? _c("span", { staticClass: "help-block tx-danger" }, [
-                _vm._v("\n      Seleccione una subcategoria\n    ")
+                _vm._v("Seleccione una subcategoria")
               ])
             : _vm._e()
         ])
@@ -5134,8 +5173,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { staticClass: "form-control-label" }, [
+        _vm._v("\n      Ingresa las imagenes del producto:\n      "),
+        _c("span", { staticClass: "tx-danger" }, [_vm._v("*")])
+      ]),
+      _vm._v(" "),
+      _c("form", {
+        staticClass: "dropzone",
+        attrs: {
+          action: "/subirImagenProducto",
+          id: "subirImagen",
+          method: "POST"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("label", { staticClass: "form-control-label" }, [
-      _vm._v("\n      Categoria: "),
+      _vm._v("\n      Categoria:\n      "),
       _c("span", { staticClass: "tx-danger" }, [_vm._v("*")])
     ])
   },
@@ -5144,7 +5203,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { staticClass: "form-control-label" }, [
-      _vm._v("\n      Tipo Categoria: "),
+      _vm._v("\n      Tipo Categoria:\n      "),
       _c("span", { staticClass: "tx-danger" }, [_vm._v("*")])
     ])
   },
@@ -5153,7 +5212,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { staticClass: "form-control-label" }, [
-      _vm._v("\n      Sub Categoria: "),
+      _vm._v("\n      Sub Categoria:\n      "),
       _c("span", { staticClass: "tx-danger" }, [_vm._v("*")])
     ])
   }
@@ -19867,6 +19926,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Alert_vue_vue_type_template_id_a0b4f4ce_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
+
+
+/***/ }),
+
+/***/ "./resources/js/helper/monedas.js":
+/*!****************************************!*\
+  !*** ./resources/js/helper/monedas.js ***!
+  \****************************************/
+/*! exports provided: formatPrice */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatPrice", function() { return formatPrice; });
+// register
+Vue.filter('formatPrice', function (value) {
+  var number = (value / 1).toFixed(2).replace('.', ',');
+  return "$" + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+});
+var formatPrice = Vue.filter('formatPrice');
 
 
 /***/ }),
