@@ -4,6 +4,6 @@ Vue.filter('formatPrice', function (value) {
     return "$"+number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 });
 
-const filterPrice = Vue.filter('formatPrice');
+const formatPrice = Vue.filter('formatPrice');
 
-export { filterPrice };
+export { formatPrice };

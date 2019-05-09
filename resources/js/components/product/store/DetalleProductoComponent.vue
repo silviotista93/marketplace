@@ -73,7 +73,7 @@
   </article>
 </template>
 <script>
-import { filterPrice } from "../../../helper/monedas.js";
+import { formatPrice } from "../../../helper/monedas.js";
 
 export default {
   data() {

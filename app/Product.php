@@ -50,4 +50,8 @@ class Product extends Model
         "price"
     ];
 
+    public function stoks(){
+        return $this->hasMany(\App\Stock::class, 'products_id','id');
+    }
+
 }

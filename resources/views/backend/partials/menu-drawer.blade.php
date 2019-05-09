@@ -36,7 +36,7 @@
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
                 <li class="sub-item"><a href="{{ route('manage_add_products') }}" class="sub-link {{request()->is('manage-products/add-products') ? 'active' : '' }}">Agregar Productos</a></li>
-                <li class="sub-item"><a href="alerts.html" class="sub-link">Productos</a></li>
+                <li class="sub-item"><a href="{{ route('listarProductos') }}" class="sub-link {{request()->is('manage-products/listar-producto') ? 'active' : '' }}">Productos</a></li>
             </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
