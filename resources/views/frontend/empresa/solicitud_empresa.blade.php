@@ -24,7 +24,7 @@
             <div id="message-box-conact"></div>
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="page-subheading">Datos de representante</h3>
+                    <h3 class="page-subheading">Datos de representante legal</h3>
                     <form  id="frmAddStore" action="{{ route('add-store') }}" enctype="multipart/form-data" >
                         @csrf
                         
@@ -32,51 +32,37 @@
 
                             <div class="form-selector">
                                 <label>Nombres:</label>
-                                <input type="text" class="form-control input-sm" id="name" name="name" >
+                                <input type="text" class="form-control input-sm" id="name" name="name" placeholder="Ingrese sus nombres" >
                             </div>
                             <div id="error-name" class="text-danger msg-error"></div>
                             <div class="form-selector">
                                 <label>Apellidos:</label>
-                                <input type="text" class="form-control input-sm" id="apellido" name="apellido">
+                                <input type="text" class="form-control input-sm" id="apellido" name="apellido" placeholder="Ingrese sus apellidos">
                             </div>
                             <div id="error-apellido" class="text-danger msg-error"></div>
                             <div class="form-selector">
                                 <label>Email:</label>
-                                <input type="text" class="form-control input-sm" name="email" id="email">
+                                <input type="text" class="form-control input-sm" name="email" id="email" placeholder="Ingrese su email">
                             </div>
                             <div id="error-email" class="text-danger msg-error"></div>
                            
                             
                             <div class="form-selector">
-                                <label>Telefono:</label>
-                                <input type="text" class="form-control input-sm" id="phone" name="phone">
+                                <label>Celular:</label>
+                                <input type="text" class="form-control input-sm" id="phone" name="phone" placeholder="Ingrese su numero de celular" >
                             </div>
                             <div id="error-phone" class="text-danger msg-error"></div>
                             <div class="form-selector">
-                                <label>Telefono 2:</label>
-                                <input type="text" class="form-control input-sm" id="phone2" name="phone2">
+                                <label>Telefono(opcional):</label>
+                                <input type="text" class="form-control input-sm" id="phone2" name="phone2" placeholder="Ingrese su numero de telefono o celular">
                             </div>
                             <div id="error-phone2" class="text-danger msg-error"></div>
-                            <div class="form-selector">
-                                <label>Fecha nacimiento:</label>
-                                <input name="fechaNac" id="datepicker" width="270" />                             
-                                                                                    
-                        </div>
-                           
-                            <div id="error-datepicker" class="text-danger msg-error"></div>
-                            <div class="form-selector">
-                                <label>Genero:</label>
-                                <select class="form-control">
-                                    <option >Selecione su genero</option>
-                                    <option value="Male">Masculino</option>
-                                    <option value="Female">Femenino</option>
-                                    <option value="Other">Otro</option>
-                                  </select>
+                            <div class="form-selector">                        
                                 
                                 <h3 class="page-subheading">Datos de la tienda</h3>
                                 <div class="form-selector">
                                     <label>Nombre de la tienda:</label>
-                                    <input type="text" class="form-control input-sm" id="nombreT" name="nombreT">
+                                    <input type="text" class="form-control input-sm" id="nombreT" name="nombreT" placeholder="Ingrese el nombre de su tienda">
                                 </div>
                                 <div id="error-nombreT" class="text-danger msg-error"></div>
                                 <div class="form-selector">
@@ -96,7 +82,7 @@
                                                 <span class="glyphicon glyphicon-folder-open"></span>
                                                 <span class="image-preview-input-title">Browse</span>
                                                 <input type="file" accept="image/png, image/jpeg, image/gif"
-                                                    name="input-file-preview" /> <!-- rename it -->
+                                                    name="imagenRut" id="imagenRut" /> <!-- rename it -->
                                             </div>
                                         </span>
                                     </div>
@@ -119,7 +105,7 @@
                                                 <span class="glyphicon glyphicon-folder-open"></span>
                                                 <span class="image-preview-input-title">Browse</span>
                                                 <input type="file" accept="image/png, image/jpeg, image/gif"
-                                                    name="input-file-preview" /> <!-- rename it -->
+                                                    name="imagenE" id="imagenE" /> <!-- rename it -->
                                             </div>
                                         </span>
                                     </div>
@@ -142,7 +128,7 @@
                                                 <span class="glyphicon glyphicon-folder-open"></span>
                                                 <span class="image-preview-input-title">Browse</span>
                                                 <input type="file" accept="image/png, image/jpeg, image/gif"
-                                                    name="input-file-preview" /> <!-- rename it -->
+                                                    name="imagenDni" id="imagenDni" /> <!-- rename it -->
                                             </div>
                                         </span>
                                     </div>
