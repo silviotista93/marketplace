@@ -43,8 +43,8 @@ class CategoryHelperController extends Controller
     public function subcategoriesFortype($type)
     {
         $subcategories = DB::table( 'type_subcategories as t' )
-            ->select('s.*')
-            ->leftJoin( 'sub_categories as s', 's.id', '=', 't.subcategory_id')
+            ->select(['t.id as type_sub_id', 's.*'])
+            ->join( 'sub_categories as s', 's.id', '=', 't.subcategory_id')
             ->where([ 't.type_id' => $type])
             ->get();
         return $subcategories;

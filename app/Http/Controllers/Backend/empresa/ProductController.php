@@ -54,6 +54,8 @@ class ProductController extends Controller
         $p->sell = 0;
         $p->weigth = 0;
         $p->slug = str_slug($p->name, "-");
+        $p->stores_id = 1;
+        $p->type_sub_id = $request->get('type_sub_id');
         $p->save();
         foreach ($request->get("imagenes") as $image) {
             $img = new Image();
@@ -61,13 +63,12 @@ class ProductController extends Controller
             $img->product_id = $p->id;
             $img->save();
         }
-        
+
 
         $productos = $request->get("productos");
 
         foreach ($productos as $pro) {
             $stock = new Stock();
-            $stock->types_id = $request->get("type");
             $stock->products_id = $p->id;
             $stock->quantity = $pro["cantidad"];
             $stock->save();

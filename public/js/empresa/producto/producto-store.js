@@ -2555,7 +2555,7 @@ __webpack_require__.r(__webpack_exports__);
       var data = {
         category: this.category,
         type: this.type,
-        subcategory: this.subcategory,
+        type_sub_id: subcategory.type_sub_id,
         category_name: category.category,
         subcategory_name: subcategory.sub_category,
         type_name: type.type,
@@ -2669,33 +2669,15 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       registroProducto: {
-        "name": "producto uno",
+        "name": "",
+        "type_sub_id": 0,
         "short_description": "descripción",
         "percentage": 12,
         "price": 10000,
         "description": "<p>sdasdasdasdasd</p>",
         "category": 5,
         "type": 5,
-        "subcategory": 5,
-        "productos": [{
-          "cantidad": 10,
-          "descriptions": [{
-            "key": "color",
-            "value": "rojo"
-          }, {
-            "key": "talla",
-            "value": "xl"
-          }]
-        }, {
-          "cantidad": 20,
-          "descriptions": [{
-            "key": "color",
-            "value": "azul"
-          }, {
-            "key": "talla",
-            "value": "xs"
-          }]
-        }]
+        "productos": []
       }
     };
   },
@@ -2714,6 +2696,8 @@ __webpack_require__.r(__webpack_exports__);
       return refToValidate.validate();
     },
     mergePartialModels: function mergePartialModels(model, isValid) {
+      console.log(model);
+
       if (isValid) {
         this.registroProducto = Object.assign({}, this.registroProducto, model);
       }

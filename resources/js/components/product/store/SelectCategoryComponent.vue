@@ -7,7 +7,7 @@
       </label>
       <form action="/subirImagenProducto" id="subirImagen" class="dropzone" method="POST"></form>
     </div>
-    
+
     <div class="form-group">
       <label class="form-control-label">
         Categoria:
@@ -191,7 +191,7 @@ export default {
       const data = {
         category: this.category,
         type: this.type,
-        subcategory: this.subcategory,
+        type_sub_id: subcategory.type_sub_id,
         category_name: category.category,
         subcategory_name: subcategory.sub_category,
         type_name: type.type,

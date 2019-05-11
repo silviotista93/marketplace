@@ -74,7 +74,17 @@ export default {
   },
   data() {
     return {
-      registroProducto: {"name":"producto uno","short_description":"descripción","percentage":12,"price":10000,"description":"<p>sdasdasdasdasd</p>","category":5,"type":5,"subcategory":5,"productos":[{"cantidad":10,"descriptions":[{"key":"color","value":"rojo"},{"key":"talla","value":"xl"}]},{"cantidad":20,"descriptions":[{"key":"color","value":"azul"},{"key":"talla","value":"xs"}]}]}
+      registroProducto: {
+        "name":"",
+        "type_sub_id":0,
+        "short_description":"descripción",
+        "percentage":12,
+        "price":10000,
+        "description":"<p>sdasdasdasdasd</p>",
+        "category":5,
+        "type":5,
+        "productos":[]
+      }
     };
   },
   methods: {
@@ -95,6 +105,7 @@ export default {
       return refToValidate.validate();
     },
     mergePartialModels(model, isValid) {
+        console.log(model);
       if (isValid) {
         this.registroProducto = Object.assign({}, this.registroProducto, model);
       }

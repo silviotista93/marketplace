@@ -19,7 +19,7 @@
 </div>
 @stop
 @section('content')
-<div class="br-pagebody pd-x-20 pd-sm-x-30 mx-wd-1350">
+<div class="br-pagebody pd-x-20 pd-sm-x-30 mx-wd-1350" style="margin: auto;">
     <div class="row row-sm mg-t-20">
         <div class="col-lg-12">
             <div class="card bd-0 shadow-base widget-14 ht-100p" id="list-product">
