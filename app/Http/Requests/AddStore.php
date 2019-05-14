@@ -29,7 +29,7 @@ class AddStore extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|regex:/^\d+$/',
             'phone2' => 'nullable|regex:/^[0-9]{0,}$/',
-            'nombreT'=> 'required|dmax:255|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
+            'nombreT'=> 'required|max:255|regex:/^[ A-Za-zñÑáéíóúÁÉÍÓÚ]+$/',
             'imagenRut'=> 'required|mimes:jpeg,bmp,png',
             'imagenE'=> 'required|mimes:jpeg,bmp,png',
             'imagenDni'=> 'required|mimes:jpeg,bmp,png',

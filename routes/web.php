@@ -104,6 +104,14 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::post('getInfoProduct', "empresa\ProductController@getInfoProduct")->name("getInfoProduct");
    Route::post("subirImagenProducto", "empresa\ProductController@subirImagenPro")->name("subirImagenProducto");
 
+    /*=============================================
+       TIENDAS
+    =============================================*/
+   //datattable solicitudes
+   Route::post('/datatables-solicitud-store', 'admin\store_managament\RequestController@dataTableRequest')->name('datatables.solicitud.store');
+  //detalle solicitud
+   Route::get('/tienda/detalle-solicitud/{id}','admin\store_managament\RequestController@requestDetail')->name('detalle-solicitud');
+   /* -------------- */
    Route::get('store-management/shops','admin\store_managament\ShopsController@index')->name('dashboard.store_management.shops');
    Route::get('store-management/request','admin\store_managament\RequestController@index')->name('dashboard.store_management.request');
    Route::get('store-management/show','admin\store_managament\ShopsController@store')->name('dashboard.store_management.store');

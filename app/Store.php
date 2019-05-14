@@ -38,7 +38,7 @@ class Store extends Model
 
     public function users(){
         
-        /* return $this->belongsToMany(\App\TypeSubcategory::class,'type_subcategories','type_id','subcategory_id'); */
+        return $this->hasOne(\App\User::class,'id','users_id');
     }
     
 }
