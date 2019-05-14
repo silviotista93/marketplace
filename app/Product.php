@@ -54,4 +54,8 @@ class Product extends Model
         return $this->hasMany(\App\Stock::class, 'products_id','id');
     }
 
+    public function typeSubcategories () {
+        return $this->hasOne(\App\TypeSubcategory::class, 'id', 'type_sub_id');
+    }
+
 }

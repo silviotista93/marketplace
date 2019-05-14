@@ -101,7 +101,7 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::post("guardar-producto", "empresa\ProductController@store")->name("guardar-producto");
    Route::get('manage-products/listar-producto', "empresa\ProductController@index")->name("listarProductos");
    Route::post('getProducts', "empresa\ProductController@getProducts")->name("getProducts");
-   Route::post('getInfoProduct', "empresa\ProductController@getInfoProduct")->name("getInfoProduct");
+   Route::get('getInfoProduct', "empresa\ProductController@getInfoProduct")->name("getInfoProduct");
    Route::post("subirImagenProducto", "empresa\ProductController@subirImagenPro")->name("subirImagenProducto");
 
     /*=============================================
