@@ -25,7 +25,13 @@ class ProductController extends Controller
 
     public function getInfoProduct(Request $request)
     {
-        $product = Product::with(["stoks", "stoks.descriptions"])->where("id", "=", $request->get("id"))->first();
+        $product = Product::with([
+            "stoks",
+            "stoks.descriptions",
+            "typeSubcategories",
+            "typeSubcategories.types",
+            "typeSubcategories.subCategories"
+        ])->where("id", "=", $request->get("id"))->first();
         return response()->json($product, 200);
     }
 

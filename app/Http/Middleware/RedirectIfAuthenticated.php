@@ -17,9 +17,11 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        $roles = Auth::user()->roles()->get();
-        if ($roles->contains(\App\Role::ROOT)){
-            return redirect()->route("dashboard.admin");
+        if (Auth::user()){
+            $roles = Auth::user()->roles()->get();
+            if ($roles->contains(\App\Role::ROOT)){
+                return redirect()->route("dashboard.admin");
+            }
         }
 
         return $next($request);
