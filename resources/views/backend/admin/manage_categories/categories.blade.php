@@ -236,6 +236,14 @@
                       <div class="icon icon-question-circle"></div>
                       <input type="text" readonly="readonly" value="question-circle">
                     </li>
+                      <li>
+                          <div class="icon icon-question-circle"></div>
+                          <input type="text" readonly="readonly" value="question-circle">
+                      </li>
+                      <li>
+                          <div class="icon icon-television"></div>
+                          <input type="text" readonly="readonly" value="television">
+                      </li>
                   </ul>
                   
               

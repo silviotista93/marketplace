@@ -41,9 +41,6 @@
 .icon-bag:before {
   content: "\61";
 }
-.icon-tv:before {
-  content: "\62";
-}
 .icon-shoes-snickers-streamline:before {
   content: "\63";
 }
@@ -67,4 +64,7 @@
 }
 .icon-question-circle:before {
   content: "\6a";
+}
+.icon-television:before {
+  content: "\62";
 }

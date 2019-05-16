@@ -41,10 +41,10 @@ class SubCategory extends Model
 
 
     public function setSubCategoryAttribute($valor){
-        $this->attributes['sub_category'] = strtolower($valor);
+        $this->attributes['sub_category'] = ucfirst($valor);
     }
     
     public function getSubCategoryAttribute($valor){
-        return ucwords($valor);
+        return ucfirst($valor);
     }
 }
