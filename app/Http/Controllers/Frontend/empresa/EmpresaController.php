@@ -9,12 +9,14 @@ use App\Http\Requests\AddStore;
 use App\Mail\NewStoreRequest;
 use App\Store;
 use Illuminate\Support\Facades\DB;
+use App\Country;
 
 class EmpresaController extends Controller
 {
     public function index(){
 
-        return view('frontend.empresa.solicitud_empresa');
+        $countries=Country::orderBy('name')->get();
+        return view('frontend.empresa.solicitud_empresa',compact('countries'));
     }
 
     public  function saveStore(AddStore $request){

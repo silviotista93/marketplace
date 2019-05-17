@@ -16,7 +16,7 @@
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="http://localhost:8000/dashboard-root">Outlet</a>
         <a class="breadcrumb-item" href="#">Gestor Tienda</a>
-        <span class="breadcrumb-item active">Solicitudes</span>
+    <a class="breadcrumb-item active" href="{{route('dashboard.store_management.request')}}">Solicitudes</a>
         <span class="breadcrumb-item active">Detalle solicitud</span>
     </nav>
 </div>

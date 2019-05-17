@@ -57,12 +57,42 @@
                                 <input type="text" class="form-control input-sm" id="phone2" name="phone2" placeholder="Ingrese su numero de telefono o celular">
                                 <div id="error-phone2" class="text-danger msg-error"></div>
                             </div>
-                            <div class="form-selector">                        
-                                
+                            <div class="form-selector">                                                   
                                 <h3 class="page-subheading">Datos de la tienda</h3>
                                 <div class="form-selector">
                                     <label>Nombre de la tienda:</label>
                                     <input type="text" class="form-control input-sm" id="nombreT" name="nombreT" placeholder="Ingrese el nombre de su tienda">
+                                    <div id="error-nombreT" class="text-danger msg-error"></div>
+                                </div>
+                                <div class="form-selector">
+                                    <label>Telefono:</label>
+                                    <input type="text" class="form-control input-sm" id="store_phone" name="store_phone" placeholder="Ingrese el numero de telefono de su tienda">
+                                    <div id="error-store_phone" class="text-danger msg-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pais">Pais:</label>
+                                    <select class="form-control" id="pais" name="pais">
+                                      <option>Seleccione un pais</option>                         @forelse ($countries as $c)
+                                          
+                                    <option value="{{$c->id}}">{{$c->name}}</option>                                     
+                                      @empty
+                                      <option>No hay paises registrados</option>
+                                      @endforelse            
+                                    </select>
+                                  </div>
+
+                                  <div id="ciudad">
+
+
+                                  </div>
+                                <div class="form-selector">
+                                    <label>Direccion:</label>
+                                    <input type="text" class="form-control input-sm" id="direccion" name="direccion" placeholder="Ingrese la direccion de su tienda ">
+                                    <div id="error-nombreT" class="text-danger msg-error"></div>
+                                </div>
+                                <div class="form-selector">
+                                    <label>Descripcion:</label>                                   
+                                    <textarea class="form-control z-depth-1" id="descripcion" name="descripcion" rows="3"  placeholder="Ingrese una breve descripcion acerca de lo que ofrece su tienda"></textarea>
                                     <div id="error-nombreT" class="text-danger msg-error"></div>
                                 </div>
                                 <div class="form-selector">
@@ -180,6 +210,11 @@
       $('#datepicker').datepicker({
             uiLibrary: 'bootstrap'
         });; 
+</script>
+
+<script>
+
+$('#box-vertical-megamenus').remove();
 </script>
 
 @endpush
