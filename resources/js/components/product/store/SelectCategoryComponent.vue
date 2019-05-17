@@ -123,7 +123,17 @@ export default {
           "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
         },
         success: (file, response) => {
-          this.imagenes.push(response.path);
+          const imagen = {
+            img: response.path,
+            principal: false
+          };
+          
+          if (this.imagenes.length === 0){
+            imagen.principal = true;
+          }
+          
+          this.imagenes.push(imagen);
+
           $("#inputDBImageAddProject").val(response.msg);
           $("#img_add_proyect").attr("src", response.msg);
         }
@@ -197,7 +207,6 @@ export default {
         type_name: type.type,
         imagenes: this.imagenes
       };
-      this.$emit("on-validate", data, isValid);
       if (!isValid) {
         event.$emit(
           "alert",
@@ -206,6 +215,16 @@ export default {
           "Selecciona que tipo de producto ofreces"
         );
       }
+      isValid = this.imagenes.length > 0;
+      if (!isValid){
+        event.$emit(
+          "alert",
+          403,
+          "Error",
+          "Ingresa una imagen"
+        );
+      }
+      this.$emit("on-validate", data, isValid);
       return isValid;
     }
   }

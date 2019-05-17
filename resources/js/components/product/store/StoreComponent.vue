@@ -74,17 +74,7 @@ export default {
   },
   data() {
     return {
-      registroProducto: {
-        "name":"",
-        "type_sub_id":0,
-        "short_description":"descripción",
-        "percentage":12,
-        "price":10000,
-        "description":"<p>sdasdasdasdasd</p>",
-        "category":5,
-        "type":5,
-        "productos":[]
-      }
+      registroProducto: {}
     };
   },
   methods: {
