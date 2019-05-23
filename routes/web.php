@@ -120,3 +120,4 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource("caracteristicas", "CaracteristicaSubtipoController");

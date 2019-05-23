@@ -1,16 +1,20 @@
 <template>
   <section>
+    <table class="table table-bordered dt-responsive table-striped" id="tablaCaracteristicas">
+      <thead>
+        <tr>
+          <th width="40%">#</th>
+          <th>Nombre</th>
+          <th>Valores</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+    </table>
     <ul class="list-group list-group-horizontal">
-      <li
-        class="list-group-item description"
-        v-for="(producto, key) in productos"
-        :key="key"
-      >
+      <li class="list-group-item description" v-for="(producto, key) in productos" :key="key">
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text capitalize" id="txtCantidad"
-              >Cantidad</span
-            >
+            <span class="input-group-text capitalize" id="txtCantidad">Cantidad</span>
           </div>
           <input
             type="text"
@@ -18,19 +22,17 @@
             v-model.number="producto.cantidad"
             aria-describedby="txtCantidad"
             required
-          />
+          >
         </div>
-        <div
-          class="input-group"
-          v-for="(description, key) in producto.descriptions"
-          :key="key"
-        >
+        <div class="input-group" v-for="(description, key) in producto.descriptions" :key="key">
           <div class="input-group-prepend">
-            <span class="input-group-text capitalize">{{
+            <span class="input-group-text capitalize">
+              {{
               description.key
-            }}</span>
+              }}
+            </span>
           </div>
-          <input type="text" class="form-control" v-model="description.value" />
+          <input type="text" class="form-control" v-model="description.value">
         </div>
         <button
           type="button"
@@ -51,9 +53,7 @@
         data-toggle="modal"
         data-target="#agregarProducto"
         @click="reset()"
-      >
-        Agregar un sub producto
-      </button>
+      >Agregar un sub producto</button>
     </div>
     <!-- Modal -->
     <div
@@ -81,12 +81,7 @@
           <div class="modal-body">
             <form>
               <div class="form-group row">
-                <label
-                  for="cantidad"
-                  class="col-sm-4 col-form-label capitalize"
-                >
-                  Cantidad
-                </label>
+                <label for="cantidad" class="col-sm-4 col-form-label capitalize">Cantidad</label>
                 <div class="col-sm-8">
                   <input
                     type="number"
@@ -96,12 +91,11 @@
                     v-bind:class="{
                       'is-invalid': send && producto.cantidad.length < 1
                     }"
-                  />
+                  >
                   <span
                     class="help-block tx-danger"
                     v-if="send && producto.cantidad.length < 1"
-                    >Ingrese Cantidad</span
-                  >
+                  >Ingrese Cantidad</span>
                 </div>
               </div>
               <div
@@ -112,8 +106,7 @@
                 <label
                   :for="'detail-' + description.key"
                   class="col-sm-4 col-form-label capitalize"
-                  >{{ description.key }}</label
-                >
+                >{{ description.key }}</label>
                 <div class="col-sm-8">
                   <input
                     type="text"
@@ -123,12 +116,11 @@
                     v-bind:class="{
                       'is-invalid': send && description.value.length < 1
                     }"
-                  />
+                  >
                   <span
                     class="help-block tx-danger"
                     v-if="send && description.value.length < 1"
-                    >Ingrese {{ description.key }}</span
-                  >
+                  >Ingrese {{ description.key }}</span>
                 </div>
               </div>
             </form>
@@ -146,16 +138,12 @@
               class="btn btn-outline-danger"
               data-dismiss="modal"
               @click="reset()"
-            >
-              Cancelar
-            </button>
+            >Cancelar</button>
             <button
               type="button"
               class="btn btn-outline-primary"
               @click="addDetail()"
-            >
-              Guardar Cambios
-            </button>
+            >Guardar Cambios</button>
           </div>
         </div>
       </div>
@@ -164,11 +152,42 @@
 </template>
 <script>
 export default {
-  mounted() {},
+  mounted() {
+    $("#tablaCaracteristicas").on('click','.agregarCaracteristica', (e) => {
+        const data = JSON.parse(e.target.attributes['data-caracteristica'].value);
+        const index = this.caracteristicas.findIndex((c) => {
+            return c.id === data.id;
+        });
+        if (index < 0) {
+            this.caracteristicas.push(data);
+        }
+    });
+    $("#tablaCaracteristicas").DataTable({
+      processing: true,
+      serverSide: true,
+      stateSave: true,
+      data: null,
+      ajax: "/caracteristicas",
+      lengthMenu: [[5, 25, 50, -1], [5, 25, 50, "Todos"]],
+      columns: [
+        { width: "20%", data: "id" },
+        { data: "nombre" },
+        { data: "valores" },
+        {
+          render: (data, type, JsonResultRow, meta) => {
+            return (
+              '<button class="btn btn-danger agregarCaracteristica" data-caracteristica=\''+ JSON.stringify(JsonResultRow) +'\'>Agregar</button>'
+            );
+          }
+        }
+      ],
+      language: LENGUAJE_TABLA
+    });
+
+  },
   data() {
     return {
-      current: "ropa",
-      tiposProductos: ["ropa", "televisor", "plancha"],
+      caracteristicas: [],
       productos: [],
       producto: {
         cantidad: "",
@@ -183,6 +202,9 @@ export default {
   },
   validations: {},
   methods: {
+      agregarCaracteristica(data) {
+
+      },
     validate() {
       if (this.productos.length < 1) {
         event.$emit(

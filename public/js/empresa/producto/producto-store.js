@@ -2028,24 +2028,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    $("#tablaCaracteristicas").on('click', '.agregarCaracteristica', function (e) {
+      var data = JSON.parse(e.target.attributes['data-caracteristica'].value);
+
+      var index = _this.caracteristicas.findIndex(function (c) {
+        return c.id === data.id;
+      });
+
+      if (index < 0) {
+        _this.caracteristicas.push(data);
+      }
+    });
+    $("#tablaCaracteristicas").DataTable({
+      processing: true,
+      serverSide: true,
+      stateSave: true,
+      data: null,
+      ajax: "/caracteristicas",
+      lengthMenu: [[5, 25, 50, -1], [5, 25, 50, "Todos"]],
+      columns: [{
+        width: "20%",
+        data: "id"
+      }, {
+        data: "nombre"
+      }, {
+        data: "valores"
+      }, {
+        render: function render(data, type, JsonResultRow, meta) {
+          return '<button class="btn btn-danger agregarCaracteristica" data-caracteristica=\'' + JSON.stringify(JsonResultRow) + '\'>Agregar</button>';
+        }
+      }],
+      language: LENGUAJE_TABLA
+    });
+  },
   data: function data() {
     return {
-      current: "ropa",
-      tiposProductos: ["ropa", "televisor", "plancha"],
+      caracteristicas: [],
       productos: [],
       producto: {
         cantidad: "",
@@ -2060,6 +2082,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   validations: {},
   methods: {
+    agregarCaracteristica: function agregarCaracteristica(data) {},
     validate: function validate() {
       if (this.productos.length < 1) {
         event.$emit("alert", 403, "Error", "Ingresa la información basica del producto");
@@ -2625,6 +2648,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _helper_Alert_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../helper/Alert.vue */ "./resources/js/helper/Alert.vue");
 /* harmony import */ var _DetalleProductoComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DetalleProductoComponent */ "./resources/js/components/product/store/DetalleProductoComponent.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4342,6 +4372,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "ul",
       { staticClass: "list-group list-group-horizontal" },
@@ -4351,7 +4383,7 @@ var render = function() {
           { key: key, staticClass: "list-group-item description" },
           [
             _c("div", { staticClass: "input-group" }, [
-              _vm._m(0, true),
+              _vm._m(1, true),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -4388,7 +4420,11 @@ var render = function() {
               return _c("div", { key: key, staticClass: "input-group" }, [
                 _c("div", { staticClass: "input-group-prepend" }, [
                   _c("span", { staticClass: "input-group-text capitalize" }, [
-                    _vm._v(_vm._s(description.key))
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(description.key) +
+                        "\n          "
+                    )
                   ])
                 ]),
                 _vm._v(" "),
@@ -4452,7 +4488,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("\n      Agregar un sub producto\n    ")]
+        [_vm._v("Agregar un sub producto")]
       )
     ]),
     _vm._v(" "),
@@ -4518,7 +4554,7 @@ var render = function() {
                           staticClass: "col-sm-4 col-form-label capitalize",
                           attrs: { for: "cantidad" }
                         },
-                        [_vm._v("\n                Cantidad\n              ")]
+                        [_vm._v("Cantidad")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-sm-8" }, [
@@ -4659,7 +4695,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n            Cancelar\n          ")]
+                  [_vm._v("Cancelar")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -4673,7 +4709,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n            Guardar Cambios\n          ")]
+                  [_vm._v("Guardar Cambios")]
                 )
               ])
             ])
@@ -4684,6 +4720,31 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "table",
+      {
+        staticClass: "table table-bordered dt-responsive table-striped",
+        attrs: { id: "tablaCaracteristicas" }
+      },
+      [
+        _c("thead", [
+          _c("tr", [
+            _c("th", { attrs: { width: "40%" } }, [_vm._v("#")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Nombre")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Valores")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Opciones")])
+          ])
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -5320,8 +5381,14 @@ var render = function() {
               }
             },
             [
+              _c("product-characteristics", {
+                ref: "productC",
+                on: { "on-validate": _vm.mergePartialModels }
+              }),
+              _vm._v(" "),
               _c("product-detail", {
                 ref: "productDetail",
+                staticClass: "d-none",
                 on: { "on-validate": _vm.mergePartialModels }
               })
             ],
@@ -5348,25 +5415,15 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "tab-content",
-            {
-              attrs: {
-                title: "Características del producto",
-                icon: "icon icon-shop",
-                "before-change": function() {
-                  return _vm.validateStep("productC")
-                }
+          _c("tab-content", {
+            attrs: {
+              title: "Características del producto",
+              icon: "icon icon-shop",
+              "before-change": function() {
+                return _vm.validateStep("productC")
               }
-            },
-            [
-              _c("product-characteristics", {
-                ref: "productC",
-                on: { "on-validate": _vm.mergePartialModels }
-              })
-            ],
-            1
-          ),
+            }
+          }),
           _vm._v(" "),
           _c(
             "tab-content",
