@@ -10,3 +10,26 @@ frmAddStore.submit(function (e) {
    
     ajaxUpload(url, data, success);
 });
+
+$("#pais").change(function(e){
+    e.preventDefault();
+    var id=$("#id").val($(this).val());
+    /* console.log($(this).val()); */
+    $.ajax({
+        
+        url: urlCiudad,
+        type: 'html',
+        method: 'GET',
+        success: function (response) {
+            $('#ciudad').html(response);
+           
+            
+            
+        }, error: function (response) {
+            console.log(urlCiudad);
+            
+        }
+    });
+
+
+});

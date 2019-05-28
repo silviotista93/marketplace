@@ -27,7 +27,7 @@
                     <h3 class="page-subheading">Datos de representante legal</h3>
                     <form  id="frmAddStore" action="{{ route('add-store') }}" enctype="multipart/form-data" >
                         @csrf
-                        
+                        <input id="id" name="id" type="hidden" value="">
                         <div class="contact-form-box">
 
                             <div class="form-selector">
@@ -72,13 +72,14 @@
                                 <div class="form-group">
                                     <label for="pais">Pais:</label>
                                     <select class="form-control" id="pais" name="pais">
-                                      <option>Seleccione un pais</option>                         @forelse ($countries as $c)
+                                      <option value="0" >Seleccione un pais</option>                         @forelse ($countries as $c)
                                           
                                     <option value="{{$c->id}}">{{$c->name}}</option>                                     
                                       @empty
                                       <option>No hay paises registrados</option>
                                       @endforelse            
                                     </select>
+                                    <div id="error-pais" class="text-danger msg-error"></div>
                                   </div>
 
                                   <div id="ciudad">
@@ -88,12 +89,12 @@
                                 <div class="form-selector">
                                     <label>Direccion:</label>
                                     <input type="text" class="form-control input-sm" id="direccion" name="direccion" placeholder="Ingrese la direccion de su tienda ">
-                                    <div id="error-nombreT" class="text-danger msg-error"></div>
+                                    <div id="error-direccion" class="text-danger msg-error"></div>
                                 </div>
                                 <div class="form-selector">
                                     <label>Descripcion:</label>                                   
                                     <textarea class="form-control z-depth-1" id="descripcion" name="descripcion" rows="3"  placeholder="Ingrese una breve descripcion acerca de lo que ofrece su tienda"></textarea>
-                                    <div id="error-nombreT" class="text-danger msg-error"></div>
+                                    <div id="error-descripcion" class="text-danger msg-error"></div>
                                 </div>
                                 <div class="form-selector">
                                     <label>Rut:</label>
@@ -165,7 +166,7 @@
                                     <div id="error-imagenDni" class="text-danger msg-error"></div>
                                 </div>
                                 <div class="form-selector">
-                                    <button id="btn-send-contact" class="btn">Send</button>
+                                    <button id="btn-send-contact" class="btn">Enviar</button>
                                 </div>
                             </div>
                     </form>
@@ -209,12 +210,18 @@
 <script type="text/javascript">
       $('#datepicker').datepicker({
             uiLibrary: 'bootstrap'
-        });; 
+        });
 </script>
 
 <script>
 
 $('#box-vertical-megamenus').remove();
 </script>
+
+<script>
+    const id=$('#id').val();
+    urlCiudad="{{route('ciudades',"")}}"
+</script>
+
 
 @endpush

@@ -10,6 +10,7 @@ use App\Mail\NewStoreRequest;
 use App\Store;
 use Illuminate\Support\Facades\DB;
 use App\Country;
+use App\City;
 
 class EmpresaController extends Controller
 {
@@ -19,12 +20,28 @@ class EmpresaController extends Controller
         return view('frontend.empresa.solicitud_empresa',compact('countries'));
     }
 
+    public function ciudades(){
+        
+        $ciudad=City::where('country_id',"=",3)->get();
+       
+                           echo '<div class="form-group">
+                                    <label for="pais">Ciudad:</label>
+                                    <select class="form-control" id="ciudad" name="ciudad">
+                                      <option>Seleccione una ciudad</option>';
+                                 foreach ($ciudad as $ciudad){
+                                          
+                                  echo '<option value="'.$ciudad->id.'">'.$ciudad->name.'</option>';             }                        
+                                                 
+                                   echo '</select>
+                                  </div>';
+    }
+
     public  function saveStore(AddStore $request){
         $validate = $request->validated();
        
 
         try {
-            DB::beginTransaction();
+            /* DB::beginTransaction(); */
 
                 $user = new User();
                 $user->name = $request->name;
@@ -43,9 +60,12 @@ class EmpresaController extends Controller
                 
                 $store = new Store();
     
-                $store->store_name=$request->nombreT;
-                $store->rut=$request->imagen;
-                $store->bank_statement=$request->nombreT;
+                $store->store_name=$request->nombreT;                
+                $store->phone_store=$request->store_phone;
+                $store->adress_store=$request->direccion;
+                $store->store_description=$request->descripcion;
+                $store->city_id=$request->ciudad;
+                $store->country_id=$request->pais;
                 $store->rut = '/storage/' . $pathR;
                 $store->bank_statement = '/storage/' . $pathS;
                 $store->dni_picture = '/storage/' . $pathD;            
@@ -65,9 +85,11 @@ class EmpresaController extends Controller
             ], 500);
         }
         return response()->json([
+            
             'title' => 'Excelente',
             'msg' => 'Registrado correctamente, en pocos dias recibira un email con la aprovacion de su tienda '
         ],201);
+        
         return $request;
     }
 }

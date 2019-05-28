@@ -1,5 +1,6 @@
 <?php
 use App\Mail\NewStoreRequest;
+use App\Store;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,13 @@ CONSULTAS DE PRUEBAS
 =============================================*/
 
 
+/* Route::get('/prueba', function () {
+   
+   $store=Store::with('users')->where('id','=', 6)->get();
+   
+   dd($store);
 
-
+}); */
 
 
 /*=============================================
@@ -42,6 +48,11 @@ Route::group(['namespace' => 'Frontend'], function () {
    // solicitud de empresa vista
      Route::get('empresa/solicitud', 'empresa\EmpresaController@index')->name('empresa.solicitud');
      Route::post('empresa/add-store', 'empresa\EmpresaController@saveStore')->name('add-store');
+
+     // ciudades por pais 
+     Route::get('ciudades', 'empresa\EmpresaController@ciudades')->name('ciudades');
+
+
 
 });
 
@@ -115,6 +126,8 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function () {
    Route::get('store-management/shops','admin\store_managament\ShopsController@index')->name('dashboard.store_management.shops');
    Route::get('store-management/request','admin\store_managament\RequestController@index')->name('dashboard.store_management.request');
    Route::get('store-management/show','admin\store_managament\ShopsController@store')->name('dashboard.store_management.store');
+   Route::put('request-accepted','admin\store_managament\RequestController@requestAccepted')->name('request-accepted');
+   Route::put('request-rejected','admin\store_managament\RequestController@requestRejected')->name('request-rejected');
 });
 
 Auth::routes();
