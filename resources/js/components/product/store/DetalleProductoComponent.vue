@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h1 class="text-center">{{ informacion.name }}</h1>
+    <h1 class="text-center pb-4 pt-2">{{ informacion.name }}</h1>
     <section class="row">
       <p class="col-sm-6">
         <strong>Category:</strong> {{ informacion.category_name }}
@@ -56,9 +56,9 @@
             :key="key"
           >
             <div class="input-group-prepend">
-              <span class="input-group-text capitalize">{{
-                description.key
-              }}</span>
+              <span class="input-group-text capitalize">
+                {{ description.key }}
+              </span>
             </div>
             <input
               type="text"
@@ -70,6 +70,17 @@
         </li>
       </ul>
     </section>
+    <hr>
+    <div class="card-group">
+      <div class="card" 
+        :class="imagen.principal?'imagen-principal':''" 
+        v-for="(imagen, key) in informacion.imagenes" 
+        :key="key"
+        @click="cambioImagenPrincipal(key)"
+      >
+        <img :src="imagen.img" class="card-img-top" alt="Imagen del producto">
+      </div>
+    </div>
   </article>
 </template>
 <script>
@@ -80,10 +91,17 @@ export default {
     return {};
   },
   props: ["informacion"],
-  methods: {}
+  methods: {
+    cambioImagenPrincipal(key){
+      this.informacion.imagenes.map( img => {
+        img.principal = false;
+      });
+      this.informacion.imagenes[key].principal = true;
+    }
+  }
 };
 </script>
-<style>
+<style scoped>
 .description {
   display: flex;
 }
@@ -97,5 +115,47 @@ export default {
 }
 .container--agregarProducto {
   text-align: right;
+}
+
+.card{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: .4rem;
+  border: none;
+  max-width: 20rem;
+}
+
+.card img {
+  box-shadow: 0 0 3px #333;
+  cursor: pointer;
+}
+
+.imagen-principal{
+  position: relative;
+}
+
+.imagen-principal img {
+  padding: .2rem;
+}
+
+.imagen-principal::before{
+  content: "Imagen principal";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 15;
+  position: absolute;
+  height: 1.6rem;
+  background-color: hsla(0, 0%, 100%, .8);
+  padding: .2rem .4rem;
+  text-align: center;
+  color: hsla(0, 0%, 10%, .9);
+  font-weight: bold;
+  border: .2rem solid transparent;
+  border-bottom: .05rem solid #333;
+  border-top: .05rem solid #333;
 }
 </style>

@@ -65,7 +65,7 @@ class ProductController extends Controller
         $p->save();
         foreach ($request->get("imagenes") as $image) {
             $img = new Image();
-            $img->image = $image;
+            $img->image = $image["img"];
             $img->product_id = $p->id;
             $img->save();
         }
