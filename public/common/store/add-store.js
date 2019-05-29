@@ -20,6 +20,7 @@ $("#pais").change(function(e){
         url: urlCiudad,
         type: 'html',
         method: 'GET',
+        data: id,
         success: function (response) {
             $('#ciudad').html(response);
            

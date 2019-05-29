@@ -20,9 +20,9 @@ class EmpresaController extends Controller
         return view('frontend.empresa.solicitud_empresa',compact('countries'));
     }
 
-    public function ciudades(){
+    public function ciudades(Request $request){
         
-        $ciudad=City::where('country_id',"=",3)->get();
+        $ciudad=City::where('country_id',"=",$request->id)->get();
        
                            echo '<div class="form-group">
                                     <label for="pais">Ciudad:</label>
