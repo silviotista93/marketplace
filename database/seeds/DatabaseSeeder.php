@@ -197,73 +197,73 @@ class DatabaseSeeder extends Seeder
         /* tipos catracteristicas tipo subcategorias */
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Talla",
-            "valores" => "['x','s','l','m','xl']",
-            'validaciones' => "[ 'html': { 'required': true } ]",
+            "valores" => json_encode(["x","s","l","m","xl"]),
+            'validaciones' => '{ "html": { "required": true } }',
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Material",
-            "valores" => "['poliester']",
-            'validaciones' => "[ 'html': { 'required': true } ]",
+            "valores" => json_encode(['poliester']),
+            'validaciones' => "{ 'html': { 'required': true } }",
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Modelo",
             "valores" => '',
-            'validaciones' => "[
+            'validaciones' => "{
                 'html': {
                     'required': true,
                     'pattern': '[0-9]+',
                     'type': 'number'
                 }
-             ]",
+            }",
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Tamaño",
             "valores" => '',
-            'validaciones' => "[
+            'validaciones' => "{
                 'html': {
                     'required': true
                 }
-             ]",
+            }",
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Peso",
             "valores" => '',
-            'validaciones' => "[
+            'validaciones' => "{
                 'html': {
                     'required': true
                 }
-             ]",
+            }",
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Condición producto",
             "valores" => '["nuevo", "usado"]',
-            'validaciones' => "[
+            'validaciones' => "{
                 'html': {
                     'required': true
                 }
-             ]",
+            }",
             'idSubCategoria' => 29
         ]);
 
         factory(\App\CaracteristicaSubtipo::class, 1)->create([
             "nombre" => "Garantia",
             "valores" => '',
-            'validaciones' => "[
+            'validaciones' => "{
                 'html': {
                     'required': true ,
                     'min': 12
                 }
-             ]",
+            }",
             'idSubCategoria' => 29
         ]);
     }

@@ -20,7 +20,7 @@
       <tab-content
         title="Información basica del producto"
         icon="icon icon-info"
-        :before-change="() => validateStep('productDetail')"
+        :before-change="() => validateStep('productC')"
       >
       <product-characteristics
           ref="productC"

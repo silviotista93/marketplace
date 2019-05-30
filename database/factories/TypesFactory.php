@@ -6,7 +6,7 @@ $factory->define(App\Type::class, function (Faker $faker) {
     $name = $faker->unique(true)->randomElement(['SMATHPHONES', 'BICICLETAS', 'ZAPATOS HOMBRE', 'ROPA HOMBRE', 'GAFAS']);
     return [
         'type' => ucfirst($name),
-        'description' => $faker->text(),
+        'description' => $faker->text(120),
         'category_id'=>\App\Category::all()->random()->id,
     ];
 });
