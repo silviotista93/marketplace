@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43076b91-0260-4b4c-81a0-3a6473e8da0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CaracteristicaSubtipo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CaracteristicaSubtipo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TypesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TypesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/empresa/producto/producto-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/empresa/producto/producto-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,21 +37,13 @@
       <file leaf-file-name="ProductCharacteristicsComponent.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="182" column="40" selection-start-line="182" selection-start-column="40" selection-end-line="182" selection-end-column="40" />
+            <state relative-caret-position="221">
+              <caret line="170" column="30" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="30" />
               <folding>
                 <element signature="n#table#0;n#section#0;n#template#0;n#!!top" />
                 <element signature="n#ul#0;n#form#0;n#section#0;n#template#0;n#!!top" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="producto-store.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/producto-store.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -62,11 +51,17 @@
       <file leaf-file-name="StoreComponent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-              <folding>
-                <element signature="e#1886#1943#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptionProductComponent.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -74,8 +69,8 @@
       <file leaf-file-name="SelectCategoryComponent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1747">
-              <caret line="190" column="33" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="33" />
+            <state relative-caret-position="409">
+              <caret line="203" column="44" selection-start-line="203" selection-start-column="33" selection-end-line="203" selection-end-column="44" />
               <folding>
                 <element signature="e#2433#2459#0" expanded="true" />
               </folding>
@@ -86,8 +81,8 @@
       <file leaf-file-name="ProductDetailComponent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductDetailComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="205" column="29" selection-start-line="205" selection-start-column="18" selection-end-line="205" selection-end-column="29" />
+            <state relative-caret-position="408">
+              <caret line="206" column="18" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="18" />
               <folding>
                 <element signature="e#4733#4778#0" expanded="true" />
               </folding>
@@ -95,20 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DescriptionProductComponent.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DetalleProductoComponent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DetalleProductoComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+            <state relative-caret-position="1800">
+              <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -121,7 +107,7 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
+            <state relative-caret-position="1830">
               <caret line="122" column="67" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="67" />
             </state>
           </provider>
@@ -130,7 +116,7 @@
       <file leaf-file-name="CaracteristicaSubtipoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CaracteristicaSubtipoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
+            <state relative-caret-position="465">
               <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
@@ -147,9 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>frontend/</find>
-      <find>assets/</find>
-      <find>home</find>
       <find>BRAND SHOWCASE</find>
       <find>computador</find>
       <find>collapsed-menu</find>
@@ -173,6 +156,13 @@
       <find>send</find>
       <find>btn--agregarProducto</find>
       <find>reset</find>
+      <find>type_sub_id</find>
+      <find>isValidvalidate</find>
+      <find>validate</find>
+      <find>validacionesFormulario</find>
+      <find>validateStep</find>
+      <find>validarFormulario</find>
+      <find>alert</find>
     </findStrings>
     <replaceStrings>
       <replace>/frontend/</replace>
@@ -230,12 +220,12 @@
         <option value="$PROJECT_DIR$/database/factories/SubCategoryFactory.php" />
         <option value="$PROJECT_DIR$/app/SubCategory.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/TypesFactory.php" />
         <option value="$PROJECT_DIR$/app/CaracteristicaSubtipo.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue" />
       </list>
     </option>
@@ -359,7 +349,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -436,6 +425,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,29 +501,30 @@
       <workItem from="1557927278874" duration="4808000" />
       <workItem from="1559144407835" duration="8821000" />
       <workItem from="1559217218127" duration="3982000" />
+      <workItem from="1559227205211" duration="99000" />
+      <workItem from="1559339561266" duration="2817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92236000" />
+    <option name="totallyTimeSpent" value="95152000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1600" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-1" width="1602" height="881" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991013" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.328877" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29407978" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.328" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3018018" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -542,28 +533,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32862645" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3101777" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32862645" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991013" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -843,7 +812,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
+        <state relative-caret-position="1830">
           <caret line="122" column="67" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="67" />
         </state>
       </provider>
@@ -853,69 +822,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CaracteristicaSubtipoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
+        <state relative-caret-position="465">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1747">
-          <caret line="190" column="33" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="33" />
-          <folding>
-            <element signature="e#2433#2459#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductDetailComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="205" column="29" selection-start-line="205" selection-start-column="18" selection-end-line="205" selection-end-column="29" />
-          <folding>
-            <element signature="e#4733#4778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DetalleProductoComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-          <folding>
-            <element signature="e#1886#1943#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1800">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/producto-store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductDetailComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="206" column="18" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="18" />
+          <folding>
+            <element signature="e#4733#4778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/SelectCategoryComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="203" column="44" selection-start-line="203" selection-start-column="33" selection-end-line="203" selection-end-column="44" />
+          <folding>
+            <element signature="e#2433#2459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="182" column="40" selection-start-line="182" selection-start-column="40" selection-end-line="182" selection-end-column="40" />
+        <state relative-caret-position="221">
+          <caret line="170" column="30" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="30" />
           <folding>
             <element signature="n#table#0;n#section#0;n#template#0;n#!!top" />
             <element signature="n#ul#0;n#form#0;n#section#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

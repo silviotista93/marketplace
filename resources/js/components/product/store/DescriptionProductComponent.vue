@@ -6,7 +6,11 @@
             </span>
         </div>
         <input :required="getValidationBoolean('required')" type="text" class="form-control"
-               v-model="description.value">
+               v-model="description.value" v-if="description.valores === null">
+        <select :name="description.nombre" v-if="Array.isArray(description.valores)" class="form-control" required v-model="description.value">
+            <option value="">Seleccione {{description.nombre}}</option>
+            <option :value="valor" v-for="valor of description.valores">{{valor}}</option>
+        </select>
     </div>
 </template>
 <script>
@@ -31,5 +35,8 @@
     };
 </script>
 <style>
-
+    .validarFormulario input:invalid,
+    .validarFormulario select:invalid{
+        border-color: var(--danger);
+    }
 </style>

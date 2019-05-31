@@ -20,15 +20,10 @@
       <tab-content
         title="Información basica del producto"
         icon="icon icon-info"
-        :before-change="() => validateStep('productC')"
+        :before-change="() => validateStep('productDetail')"
       >
-      <product-characteristics
-          ref="productC"
-          @on-validate="mergePartialModels"
-        ></product-characteristics>
         <product-detail
           ref="productDetail"
-          class="d-none"
           @on-validate="mergePartialModels"
         ></product-detail>
       </tab-content>
@@ -47,12 +42,10 @@
         icon="icon icon-shop"
         :before-change="() => validateStep('productC')"
       >
-      <!--
         <product-characteristics
           ref="productC"
           @on-validate="mergePartialModels"
         ></product-characteristics>
-        -->
       </tab-content>
       <tab-content title="Registro" icon="icon icon-shop">
         <detalle-product :informacion="registroProducto"></detalle-product>
@@ -102,7 +95,6 @@ export default {
       return refToValidate.validate();
     },
     mergePartialModels(model, isValid) {
-        console.log(model);
       if (isValid) {
         this.registroProducto = Object.assign({}, this.registroProducto, model);
       }

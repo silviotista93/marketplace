@@ -36,7 +36,8 @@
                         >
                     </div>
 
-                    <description-product :description="description" v-for="(description, key) in producto.descriptions" :key="key"></description-product>
+                    <description-product :description="description" v-for="(description, key) in producto.descriptions"
+                                         :key="key"></description-product>
 
                     <button
                         type="button"
@@ -48,7 +49,7 @@
                     </button>
                 </li>
             </ul>
-            <button id="btnEnviarDatos">Enviar datos</button>
+            <button id="btnEnviarDatos" style="display: none;">Enviar datos</button>
         </form>
 
     </section>
@@ -156,24 +157,26 @@
 
             },
             validate() {
-                if (this.envioDatos){
-                    if (this.productos.length < 1) {
-                        event.$emit(
-                            "alert",
-                            403,
-                            "Error",
-                            "Ingresa la información basica del producto"
-                        );
-                        return false;
-                    }
-                    let isValid = true;
-                    this.$emit("on-validate", {productos: this.productos}, isValid);
-                    this.envioDatos = false;
-                    return isValid;
-                }else{
-                    $("#btnEnviarDatos").click();
+                $("#btnEnviarDatos").click();
+                this.envioDatos = $("#validacionesFormulario:valid").length > 0;
+
+                if (!this.envioDatos) {
+                    $("#validacionesFormulario").addClass('validarFormulario');
+                } else {
+                    $("#validacionesFormulario").removeClass('validarFormulario');
                 }
-                return false;
+
+                if (this.productos.length < 1) {
+                    event.$emit(
+                        "alert",
+                        403,
+                        "Error",
+                        "Ingresa la información basica del producto"
+                    );
+                    return false;
+                }
+                this.$emit("on-validate", {productos: this.productos}, this.envioDatos);
+                return this.envioDatos;
             },
             reset() {
                 const c = JSON.stringify(this.caracteristicas);

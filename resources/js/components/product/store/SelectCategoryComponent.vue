@@ -127,11 +127,11 @@ export default {
             img: response.path,
             principal: false
           };
-          
+
           if (this.imagenes.length === 0){
             imagen.principal = true;
           }
-          
+
           this.imagenes.push(imagen);
 
           $("#inputDBImageAddProject").val(response.msg);
