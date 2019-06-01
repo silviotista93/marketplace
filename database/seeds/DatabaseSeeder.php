@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         factory(\App\Role::class, 1)->create(['name'=>'Bodega','super_role_id'=>\App\Role::EMPRESA]);
         factory(\App\Role::class, 1)->create(['name'=>'Empresa']);
 
+
         $roles = [ \App\Role::ROOT, \App\Role::SUPER_ADMIN, \App\Role::MARKETING, \App\Role::ADMIN, \App\Role::VENDEDOR, \App\Role::BODEGA, \App\Role::EMPRESA];
         $email = ['root@gmail.com','sadmin@gmail.com','marketing@gmail.com','admin@gmail.com','vendedor@gmail.com','bodega@gmail.com', "empresa@gmail.com" ];
         $i=0;
@@ -193,6 +194,8 @@ class DatabaseSeeder extends Seeder
         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 28,'type_id' => 9,'slug'=>'289']); //Tipo Ropa para hombre
         factory(\App\TypeSubcategory::class,1)->create(['subcategory_id' => 29,'type_id' => 9,'slug'=>'299']); //Tipo Ropa para hombre
 
+
+        factory(\App\Store::class, 1)->create();
 
         /* tipos catracteristicas tipo subcategorias */
         factory(\App\CaracteristicaSubtipo::class, 1)->create([

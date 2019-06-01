@@ -113,7 +113,16 @@
         },
         data() {
             return {
-                caracteristicas: [],
+                caracteristicas: [
+                    {
+                        "nombre":"Color",
+                        "valores":["x","s","l","m","xl"],
+                        "key":"Color",
+                        "value":null
+                    }
+                    /*
+                    * */
+                ],
                 productos: [],
                 producto: {
                     cantidad: "",
@@ -175,6 +184,17 @@
                     );
                     return false;
                 }
+                this.productos.map(producto => {
+                    if (producto.descriptions[0].value == null) {
+                        event.$emit(
+                            "alert",
+                            403,
+                            "Error",
+                            "Ingresa un color"
+                        );
+                        return false;
+                    }
+                });
                 this.$emit("on-validate", {productos: this.productos}, this.envioDatos);
                 return this.envioDatos;
             },

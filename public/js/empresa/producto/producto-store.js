@@ -1778,6 +1778,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['description'],
   mounted: function mounted() {
@@ -2031,7 +2043,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      caracteristicas: [],
+      caracteristicas: [{
+        "nombre": "Color",
+        "valores": ["x", "s", "l", "m", "xl"],
+        "key": "Color",
+        "value": null
+        /*
+        * */
+
+      }],
       productos: [],
       producto: {
         cantidad: "",
@@ -2088,6 +2108,12 @@ __webpack_require__.r(__webpack_exports__);
         return false;
       }
 
+      this.productos.map(function (producto) {
+        if (producto.descriptions[0].value == null) {
+          event.$emit("alert", 403, "Error", "Ingresa un color");
+          return false;
+        }
+      });
       this.$emit("on-validate", {
         productos: this.productos
       }, this.envioDatos);
@@ -2687,6 +2713,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2839,7 +2866,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.validarFormulario input:invalid,\n.validarFormulario select:invalid{\n    border-color: var(--danger);\n}\n", ""]);
+exports.push([module.i, "\n.validarFormulario input:invalid,\n.validarFormulario select:invalid {\n    border-color: var(--danger);\n}\n", ""]);
 
 // exports
 
@@ -2896,7 +2923,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.icon {\n  color: rgb(52, 152, 219);\n}\n.active .icon {\n  color: white;\n}\n", ""]);
+exports.push([module.i, "\n.icon {\n    color: rgb(52, 152, 219);\n}\n.active .icon {\n    color: white;\n}\n", ""]);
 
 // exports
 
@@ -4242,10 +4269,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: {
-            required: _vm.getValidationBoolean("required"),
-            type: "text"
-          },
+          attrs: { required: "", type: "text" },
           domProps: { value: _vm.description.value },
           on: {
             input: function($event) {
@@ -4258,7 +4282,7 @@ var render = function() {
         })
       : _vm._e(),
     _vm._v(" "),
-    Array.isArray(_vm.description.valores)
+    Array.isArray(_vm.description.valores) && _vm.description.key !== "Color"
       ? _c(
           "select",
           {
@@ -4303,10 +4327,59 @@ var render = function() {
           ],
           2
         )
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    Array.isArray(_vm.description.valores) && _vm.description.key === "Color"
+      ? _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.description.value,
+              expression: "description.value"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { required: "", type: "color", list: "presetColors" },
+          domProps: { value: _vm.description.value },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.description, "value", $event.target.value)
+            }
+          }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("datalist", { attrs: { id: "presetColors" } }, [
+      _c("option", [_vm._v("#0866C6")]),
+      _vm._v("/>\n        "),
+      _c("option", [_vm._v("#17A2B8")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#1CAF9A")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#23BF08")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#F49917")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#DC3545")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#DEE2E6")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("#343a40")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -5225,7 +5298,7 @@ var render = function() {
           staticClass: "br-section-label",
           staticStyle: { "margin-top": "0px !important" }
         },
-        [_vm._v("\n    Ingrese la información del producto\n  ")]
+        [_vm._v("\n        Ingrese la información del producto\n    ")]
       ),
       _vm._v(" "),
       _c("p", { staticClass: "br-section-text" }, [
