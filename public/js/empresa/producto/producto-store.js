@@ -1991,6 +1991,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2043,6 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      showTable: false,
       caracteristicas: [{
         "nombre": "Color",
         "valores": ["x", "s", "l", "m", "xl"],
@@ -4572,9 +4582,53 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _vm._m(0),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.productos.length < 1 || _vm.showTable,
+            expression: "productos.length < 1 || showTable"
+          }
+        ]
+      },
+      [_vm._m(0)]
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "container--agregarProducto" }, [
+      _c(
+        "button",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.productos.length > 0,
+              expression: "productos.length > 0"
+            }
+          ],
+          staticClass: "btn btn-danger",
+          on: {
+            click: function($event) {
+              _vm.showTable = !_vm.showTable
+            }
+          }
+        },
+        [
+          _vm._v(
+            "\n            " +
+              _vm._s(
+                _vm.showTable
+                  ? "Ocultar Caracteristicas"
+                  : "Mostrar Caracteristicas"
+              ) +
+              "\n        "
+          )
+        ]
+      ),
+      _vm._v(" "),
       _c(
         "button",
         {

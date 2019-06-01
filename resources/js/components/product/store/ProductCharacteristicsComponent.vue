@@ -1,18 +1,27 @@
 <template>
     <section>
-        <table class="table table-bordered dt-responsive table-striped" id="tablaCaracteristicas">
-            <thead>
-            <tr>
-                <th width="40%">#</th>
-                <th>Nombre</th>
-                <th>Valores</th>
-                <th>Opciones</th>
-            </tr>
-            </thead>
-        </table>
+        <div v-show="productos.length < 1 || showTable" >
+            <table  class="table table-bordered dt-responsive table-striped" id="tablaCaracteristicas">
+                <thead>
+                <tr>
+                    <th width="40%">#</th>
+                    <th>Nombre</th>
+                    <th>Valores</th>
+                    <th>Opciones</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
 
         <!-- Button trigger modal -->
         <div class="container--agregarProducto">
+            <button
+                class="btn btn-danger"
+                @click="showTable=!showTable"
+                v-show="productos.length > 0"
+            >
+                {{showTable?'Ocultar Caracteristicas':'Mostrar Caracteristicas'}}
+            </button>
             <button
                 type="button"
                 class="btn btn-teal btn--agregarProducto"
@@ -113,6 +122,7 @@
         },
         data() {
             return {
+                showTable: false,
                 caracteristicas: [
                     {
                         "nombre":"Color",

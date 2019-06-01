@@ -37,8 +37,8 @@
       <file leaf-file-name="ProductCharacteristicsComponent.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="192" column="41" selection-start-line="192" selection-start-column="41" selection-end-line="192" selection-end-column="41" />
+            <state relative-caret-position="135">
+              <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
               <folding>
                 <element signature="n#table#0;n#section#0;n#template#0;n#!!top" />
                 <element signature="n#style#0;n#button#0;n#form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
@@ -423,12 +423,12 @@
       <workItem from="1559217218127" duration="3982000" />
       <workItem from="1559227205211" duration="99000" />
       <workItem from="1559339561266" duration="2817000" />
-      <workItem from="1559407923819" duration="6361000" />
+      <workItem from="1559407923819" duration="7305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101513000" />
+    <option name="totallyTimeSpent" value="102457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="876" extended-state="6" />
@@ -785,13 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/StoreComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -802,10 +795,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/DescriptionProductComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/product/store/ProductCharacteristicsComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="192" column="41" selection-start-line="192" selection-start-column="41" selection-end-line="192" selection-end-column="41" />
+        <state relative-caret-position="135">
+          <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
           <folding>
             <element signature="n#table#0;n#section#0;n#template#0;n#!!top" />
             <element signature="n#style#0;n#button#0;n#form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
